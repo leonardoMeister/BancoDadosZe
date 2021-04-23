@@ -12,20 +12,22 @@ using System.Threading;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// Classe de controle de usuario
+    /// </summary>
     public partial class ControleUs : UserControl
     {
+        /// <summary>
+        /// Inicializado os componentes do controle de usuario
+        /// </summary>
         public ControleUs()
         {
             InitializeComponent();
             this.btnAdicionar.Text = Properties.Resources.ResourceManager.GetString("btn_adicionar");
             this.btnRemover.Text = Properties.Resources.ResourceManager.GetString("btn_remover");
             this.btnSalvar.Text = Properties.Resources.ResourceManager.GetString("btn_salvar");
-
         }
 
-        private void painelFundo_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

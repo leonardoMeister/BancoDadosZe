@@ -47,7 +47,6 @@ namespace BancoDadosZe
             this.painelFundo.Name = "painelFundo";
             this.painelFundo.Size = new System.Drawing.Size(743, 53);
             this.painelFundo.TabIndex = 0;
-            this.painelFundo.Paint += new System.Windows.Forms.PaintEventHandler(this.painelFundo_Paint);
             // 
             // btnRemover
             // 

@@ -170,13 +170,13 @@
     <value>..\Resources\funcionarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_adicionar" xml:space="preserve">
-    <value>Adicionar</value>
+    <value>&amp;Adicionar</value>
   </data>
   <data name="btn_busca" xml:space="preserve">
-    <value>Buscar</value>
+    <value>&amp;Buscar</value>
   </data>
   <data name="btn_editar" xml:space="preserve">
-    <value>Editar</value>
+    <value>&amp;Editar</value>
   </data>
   <data name="btn_remover" xml:space="preserve">
     <value>Remover</value>
@@ -185,25 +185,25 @@
     <value>Escolha</value>
   </data>
   <data name="titulo_ajustes" xml:space="preserve">
-    <value>Ajustes</value>
+    <value>A&amp;justes</value>
   </data>
   <data name="titulo_entradas" xml:space="preserve">
-    <value>Entradas</value>
+    <value>E&amp;ntradas</value>
   </data>
   <data name="titulo_fornecedor" xml:space="preserve">
-    <value>Fornecedor</value>
+    <value>&amp;Fornecedor</value>
   </data>
   <data name="titulo_funcionario" xml:space="preserve">
-    <value>Funcionários</value>
+    <value>F&amp;uncionários</value>
   </data>
   <data name="titulo_logar" xml:space="preserve">
-    <value>Entrar</value>
+    <value>Ent&amp;rar</value>
   </data>
   <data name="titulo_loja" xml:space="preserve">
-    <value>Loja</value>
+    <value>&amp;Loja</value>
   </data>
   <data name="titulo_produto" xml:space="preserve">
-    <value>Produto</value>
+    <value>&amp;Produto</value>
   </data>
   <data name="btn_importar" xml:space="preserve">
     <value>Importar XML</value>
@@ -345,5 +345,20 @@
   </data>
   <data name="titulo_idioma" xml:space="preserve">
     <value>Escolher Idioma</value>
+  </data>
+  <data name="titulo_sair" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="titulo_abrir" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="titulo_sobre" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="titulo_ballonText" xml:space="preserve">
+    <value>Aplicação continua executando na bandeja.</value>
+  </data>
+  <data name="titulo_ballonTitulo" xml:space="preserve">
+    <value>Controle Estoque Zé</value>
   </data>
 </root>

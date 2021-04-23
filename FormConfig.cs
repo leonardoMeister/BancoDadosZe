@@ -10,9 +10,15 @@ using System.Windows.Forms;
 using System.Configuration;
 
 namespace BancoDadosZe
-{
+{   
+    /// <summary>
+    /// classe de form de configurações da app para linguagem
+    /// </summary>
     public partial class FormConfig : Form
     {
+        /// <summary>
+        /// Configurações para configurar as linguagens 
+        /// </summary>
         public FormConfig()
         {
             InitializeComponent();
@@ -25,9 +31,12 @@ namespace BancoDadosZe
 
             //evento de teclado para tab no enter e Esc
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
-
         }
-
+        /// <summary>
+        /// Botão para salvar as configurações alteradas no sistema
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void btn_salvar_Click(object sender, EventArgs e)
         {
             //abre o arquivo local como leitura/escrita e salva as alterações em ControleEstoqueDoZe.exe.config

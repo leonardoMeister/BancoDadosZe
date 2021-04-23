@@ -12,29 +12,35 @@ using System.Windows.Forms;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// classe de form para entradas de produtos
+    /// </summary>
     public partial class FormEntradas : Form
     {
+        /// <summary>
+        /// inicializando os componentes
+        /// </summary>
         public FormEntradas()
         {
             InitializeComponent();
             //evento de destaque de campos
-            campoCnpj.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoEmail.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoEndereco.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_transportadora.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_marca.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_valor.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             campoLaranja.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoNomeFantasia.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoQuantidade.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoTelefone.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoValidade.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_lote.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_quantidade.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_dataEntrada.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_validade.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             //leave
-            campoCnpj.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoEmail.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoEndereco.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_transportadora.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_marca.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_valor.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
             campoLaranja.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoNomeFantasia.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoQuantidade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoTelefone.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoValidade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_lote.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_quantidade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_dataEntrada.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_validade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
 
 
             //tradução
@@ -56,10 +62,8 @@ namespace BancoDadosZe
             //evento de teclado para tab no enter e Esc
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
 
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
+            //evento de campo mascarado
+            ClassFuncoes.AplicaMascaraMoeda(mk_valor);
 
         }
     }

@@ -31,17 +31,22 @@ namespace BancoDadosZe
         {
             this.panelFundo = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
-            this.CampoEmail = new System.Windows.Forms.TextBox();
+            this.mk_pais = new System.Windows.Forms.MaskedTextBox();
+            this.mk_numero = new System.Windows.Forms.MaskedTextBox();
+            this.mk_rua = new System.Windows.Forms.MaskedTextBox();
+            this.mk_bairro = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cidade = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cep = new System.Windows.Forms.MaskedTextBox();
+            this.mk_email = new System.Windows.Forms.MaskedTextBox();
+            this.mk_matricula = new System.Windows.Forms.MaskedTextBox();
+            this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.mk_dataNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cpf = new System.Windows.Forms.MaskedTextBox();
+            this.mk_nome = new System.Windows.Forms.MaskedTextBox();
             this.textoEmail = new System.Windows.Forms.Label();
             this.comboBoxCargo = new System.Windows.Forms.ComboBox();
             this.comboBoxGrupo = new System.Windows.Forms.ComboBox();
             this.campoComplemento = new System.Windows.Forms.TextBox();
-            this.campoPais = new System.Windows.Forms.TextBox();
-            this.campoNumero = new System.Windows.Forms.TextBox();
-            this.campoRua = new System.Windows.Forms.TextBox();
-            this.campoBairro = new System.Windows.Forms.TextBox();
-            this.campoCidade = new System.Windows.Forms.TextBox();
-            this.campoCep = new System.Windows.Forms.TextBox();
             this.textoBairro = new System.Windows.Forms.Label();
             this.textoRua = new System.Windows.Forms.Label();
             this.textoNumero = new System.Windows.Forms.Label();
@@ -52,18 +57,13 @@ namespace BancoDadosZe
             this.textoEndereco = new System.Windows.Forms.Label();
             this.textoGrupo = new System.Windows.Forms.Label();
             this.textoCargo = new System.Windows.Forms.Label();
-            this.campoMatricula = new System.Windows.Forms.TextBox();
             this.textoMatricula = new System.Windows.Forms.Label();
-            this.campoTelefone = new System.Windows.Forms.TextBox();
             this.textoTelefone = new System.Windows.Forms.Label();
-            this.campoCpf = new System.Windows.Forms.TextBox();
-            this.campoDataNascimento = new System.Windows.Forms.TextBox();
             this.textoDataNascimento = new System.Windows.Forms.Label();
             this.textoCpf = new System.Windows.Forms.Label();
             this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
             this.textoSexo = new System.Windows.Forms.Label();
-            this.campoNome = new System.Windows.Forms.TextBox();
             this.textoNome = new System.Windows.Forms.Label();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
@@ -82,17 +82,22 @@ namespace BancoDadosZe
             // 
             // panelFormulario
             // 
-            this.panelFormulario.Controls.Add(this.CampoEmail);
+            this.panelFormulario.Controls.Add(this.mk_pais);
+            this.panelFormulario.Controls.Add(this.mk_numero);
+            this.panelFormulario.Controls.Add(this.mk_rua);
+            this.panelFormulario.Controls.Add(this.mk_bairro);
+            this.panelFormulario.Controls.Add(this.mk_cidade);
+            this.panelFormulario.Controls.Add(this.mk_cep);
+            this.panelFormulario.Controls.Add(this.mk_email);
+            this.panelFormulario.Controls.Add(this.mk_matricula);
+            this.panelFormulario.Controls.Add(this.mk_telefone);
+            this.panelFormulario.Controls.Add(this.mk_dataNascimento);
+            this.panelFormulario.Controls.Add(this.mk_cpf);
+            this.panelFormulario.Controls.Add(this.mk_nome);
             this.panelFormulario.Controls.Add(this.textoEmail);
             this.panelFormulario.Controls.Add(this.comboBoxCargo);
             this.panelFormulario.Controls.Add(this.comboBoxGrupo);
             this.panelFormulario.Controls.Add(this.campoComplemento);
-            this.panelFormulario.Controls.Add(this.campoPais);
-            this.panelFormulario.Controls.Add(this.campoNumero);
-            this.panelFormulario.Controls.Add(this.campoRua);
-            this.panelFormulario.Controls.Add(this.campoBairro);
-            this.panelFormulario.Controls.Add(this.campoCidade);
-            this.panelFormulario.Controls.Add(this.campoCep);
             this.panelFormulario.Controls.Add(this.textoBairro);
             this.panelFormulario.Controls.Add(this.textoRua);
             this.panelFormulario.Controls.Add(this.textoNumero);
@@ -103,33 +108,113 @@ namespace BancoDadosZe
             this.panelFormulario.Controls.Add(this.textoEndereco);
             this.panelFormulario.Controls.Add(this.textoGrupo);
             this.panelFormulario.Controls.Add(this.textoCargo);
-            this.panelFormulario.Controls.Add(this.campoMatricula);
             this.panelFormulario.Controls.Add(this.textoMatricula);
-            this.panelFormulario.Controls.Add(this.campoTelefone);
             this.panelFormulario.Controls.Add(this.textoTelefone);
-            this.panelFormulario.Controls.Add(this.campoCpf);
-            this.panelFormulario.Controls.Add(this.campoDataNascimento);
             this.panelFormulario.Controls.Add(this.textoDataNascimento);
             this.panelFormulario.Controls.Add(this.textoCpf);
             this.panelFormulario.Controls.Add(this.radioButtonMasculino);
             this.panelFormulario.Controls.Add(this.radioButtonFeminino);
             this.panelFormulario.Controls.Add(this.textoSexo);
-            this.panelFormulario.Controls.Add(this.campoNome);
             this.panelFormulario.Controls.Add(this.textoNome);
             this.panelFormulario.Location = new System.Drawing.Point(11, 14);
             this.panelFormulario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFormulario.Name = "panelFormulario";
             this.panelFormulario.Size = new System.Drawing.Size(797, 377);
             this.panelFormulario.TabIndex = 2;
-            this.panelFormulario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormulario_Paint);
             // 
-            // CampoEmail
+            // mk_pais
             // 
-            this.CampoEmail.Location = new System.Drawing.Point(574, 114);
-            this.CampoEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CampoEmail.Name = "CampoEmail";
-            this.CampoEmail.Size = new System.Drawing.Size(212, 22);
-            this.CampoEmail.TabIndex = 6;
+            this.mk_pais.Location = new System.Drawing.Point(571, 217);
+            this.mk_pais.Name = "mk_pais";
+            this.mk_pais.Size = new System.Drawing.Size(188, 22);
+            this.mk_pais.TabIndex = 109;
+            // 
+            // mk_numero
+            // 
+            this.mk_numero.Location = new System.Drawing.Point(571, 185);
+            this.mk_numero.Mask = "00000";
+            this.mk_numero.Name = "mk_numero";
+            this.mk_numero.Size = new System.Drawing.Size(55, 22);
+            this.mk_numero.TabIndex = 108;
+            this.mk_numero.ValidatingType = typeof(int);
+            // 
+            // mk_rua
+            // 
+            this.mk_rua.Location = new System.Drawing.Point(163, 282);
+            this.mk_rua.Name = "mk_rua";
+            this.mk_rua.Size = new System.Drawing.Size(232, 22);
+            this.mk_rua.TabIndex = 107;
+            // 
+            // mk_bairro
+            // 
+            this.mk_bairro.Location = new System.Drawing.Point(163, 254);
+            this.mk_bairro.Name = "mk_bairro";
+            this.mk_bairro.Size = new System.Drawing.Size(232, 22);
+            this.mk_bairro.TabIndex = 106;
+            // 
+            // mk_cidade
+            // 
+            this.mk_cidade.Location = new System.Drawing.Point(163, 226);
+            this.mk_cidade.Name = "mk_cidade";
+            this.mk_cidade.Size = new System.Drawing.Size(232, 22);
+            this.mk_cidade.TabIndex = 105;
+            // 
+            // mk_cep
+            // 
+            this.mk_cep.Location = new System.Drawing.Point(163, 198);
+            this.mk_cep.Mask = "00000000";
+            this.mk_cep.Name = "mk_cep";
+            this.mk_cep.Size = new System.Drawing.Size(84, 22);
+            this.mk_cep.TabIndex = 104;
+            this.mk_cep.ValidatingType = typeof(int);
+            // 
+            // mk_email
+            // 
+            this.mk_email.Location = new System.Drawing.Point(575, 116);
+            this.mk_email.Name = "mk_email";
+            this.mk_email.Size = new System.Drawing.Size(170, 22);
+            this.mk_email.TabIndex = 103;
+            // 
+            // mk_matricula
+            // 
+            this.mk_matricula.Location = new System.Drawing.Point(575, 81);
+            this.mk_matricula.Mask = "9990000";
+            this.mk_matricula.Name = "mk_matricula";
+            this.mk_matricula.Size = new System.Drawing.Size(76, 22);
+            this.mk_matricula.TabIndex = 102;
+            this.mk_matricula.ValidatingType = typeof(int);
+            // 
+            // mk_telefone
+            // 
+            this.mk_telefone.Location = new System.Drawing.Point(575, 48);
+            this.mk_telefone.Mask = "(999) 9000-0000";
+            this.mk_telefone.Name = "mk_telefone";
+            this.mk_telefone.Size = new System.Drawing.Size(118, 22);
+            this.mk_telefone.TabIndex = 101;
+            // 
+            // mk_dataNascimento
+            // 
+            this.mk_dataNascimento.Location = new System.Drawing.Point(179, 86);
+            this.mk_dataNascimento.Mask = "00/00/0000";
+            this.mk_dataNascimento.Name = "mk_dataNascimento";
+            this.mk_dataNascimento.Size = new System.Drawing.Size(139, 22);
+            this.mk_dataNascimento.TabIndex = 100;
+            this.mk_dataNascimento.ValidatingType = typeof(System.DateTime);
+            // 
+            // mk_cpf
+            // 
+            this.mk_cpf.Location = new System.Drawing.Point(179, 51);
+            this.mk_cpf.Mask = "000.000.000-00";
+            this.mk_cpf.Name = "mk_cpf";
+            this.mk_cpf.Size = new System.Drawing.Size(120, 22);
+            this.mk_cpf.TabIndex = 99;
+            // 
+            // mk_nome
+            // 
+            this.mk_nome.Location = new System.Drawing.Point(179, 16);
+            this.mk_nome.Name = "mk_nome";
+            this.mk_nome.Size = new System.Drawing.Size(139, 22);
+            this.mk_nome.TabIndex = 98;
             // 
             // textoEmail
             // 
@@ -181,54 +266,6 @@ namespace BancoDadosZe
             this.campoComplemento.Name = "campoComplemento";
             this.campoComplemento.Size = new System.Drawing.Size(273, 42);
             this.campoComplemento.TabIndex = 13;
-            // 
-            // campoPais
-            // 
-            this.campoPais.Location = new System.Drawing.Point(572, 217);
-            this.campoPais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoPais.Name = "campoPais";
-            this.campoPais.Size = new System.Drawing.Size(193, 22);
-            this.campoPais.TabIndex = 12;
-            // 
-            // campoNumero
-            // 
-            this.campoNumero.Location = new System.Drawing.Point(572, 185);
-            this.campoNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoNumero.Name = "campoNumero";
-            this.campoNumero.Size = new System.Drawing.Size(193, 22);
-            this.campoNumero.TabIndex = 11;
-            // 
-            // campoRua
-            // 
-            this.campoRua.Location = new System.Drawing.Point(163, 282);
-            this.campoRua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoRua.Name = "campoRua";
-            this.campoRua.Size = new System.Drawing.Size(239, 22);
-            this.campoRua.TabIndex = 10;
-            // 
-            // campoBairro
-            // 
-            this.campoBairro.Location = new System.Drawing.Point(163, 255);
-            this.campoBairro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoBairro.Name = "campoBairro";
-            this.campoBairro.Size = new System.Drawing.Size(239, 22);
-            this.campoBairro.TabIndex = 9;
-            // 
-            // campoCidade
-            // 
-            this.campoCidade.Location = new System.Drawing.Point(163, 225);
-            this.campoCidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoCidade.Name = "campoCidade";
-            this.campoCidade.Size = new System.Drawing.Size(239, 22);
-            this.campoCidade.TabIndex = 8;
-            // 
-            // campoCep
-            // 
-            this.campoCep.Location = new System.Drawing.Point(163, 198);
-            this.campoCep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoCep.Name = "campoCep";
-            this.campoCep.Size = new System.Drawing.Size(193, 22);
-            this.campoCep.TabIndex = 7;
             // 
             // textoBairro
             // 
@@ -330,14 +367,6 @@ namespace BancoDadosZe
             this.textoCargo.Text = "Cargo";
             this.textoCargo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoMatricula
-            // 
-            this.campoMatricula.Location = new System.Drawing.Point(574, 81);
-            this.campoMatricula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoMatricula.Name = "campoMatricula";
-            this.campoMatricula.Size = new System.Drawing.Size(212, 22);
-            this.campoMatricula.TabIndex = 5;
-            // 
             // textoMatricula
             // 
             this.textoMatricula.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -348,14 +377,6 @@ namespace BancoDadosZe
             this.textoMatricula.Text = "Matricula";
             this.textoMatricula.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoTelefone
-            // 
-            this.campoTelefone.Location = new System.Drawing.Point(574, 46);
-            this.campoTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoTelefone.Name = "campoTelefone";
-            this.campoTelefone.Size = new System.Drawing.Size(212, 22);
-            this.campoTelefone.TabIndex = 4;
-            // 
             // textoTelefone
             // 
             this.textoTelefone.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -365,22 +386,6 @@ namespace BancoDadosZe
             this.textoTelefone.TabIndex = 55;
             this.textoTelefone.Text = "Telefone";
             this.textoTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // campoCpf
-            // 
-            this.campoCpf.Location = new System.Drawing.Point(179, 50);
-            this.campoCpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoCpf.Name = "campoCpf";
-            this.campoCpf.Size = new System.Drawing.Size(244, 22);
-            this.campoCpf.TabIndex = 2;
-            // 
-            // campoDataNascimento
-            // 
-            this.campoDataNascimento.Location = new System.Drawing.Point(179, 85);
-            this.campoDataNascimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoDataNascimento.Name = "campoDataNascimento";
-            this.campoDataNascimento.Size = new System.Drawing.Size(189, 22);
-            this.campoDataNascimento.TabIndex = 3;
             // 
             // textoDataNascimento
             // 
@@ -438,14 +443,6 @@ namespace BancoDadosZe
             this.textoSexo.Text = "Sexo:";
             this.textoSexo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoNome
-            // 
-            this.campoNome.Location = new System.Drawing.Point(179, 13);
-            this.campoNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoNome.Name = "campoNome";
-            this.campoNome.Size = new System.Drawing.Size(244, 22);
-            this.campoNome.TabIndex = 1;
-            // 
             // textoNome
             // 
             this.textoNome.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -479,12 +476,6 @@ namespace BancoDadosZe
         private System.Windows.Forms.Panel panelFundo;
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.TextBox campoComplemento;
-        private System.Windows.Forms.TextBox campoPais;
-        private System.Windows.Forms.TextBox campoNumero;
-        private System.Windows.Forms.TextBox campoRua;
-        private System.Windows.Forms.TextBox campoBairro;
-        private System.Windows.Forms.TextBox campoCidade;
-        private System.Windows.Forms.TextBox campoCep;
         private System.Windows.Forms.Label textoBairro;
         private System.Windows.Forms.Label textoRua;
         private System.Windows.Forms.Label textoNumero;
@@ -495,22 +486,28 @@ namespace BancoDadosZe
         private System.Windows.Forms.Label textoEndereco;
         private System.Windows.Forms.Label textoGrupo;
         private System.Windows.Forms.Label textoCargo;
-        private System.Windows.Forms.TextBox campoMatricula;
         private System.Windows.Forms.Label textoMatricula;
-        private System.Windows.Forms.TextBox campoTelefone;
         private System.Windows.Forms.Label textoTelefone;
-        private System.Windows.Forms.TextBox campoCpf;
-        private System.Windows.Forms.TextBox campoDataNascimento;
         private System.Windows.Forms.Label textoDataNascimento;
         private System.Windows.Forms.Label textoCpf;
         private System.Windows.Forms.RadioButton radioButtonMasculino;
         private System.Windows.Forms.RadioButton radioButtonFeminino;
         private System.Windows.Forms.Label textoSexo;
-        private System.Windows.Forms.TextBox campoNome;
         private System.Windows.Forms.Label textoNome;
         private System.Windows.Forms.ComboBox comboBoxGrupo;
         private System.Windows.Forms.ComboBox comboBoxCargo;
-        private System.Windows.Forms.TextBox CampoEmail;
         private System.Windows.Forms.Label textoEmail;
+        private System.Windows.Forms.MaskedTextBox mk_pais;
+        private System.Windows.Forms.MaskedTextBox mk_numero;
+        private System.Windows.Forms.MaskedTextBox mk_rua;
+        private System.Windows.Forms.MaskedTextBox mk_bairro;
+        private System.Windows.Forms.MaskedTextBox mk_cidade;
+        private System.Windows.Forms.MaskedTextBox mk_cep;
+        private System.Windows.Forms.MaskedTextBox mk_email;
+        private System.Windows.Forms.MaskedTextBox mk_matricula;
+        private System.Windows.Forms.MaskedTextBox mk_telefone;
+        private System.Windows.Forms.MaskedTextBox mk_dataNascimento;
+        private System.Windows.Forms.MaskedTextBox mk_cpf;
+        private System.Windows.Forms.MaskedTextBox mk_nome;
     }
 }

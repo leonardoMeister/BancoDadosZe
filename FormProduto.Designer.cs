@@ -37,12 +37,12 @@ namespace BancoDadosZe
             this.radioButtonAtivo = new System.Windows.Forms.RadioButton();
             this.textoStatus = new System.Windows.Forms.Label();
             this.textoCategoria = new System.Windows.Forms.Label();
-            this.campoNome = new System.Windows.Forms.TextBox();
             this.campoDescricao = new System.Windows.Forms.TextBox();
             this.textoDescrição = new System.Windows.Forms.Label();
             this.textoNome = new System.Windows.Forms.Label();
-            this.campoCodigo = new System.Windows.Forms.TextBox();
             this.textoCodigo = new System.Windows.Forms.Label();
+            this.mk_codigo = new System.Windows.Forms.MaskedTextBox();
+            this.mk_nome = new System.Windows.Forms.MaskedTextBox();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -60,24 +60,23 @@ namespace BancoDadosZe
             // 
             // panelFormulario
             // 
+            this.panelFormulario.Controls.Add(this.mk_nome);
+            this.panelFormulario.Controls.Add(this.mk_codigo);
             this.panelFormulario.Controls.Add(this.controleUs1);
             this.panelFormulario.Controls.Add(this.comboBoxCategoria);
             this.panelFormulario.Controls.Add(this.radioButtonInativo);
             this.panelFormulario.Controls.Add(this.radioButtonAtivo);
             this.panelFormulario.Controls.Add(this.textoStatus);
             this.panelFormulario.Controls.Add(this.textoCategoria);
-            this.panelFormulario.Controls.Add(this.campoNome);
             this.panelFormulario.Controls.Add(this.campoDescricao);
             this.panelFormulario.Controls.Add(this.textoDescrição);
             this.panelFormulario.Controls.Add(this.textoNome);
-            this.panelFormulario.Controls.Add(this.campoCodigo);
             this.panelFormulario.Controls.Add(this.textoCodigo);
             this.panelFormulario.Location = new System.Drawing.Point(7, 14);
             this.panelFormulario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFormulario.Name = "panelFormulario";
             this.panelFormulario.Size = new System.Drawing.Size(663, 215);
             this.panelFormulario.TabIndex = 2;
-            this.panelFormulario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormulario_Paint);
             // 
             // controleUs1
             // 
@@ -86,7 +85,6 @@ namespace BancoDadosZe
             this.controleUs1.Name = "controleUs1";
             this.controleUs1.Size = new System.Drawing.Size(771, 53);
             this.controleUs1.TabIndex = 4;
-            this.controleUs1.Load += new System.EventHandler(this.controleUs1_Load);
             // 
             // comboBoxCategoria
             // 
@@ -150,14 +148,6 @@ namespace BancoDadosZe
             this.textoCategoria.Text = "Categoria";
             this.textoCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoNome
-            // 
-            this.campoNome.Location = new System.Drawing.Point(104, 46);
-            this.campoNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoNome.Name = "campoNome";
-            this.campoNome.Size = new System.Drawing.Size(242, 22);
-            this.campoNome.TabIndex = 2;
-            // 
             // campoDescricao
             // 
             this.campoDescricao.Location = new System.Drawing.Point(116, 80);
@@ -187,14 +177,6 @@ namespace BancoDadosZe
             this.textoNome.Text = "Nome";
             this.textoNome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoCodigo
-            // 
-            this.campoCodigo.Location = new System.Drawing.Point(104, 7);
-            this.campoCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoCodigo.Name = "campoCodigo";
-            this.campoCodigo.Size = new System.Drawing.Size(172, 22);
-            this.campoCodigo.TabIndex = 1;
-            // 
             // textoCodigo
             // 
             this.textoCodigo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,6 +186,22 @@ namespace BancoDadosZe
             this.textoCodigo.TabIndex = 46;
             this.textoCodigo.Text = "Código";
             this.textoCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mk_codigo
+            // 
+            this.mk_codigo.Location = new System.Drawing.Point(104, 6);
+            this.mk_codigo.Mask = "9990000";
+            this.mk_codigo.Name = "mk_codigo";
+            this.mk_codigo.Size = new System.Drawing.Size(67, 22);
+            this.mk_codigo.TabIndex = 100;
+            this.mk_codigo.ValidatingType = typeof(int);
+            // 
+            // mk_nome
+            // 
+            this.mk_nome.Location = new System.Drawing.Point(104, 48);
+            this.mk_nome.Name = "mk_nome";
+            this.mk_nome.Size = new System.Drawing.Size(200, 22);
+            this.mk_nome.TabIndex = 101;
             // 
             // FormProduto
             // 
@@ -229,15 +227,15 @@ namespace BancoDadosZe
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.Label textoStatus;
         private System.Windows.Forms.Label textoCategoria;
-        private System.Windows.Forms.TextBox campoNome;
         private System.Windows.Forms.TextBox campoDescricao;
         private System.Windows.Forms.Label textoDescrição;
         private System.Windows.Forms.Label textoNome;
-        private System.Windows.Forms.TextBox campoCodigo;
         private System.Windows.Forms.Label textoCodigo;
         private System.Windows.Forms.RadioButton radioButtonInativo;
         private System.Windows.Forms.RadioButton radioButtonAtivo;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
         private ControleUs controleUs1;
+        private System.Windows.Forms.MaskedTextBox mk_codigo;
+        private System.Windows.Forms.MaskedTextBox mk_nome;
     }
 }

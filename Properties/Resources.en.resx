@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btn_adicionar" xml:space="preserve">
-    <value>To add</value>
+    <value>To a&amp;dd</value>
   </data>
   <data name="btn_busca" xml:space="preserve">
-    <value>Search</value>
+    <value>Sea&amp;rch</value>
   </data>
   <data name="btn_editar" xml:space="preserve">
-    <value>To edit</value>
+    <value>&amp;To edit</value>
   </data>
   <data name="btn_importar" xml:space="preserve">
     <value>Import XML</value>
   </data>
   <data name="btn_remover" xml:space="preserve">
-    <value>To remove</value>
+    <value>To &amp;remove</value>
   </data>
   <data name="btn_salvar" xml:space="preserve">
-    <value>To save</value>
+    <value>To sa&amp;ve</value>
   </data>
   <data name="campo_escolha" xml:space="preserve">
     <value>Choice</value>
@@ -159,14 +159,23 @@
   <data name="titulo_" xml:space="preserve">
     <value />
   </data>
+  <data name="titulo_abrir" xml:space="preserve">
+    <value>Open</value>
+  </data>
   <data name="titulo_ajustes" xml:space="preserve">
-    <value>Settings</value>
+    <value>&amp;Settings</value>
   </data>
   <data name="titulo_atuacao" xml:space="preserve">
     <value>Occupation area</value>
   </data>
   <data name="titulo_bairro" xml:space="preserve">
     <value>Neighborhood</value>
+  </data>
+  <data name="titulo_ballonText" xml:space="preserve">
+    <value>Application continues to run in the tray.</value>
+  </data>
+  <data name="titulo_ballonTitulo" xml:space="preserve">
+    <value>Zé Stock Control</value>
   </data>
   <data name="titulo_cargo" xml:space="preserve">
     <value>Office</value>
@@ -214,13 +223,13 @@
     <value>Physical address</value>
   </data>
   <data name="titulo_entradas" xml:space="preserve">
-    <value>Appetizer</value>
+    <value>&amp;Appetizer</value>
   </data>
   <data name="titulo_fornecedor" xml:space="preserve">
-    <value>Supplier</value>
+    <value>Supp&amp;lier</value>
   </data>
   <data name="titulo_funcionario" xml:space="preserve">
-    <value>Employees</value>
+    <value>&amp;Employees</value>
   </data>
   <data name="titulo_gerente" xml:space="preserve">
     <value>Manager</value>
@@ -232,10 +241,10 @@
     <value>Choose Language</value>
   </data>
   <data name="titulo_logar" xml:space="preserve">
-    <value>Get in</value>
+    <value>&amp;Get in</value>
   </data>
   <data name="titulo_loja" xml:space="preserve">
-    <value>Store</value>
+    <value>&amp;Store</value>
   </data>
   <data name="titulo_lote" xml:space="preserve">
     <value>Batch</value>
@@ -265,7 +274,7 @@
     <value>Country</value>
   </data>
   <data name="titulo_produto" xml:space="preserve">
-    <value>Product</value>
+    <value>&amp;Product</value>
   </data>
   <data name="titulo_quantidade" xml:space="preserve">
     <value>Amount</value>
@@ -273,8 +282,14 @@
   <data name="titulo_rua" xml:space="preserve">
     <value>Street</value>
   </data>
+  <data name="titulo_sair" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="titulo_sexo" xml:space="preserve">
     <value>Sex:</value>
+  </data>
+  <data name="titulo_sobre" xml:space="preserve">
+    <value>about</value>
   </data>
   <data name="titulo_social" xml:space="preserve">
     <value>Company name</value>

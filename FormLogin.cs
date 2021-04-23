@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// classe form de login
+    /// </summary>
     public partial class FormLogin : Form
     {
+        /// <summary>
+        /// Inicializando os componentes do formulario login
+        /// </summary>
         public FormLogin()
         {
             InitializeComponent();

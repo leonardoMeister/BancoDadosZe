@@ -30,9 +30,7 @@ namespace BancoDadosZe
         private void InitializeComponent()
         {
             this.panelFundo = new System.Windows.Forms.Panel();
-            this.campoCnpj = new System.Windows.Forms.TextBox();
             this.textoTransportadora = new System.Windows.Forms.Label();
-            this.campoValidade = new System.Windows.Forms.TextBox();
             this.textoValidade = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textoFornecedor = new System.Windows.Forms.Label();
@@ -42,29 +40,36 @@ namespace BancoDadosZe
             this.textoLoja = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textoProduto = new System.Windows.Forms.Label();
-            this.campoEndereco = new System.Windows.Forms.TextBox();
             this.textoValor = new System.Windows.Forms.Label();
             this.btnImportarXml = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.campoEmail = new System.Windows.Forms.TextBox();
             this.textoMarca = new System.Windows.Forms.Label();
-            this.campoQuantidade = new System.Windows.Forms.TextBox();
             this.textoQuantidade = new System.Windows.Forms.Label();
-            this.campoTelefone = new System.Windows.Forms.TextBox();
             this.textoDataEntrada = new System.Windows.Forms.Label();
             this.campoLaranja = new System.Windows.Forms.TextBox();
             this.textoNotaFiscal = new System.Windows.Forms.Label();
-            this.campoNomeFantasia = new System.Windows.Forms.TextBox();
             this.textoLote = new System.Windows.Forms.Label();
+            this.mk_validade = new System.Windows.Forms.MaskedTextBox();
+            this.mk_marca = new System.Windows.Forms.MaskedTextBox();
+            this.mk_valor = new System.Windows.Forms.MaskedTextBox();
+            this.mk_lote = new System.Windows.Forms.MaskedTextBox();
+            this.mk_transportadora = new System.Windows.Forms.MaskedTextBox();
+            this.mk_quantidade = new System.Windows.Forms.MaskedTextBox();
+            this.mk_dataEntrada = new System.Windows.Forms.MaskedTextBox();
             this.panelFundo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFundo
             // 
             this.panelFundo.BackColor = System.Drawing.SystemColors.Info;
-            this.panelFundo.Controls.Add(this.campoCnpj);
+            this.panelFundo.Controls.Add(this.mk_dataEntrada);
+            this.panelFundo.Controls.Add(this.mk_quantidade);
+            this.panelFundo.Controls.Add(this.mk_transportadora);
+            this.panelFundo.Controls.Add(this.mk_lote);
+            this.panelFundo.Controls.Add(this.mk_valor);
+            this.panelFundo.Controls.Add(this.mk_marca);
+            this.panelFundo.Controls.Add(this.mk_validade);
             this.panelFundo.Controls.Add(this.textoTransportadora);
-            this.panelFundo.Controls.Add(this.campoValidade);
             this.panelFundo.Controls.Add(this.textoValidade);
             this.panelFundo.Controls.Add(this.comboBox3);
             this.panelFundo.Controls.Add(this.textoFornecedor);
@@ -74,32 +79,20 @@ namespace BancoDadosZe
             this.panelFundo.Controls.Add(this.textoLoja);
             this.panelFundo.Controls.Add(this.comboBox1);
             this.panelFundo.Controls.Add(this.textoProduto);
-            this.panelFundo.Controls.Add(this.campoEndereco);
             this.panelFundo.Controls.Add(this.textoValor);
             this.panelFundo.Controls.Add(this.btnImportarXml);
             this.panelFundo.Controls.Add(this.btnAdicionar);
-            this.panelFundo.Controls.Add(this.campoEmail);
             this.panelFundo.Controls.Add(this.textoMarca);
-            this.panelFundo.Controls.Add(this.campoQuantidade);
             this.panelFundo.Controls.Add(this.textoQuantidade);
-            this.panelFundo.Controls.Add(this.campoTelefone);
             this.panelFundo.Controls.Add(this.textoDataEntrada);
             this.panelFundo.Controls.Add(this.campoLaranja);
             this.panelFundo.Controls.Add(this.textoNotaFiscal);
-            this.panelFundo.Controls.Add(this.campoNomeFantasia);
             this.panelFundo.Controls.Add(this.textoLote);
             this.panelFundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFundo.Location = new System.Drawing.Point(0, 0);
             this.panelFundo.Name = "panelFundo";
             this.panelFundo.Size = new System.Drawing.Size(647, 300);
             this.panelFundo.TabIndex = 1;
-            // 
-            // campoCnpj
-            // 
-            this.campoCnpj.Location = new System.Drawing.Point(443, 130);
-            this.campoCnpj.Name = "campoCnpj";
-            this.campoCnpj.Size = new System.Drawing.Size(192, 22);
-            this.campoCnpj.TabIndex = 6;
             // 
             // textoTransportadora
             // 
@@ -110,14 +103,6 @@ namespace BancoDadosZe
             this.textoTransportadora.TabIndex = 129;
             this.textoTransportadora.Text = "Transportadora";
             this.textoTransportadora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // campoValidade
-            // 
-            this.campoValidade.Location = new System.Drawing.Point(472, 19);
-            this.campoValidade.Name = "campoValidade";
-            this.campoValidade.Size = new System.Drawing.Size(126, 22);
-            this.campoValidade.TabIndex = 3;
-            this.campoValidade.Tag = "1";
             // 
             // textoValidade
             // 
@@ -227,13 +212,6 @@ namespace BancoDadosZe
             this.textoProduto.Text = "Produto";
             this.textoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoEndereco
-            // 
-            this.campoEndereco.Location = new System.Drawing.Point(121, 130);
-            this.campoEndereco.Name = "campoEndereco";
-            this.campoEndereco.Size = new System.Drawing.Size(117, 22);
-            this.campoEndereco.TabIndex = 1;
-            // 
             // textoValor
             // 
             this.textoValor.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,15 +245,6 @@ namespace BancoDadosZe
             this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // campoEmail
-            // 
-            this.campoEmail.Location = new System.Drawing.Point(472, 57);
-            this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(126, 22);
-            this.campoEmail.TabIndex = 4;
-            this.campoEmail.Tag = "";
             // 
             // textoMarca
             // 
@@ -287,13 +256,6 @@ namespace BancoDadosZe
             this.textoMarca.Text = "Marca";
             this.textoMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoQuantidade
-            // 
-            this.campoQuantidade.Location = new System.Drawing.Point(121, 198);
-            this.campoQuantidade.Name = "campoQuantidade";
-            this.campoQuantidade.Size = new System.Drawing.Size(121, 22);
-            this.campoQuantidade.TabIndex = 2;
-            // 
             // textoQuantidade
             // 
             this.textoQuantidade.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,13 +265,6 @@ namespace BancoDadosZe
             this.textoQuantidade.TabIndex = 111;
             this.textoQuantidade.Text = "Quantidade";
             this.textoQuantidade.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // campoTelefone
-            // 
-            this.campoTelefone.Location = new System.Drawing.Point(443, 198);
-            this.campoTelefone.Name = "campoTelefone";
-            this.campoTelefone.Size = new System.Drawing.Size(192, 22);
-            this.campoTelefone.TabIndex = 7;
             // 
             // textoDataEntrada
             // 
@@ -339,14 +294,6 @@ namespace BancoDadosZe
             this.textoNotaFiscal.Text = "Nota Fiscal";
             this.textoNotaFiscal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoNomeFantasia
-            // 
-            this.campoNomeFantasia.Location = new System.Drawing.Point(472, 94);
-            this.campoNomeFantasia.Name = "campoNomeFantasia";
-            this.campoNomeFantasia.Size = new System.Drawing.Size(126, 22);
-            this.campoNomeFantasia.TabIndex = 5;
-            this.campoNomeFantasia.Tag = "2";
-            // 
             // textoLote
             // 
             this.textoLote.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -356,6 +303,63 @@ namespace BancoDadosZe
             this.textoLote.TabIndex = 105;
             this.textoLote.Text = "Lote";
             this.textoLote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mk_validade
+            // 
+            this.mk_validade.Location = new System.Drawing.Point(472, 20);
+            this.mk_validade.Mask = "00/00/0000";
+            this.mk_validade.Name = "mk_validade";
+            this.mk_validade.Size = new System.Drawing.Size(97, 22);
+            this.mk_validade.TabIndex = 130;
+            this.mk_validade.ValidatingType = typeof(System.DateTime);
+            // 
+            // mk_marca
+            // 
+            this.mk_marca.Location = new System.Drawing.Point(472, 59);
+            this.mk_marca.Name = "mk_marca";
+            this.mk_marca.Size = new System.Drawing.Size(126, 22);
+            this.mk_marca.TabIndex = 131;
+            // 
+            // mk_valor
+            // 
+            this.mk_valor.Location = new System.Drawing.Point(121, 131);
+            this.mk_valor.Name = "mk_valor";
+            this.mk_valor.Size = new System.Drawing.Size(126, 22);
+            this.mk_valor.TabIndex = 132;
+            // 
+            // mk_lote
+            // 
+            this.mk_lote.Location = new System.Drawing.Point(472, 94);
+            this.mk_lote.Mask = "00000";
+            this.mk_lote.Name = "mk_lote";
+            this.mk_lote.Size = new System.Drawing.Size(60, 22);
+            this.mk_lote.TabIndex = 133;
+            this.mk_lote.ValidatingType = typeof(int);
+            // 
+            // mk_transportadora
+            // 
+            this.mk_transportadora.Location = new System.Drawing.Point(442, 130);
+            this.mk_transportadora.Name = "mk_transportadora";
+            this.mk_transportadora.Size = new System.Drawing.Size(193, 22);
+            this.mk_transportadora.TabIndex = 134;
+            // 
+            // mk_quantidade
+            // 
+            this.mk_quantidade.Location = new System.Drawing.Point(121, 199);
+            this.mk_quantidade.Mask = "000000";
+            this.mk_quantidade.Name = "mk_quantidade";
+            this.mk_quantidade.Size = new System.Drawing.Size(67, 22);
+            this.mk_quantidade.TabIndex = 135;
+            this.mk_quantidade.ValidatingType = typeof(int);
+            // 
+            // mk_dataEntrada
+            // 
+            this.mk_dataEntrada.Location = new System.Drawing.Point(443, 199);
+            this.mk_dataEntrada.Mask = "00/00/0000";
+            this.mk_dataEntrada.Name = "mk_dataEntrada";
+            this.mk_dataEntrada.Size = new System.Drawing.Size(89, 22);
+            this.mk_dataEntrada.TabIndex = 136;
+            this.mk_dataEntrada.ValidatingType = typeof(System.DateTime);
             // 
             // FormEntradas
             // 
@@ -376,9 +380,7 @@ namespace BancoDadosZe
         #endregion
 
         private System.Windows.Forms.Panel panelFundo;
-        private System.Windows.Forms.TextBox campoCnpj;
         private System.Windows.Forms.Label textoTransportadora;
-        private System.Windows.Forms.TextBox campoValidade;
         private System.Windows.Forms.Label textoValidade;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label textoFornecedor;
@@ -388,19 +390,21 @@ namespace BancoDadosZe
         private System.Windows.Forms.Label textoLoja;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label textoProduto;
-        private System.Windows.Forms.TextBox campoEndereco;
         private System.Windows.Forms.Label textoValor;
         private System.Windows.Forms.Button btnImportarXml;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.TextBox campoEmail;
         private System.Windows.Forms.Label textoMarca;
-        private System.Windows.Forms.TextBox campoQuantidade;
         private System.Windows.Forms.Label textoQuantidade;
-        private System.Windows.Forms.TextBox campoTelefone;
         private System.Windows.Forms.Label textoDataEntrada;
         private System.Windows.Forms.TextBox campoLaranja;
         private System.Windows.Forms.Label textoNotaFiscal;
-        private System.Windows.Forms.TextBox campoNomeFantasia;
         private System.Windows.Forms.Label textoLote;
+        private System.Windows.Forms.MaskedTextBox mk_validade;
+        private System.Windows.Forms.MaskedTextBox mk_marca;
+        private System.Windows.Forms.MaskedTextBox mk_valor;
+        private System.Windows.Forms.MaskedTextBox mk_lote;
+        private System.Windows.Forms.MaskedTextBox mk_transportadora;
+        private System.Windows.Forms.MaskedTextBox mk_quantidade;
+        private System.Windows.Forms.MaskedTextBox mk_dataEntrada;
     }
 }

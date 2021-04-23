@@ -10,19 +10,25 @@ using System.Windows.Forms;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// Classe formulario de produtos
+    /// </summary>
     public partial class FormProduto : Form
     {
+        /// <summary>
+        /// inicializando os componentes
+        /// </summary>
         public FormProduto()
         {
             InitializeComponent();
             //eventos de destaque de campo
-            campoCodigo.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_codigo.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             campoDescricao.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoNome.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_nome.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             //leave
-            campoCodigo.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_codigo.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
             campoDescricao.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoNome.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_nome.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
 
             //tradução
             this.textoCategoria.Text = Properties.Resources.ResourceManager.GetString("titulo_categoria");
@@ -41,33 +47,34 @@ namespace BancoDadosZe
             controleUs1.btnRemover.Click += BtnRemover_Click;
             controleUs1.btnSalvar.Click += BtnSalvar_Click;
         }
-
-        //evento de salvar
+        /// <summary>
+        /// evento salvar
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você clicou algo dentro da tela produtos");
         }
 
-        //evento remover
+        /// <summary>
+        /// evento remover
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você clicou algo dentro da tela produtos");
         }
 
-        //evento adiconar 
+        /// <summary>
+        /// evento adicionar
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você clicou algo dentro da tela produtos");
-        }
-
-        private void controleUs1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelFormulario_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

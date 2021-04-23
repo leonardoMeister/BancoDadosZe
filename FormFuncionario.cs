@@ -11,39 +11,45 @@ using System.Windows.Forms;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// classe fomr para cadastro de funcionarios
+    /// </summary>
     public partial class FormFuncionario : Form
     {
+        /// <summary>
+        /// inicializando os componentes
+        /// </summary>
         public FormFuncionario()
         {
             InitializeComponent();
             //evento de destaque de campo
-            campoBairro.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoCep.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoCidade.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_bairro.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_cep.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_cidade.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             campoComplemento.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoCpf.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoDataNascimento.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoMatricula.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoNome.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoNumero.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoPais.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoRua.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            campoTelefone.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
-            CampoEmail.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_cpf.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_dataNascimento.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_matricula.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_nome.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_numero.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_pais.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_rua.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_telefone.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            mk_email.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             //leave 
-            campoBairro.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoCep.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoCidade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_bairro.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_cep.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_cidade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
             campoComplemento.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoCpf.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoDataNascimento.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoMatricula.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoNome.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoNumero.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoPais.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoRua.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            campoTelefone.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
-            CampoEmail.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_cpf.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_dataNascimento.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_matricula.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_nome.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_numero.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_pais.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_rua.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_telefone.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+            mk_email.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
 
             //tradução
             this.textoBairro.Text = Properties.Resources.ResourceManager.GetString("titulo_bairro");
@@ -68,11 +74,8 @@ namespace BancoDadosZe
 
             //evento de teclado para tab no enter e Esc
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
-
-
-
-
-
+            
+            
             ControleUs userControl = new ControleUs();
             userControl.Dock = DockStyle.Bottom;
             panelFormulario.Controls.Add(userControl);
@@ -84,27 +87,35 @@ namespace BancoDadosZe
             userControl.btnSalvar.Click += BtnSalvar_Click;
         }
 
-        //evento salvar
+        /// <summary>
+        /// evento salvar
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você clicou em algo na tela de funcionário");
         }
 
-        //evento remover
+        /// <summary>
+        /// evento remover
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você clicou em algo na tela de funcionário");
         }
 
-        //evento de adicionar
+        /// <summary>
+        /// evento adicionar
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você clicou em algo na tela de funcionário");
         }
 
-        private void panelFormulario_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

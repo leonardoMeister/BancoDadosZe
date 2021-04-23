@@ -32,21 +32,21 @@ namespace BancoDadosZe
             this.panelFundo = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.combobox1 = new System.Windows.Forms.ComboBox();
-            this.campoEndereco = new System.Windows.Forms.TextBox();
             this.textoEndereco = new System.Windows.Forms.Label();
-            this.campoEmail = new System.Windows.Forms.TextBox();
             this.textoEmail = new System.Windows.Forms.Label();
             this.textoAtuacao = new System.Windows.Forms.Label();
-            this.campoContato = new System.Windows.Forms.TextBox();
             this.textoContato = new System.Windows.Forms.Label();
-            this.campoTelefone = new System.Windows.Forms.TextBox();
             this.textoTelefone = new System.Windows.Forms.Label();
-            this.campoCnpj = new System.Windows.Forms.TextBox();
-            this.campoRazaoSocial = new System.Windows.Forms.TextBox();
             this.textoRazaoSocial = new System.Windows.Forms.Label();
             this.textoCnpj = new System.Windows.Forms.Label();
-            this.campoNomeFantasia = new System.Windows.Forms.TextBox();
             this.textoNomeFantasia = new System.Windows.Forms.Label();
+            this.mk_nomeFantasia = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cnpj = new System.Windows.Forms.MaskedTextBox();
+            this.mk_razaoSocial = new System.Windows.Forms.MaskedTextBox();
+            this.mk_contato = new System.Windows.Forms.MaskedTextBox();
+            this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.mk_email = new System.Windows.Forms.MaskedTextBox();
+            this.mk_enderecoFisico = new System.Windows.Forms.MaskedTextBox();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -64,28 +64,27 @@ namespace BancoDadosZe
             // 
             // panelFormulario
             // 
+            this.panelFormulario.Controls.Add(this.mk_enderecoFisico);
+            this.panelFormulario.Controls.Add(this.mk_email);
+            this.panelFormulario.Controls.Add(this.mk_telefone);
+            this.panelFormulario.Controls.Add(this.mk_contato);
+            this.panelFormulario.Controls.Add(this.mk_razaoSocial);
+            this.panelFormulario.Controls.Add(this.mk_cnpj);
+            this.panelFormulario.Controls.Add(this.mk_nomeFantasia);
             this.panelFormulario.Controls.Add(this.combobox1);
-            this.panelFormulario.Controls.Add(this.campoEndereco);
             this.panelFormulario.Controls.Add(this.textoEndereco);
-            this.panelFormulario.Controls.Add(this.campoEmail);
             this.panelFormulario.Controls.Add(this.textoEmail);
             this.panelFormulario.Controls.Add(this.textoAtuacao);
-            this.panelFormulario.Controls.Add(this.campoContato);
             this.panelFormulario.Controls.Add(this.textoContato);
-            this.panelFormulario.Controls.Add(this.campoTelefone);
             this.panelFormulario.Controls.Add(this.textoTelefone);
-            this.panelFormulario.Controls.Add(this.campoCnpj);
-            this.panelFormulario.Controls.Add(this.campoRazaoSocial);
             this.panelFormulario.Controls.Add(this.textoRazaoSocial);
             this.panelFormulario.Controls.Add(this.textoCnpj);
-            this.panelFormulario.Controls.Add(this.campoNomeFantasia);
             this.panelFormulario.Controls.Add(this.textoNomeFantasia);
             this.panelFormulario.Location = new System.Drawing.Point(8, 14);
             this.panelFormulario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFormulario.Name = "panelFormulario";
             this.panelFormulario.Size = new System.Drawing.Size(797, 250);
             this.panelFormulario.TabIndex = 2;
-            this.panelFormulario.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormulario_Paint);
             // 
             // combobox1
             // 
@@ -102,14 +101,6 @@ namespace BancoDadosZe
             this.combobox1.TabIndex = 92;
             this.combobox1.TabStop = false;
             // 
-            // campoEndereco
-            // 
-            this.campoEndereco.Location = new System.Drawing.Point(199, 151);
-            this.campoEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoEndereco.Name = "campoEndereco";
-            this.campoEndereco.Size = new System.Drawing.Size(353, 22);
-            this.campoEndereco.TabIndex = 6;
-            // 
             // textoEndereco
             // 
             this.textoEndereco.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,14 +110,6 @@ namespace BancoDadosZe
             this.textoEndereco.TabIndex = 90;
             this.textoEndereco.Text = "Endereço Fisíco";
             this.textoEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // campoEmail
-            // 
-            this.campoEmail.Location = new System.Drawing.Point(507, 117);
-            this.campoEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoEmail.Name = "campoEmail";
-            this.campoEmail.Size = new System.Drawing.Size(243, 22);
-            this.campoEmail.TabIndex = 9;
             // 
             // textoEmail
             // 
@@ -148,14 +131,6 @@ namespace BancoDadosZe
             this.textoAtuacao.Text = "Áreas De Atuação";
             this.textoAtuacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoContato
-            // 
-            this.campoContato.Location = new System.Drawing.Point(584, 9);
-            this.campoContato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoContato.Name = "campoContato";
-            this.campoContato.Size = new System.Drawing.Size(170, 22);
-            this.campoContato.TabIndex = 7;
-            // 
             // textoContato
             // 
             this.textoContato.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,14 +141,6 @@ namespace BancoDadosZe
             this.textoContato.Text = "Contato";
             this.textoContato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoTelefone
-            // 
-            this.campoTelefone.Location = new System.Drawing.Point(584, 46);
-            this.campoTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoTelefone.Name = "campoTelefone";
-            this.campoTelefone.Size = new System.Drawing.Size(203, 22);
-            this.campoTelefone.TabIndex = 8;
-            // 
             // textoTelefone
             // 
             this.textoTelefone.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,22 +150,6 @@ namespace BancoDadosZe
             this.textoTelefone.TabIndex = 55;
             this.textoTelefone.Text = "Telefone";
             this.textoTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // campoCnpj
-            // 
-            this.campoCnpj.Location = new System.Drawing.Point(179, 46);
-            this.campoCnpj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoCnpj.Name = "campoCnpj";
-            this.campoCnpj.Size = new System.Drawing.Size(247, 22);
-            this.campoCnpj.TabIndex = 4;
-            // 
-            // campoRazaoSocial
-            // 
-            this.campoRazaoSocial.Location = new System.Drawing.Point(199, 81);
-            this.campoRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoRazaoSocial.Name = "campoRazaoSocial";
-            this.campoRazaoSocial.Size = new System.Drawing.Size(281, 22);
-            this.campoRazaoSocial.TabIndex = 5;
             // 
             // textoRazaoSocial
             // 
@@ -220,14 +171,6 @@ namespace BancoDadosZe
             this.textoCnpj.Text = "CNPJ";
             this.textoCnpj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // campoNomeFantasia
-            // 
-            this.campoNomeFantasia.Location = new System.Drawing.Point(179, 9);
-            this.campoNomeFantasia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoNomeFantasia.Name = "campoNomeFantasia";
-            this.campoNomeFantasia.Size = new System.Drawing.Size(247, 22);
-            this.campoNomeFantasia.TabIndex = 3;
-            // 
             // textoNomeFantasia
             // 
             this.textoNomeFantasia.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,6 +180,57 @@ namespace BancoDadosZe
             this.textoNomeFantasia.TabIndex = 46;
             this.textoNomeFantasia.Text = "Nome Fantasia";
             this.textoNomeFantasia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mk_nomeFantasia
+            // 
+            this.mk_nomeFantasia.Location = new System.Drawing.Point(179, 10);
+            this.mk_nomeFantasia.Name = "mk_nomeFantasia";
+            this.mk_nomeFantasia.Size = new System.Drawing.Size(247, 22);
+            this.mk_nomeFantasia.TabIndex = 93;
+            // 
+            // mk_cnpj
+            // 
+            this.mk_cnpj.Location = new System.Drawing.Point(179, 47);
+            this.mk_cnpj.Mask = "00.000.000/00-0000";
+            this.mk_cnpj.Name = "mk_cnpj";
+            this.mk_cnpj.Size = new System.Drawing.Size(151, 22);
+            this.mk_cnpj.TabIndex = 94;
+            // 
+            // mk_razaoSocial
+            // 
+            this.mk_razaoSocial.Location = new System.Drawing.Point(199, 81);
+            this.mk_razaoSocial.Name = "mk_razaoSocial";
+            this.mk_razaoSocial.Size = new System.Drawing.Size(247, 22);
+            this.mk_razaoSocial.TabIndex = 95;
+            // 
+            // mk_contato
+            // 
+            this.mk_contato.Location = new System.Drawing.Point(584, 10);
+            this.mk_contato.Name = "mk_contato";
+            this.mk_contato.Size = new System.Drawing.Size(188, 22);
+            this.mk_contato.TabIndex = 96;
+            // 
+            // mk_telefone
+            // 
+            this.mk_telefone.Location = new System.Drawing.Point(584, 46);
+            this.mk_telefone.Mask = "(999) 9000-0000";
+            this.mk_telefone.Name = "mk_telefone";
+            this.mk_telefone.Size = new System.Drawing.Size(188, 22);
+            this.mk_telefone.TabIndex = 97;
+            // 
+            // mk_email
+            // 
+            this.mk_email.Location = new System.Drawing.Point(507, 117);
+            this.mk_email.Name = "mk_email";
+            this.mk_email.Size = new System.Drawing.Size(188, 22);
+            this.mk_email.TabIndex = 98;
+            // 
+            // mk_enderecoFisico
+            // 
+            this.mk_enderecoFisico.Location = new System.Drawing.Point(199, 153);
+            this.mk_enderecoFisico.Name = "mk_enderecoFisico";
+            this.mk_enderecoFisico.Size = new System.Drawing.Size(291, 22);
+            this.mk_enderecoFisico.TabIndex = 99;
             // 
             // FormFornecedor
             // 
@@ -260,21 +254,21 @@ namespace BancoDadosZe
 
         private System.Windows.Forms.Panel panelFundo;
         private System.Windows.Forms.Panel panelFormulario;
-        private System.Windows.Forms.TextBox campoEmail;
         private System.Windows.Forms.Label textoEmail;
         private System.Windows.Forms.Label textoAtuacao;
-        private System.Windows.Forms.TextBox campoContato;
         private System.Windows.Forms.Label textoContato;
-        private System.Windows.Forms.TextBox campoTelefone;
         private System.Windows.Forms.Label textoTelefone;
-        private System.Windows.Forms.TextBox campoCnpj;
-        private System.Windows.Forms.TextBox campoRazaoSocial;
         private System.Windows.Forms.Label textoRazaoSocial;
         private System.Windows.Forms.Label textoCnpj;
-        private System.Windows.Forms.TextBox campoNomeFantasia;
         private System.Windows.Forms.Label textoNomeFantasia;
-        private System.Windows.Forms.TextBox campoEndereco;
         private System.Windows.Forms.Label textoEndereco;
         private System.Windows.Forms.ComboBox combobox1;
+        private System.Windows.Forms.MaskedTextBox mk_nomeFantasia;
+        private System.Windows.Forms.MaskedTextBox mk_cnpj;
+        private System.Windows.Forms.MaskedTextBox mk_razaoSocial;
+        private System.Windows.Forms.MaskedTextBox mk_contato;
+        private System.Windows.Forms.MaskedTextBox mk_email;
+        private System.Windows.Forms.MaskedTextBox mk_telefone;
+        private System.Windows.Forms.MaskedTextBox mk_enderecoFisico;
     }
 }

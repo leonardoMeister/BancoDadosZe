@@ -81,7 +81,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Adicionar.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Adicionar.
         /// </summary>
         internal static string btn_adicionar {
             get {
@@ -90,7 +90,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Buscar.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Buscar.
         /// </summary>
         internal static string btn_busca {
             get {
@@ -99,7 +99,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Editar.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Editar.
         /// </summary>
         internal static string btn_editar {
             get {
@@ -348,7 +348,16 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Ajustes.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Abrir.
+        /// </summary>
+        internal static string titulo_abrir {
+            get {
+                return ResourceManager.GetString("titulo_abrir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A&amp;justes.
         /// </summary>
         internal static string titulo_ajustes {
             get {
@@ -371,6 +380,24 @@ namespace BancoDadosZe.Properties {
         internal static string titulo_bairro {
             get {
                 return ResourceManager.GetString("titulo_bairro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Aplicação continua executando na bandeja..
+        /// </summary>
+        internal static string titulo_ballonText {
+            get {
+                return ResourceManager.GetString("titulo_ballonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Controle Estoque Zé.
+        /// </summary>
+        internal static string titulo_ballonTitulo {
+            get {
+                return ResourceManager.GetString("titulo_ballonTitulo", resourceCulture);
             }
         }
         
@@ -510,7 +537,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Entradas.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a E&amp;ntradas.
         /// </summary>
         internal static string titulo_entradas {
             get {
@@ -519,7 +546,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Fornecedor.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Fornecedor.
         /// </summary>
         internal static string titulo_fornecedor {
             get {
@@ -528,7 +555,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Funcionários.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a F&amp;uncionários.
         /// </summary>
         internal static string titulo_funcionario {
             get {
@@ -564,7 +591,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Entrar.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ent&amp;rar.
         /// </summary>
         internal static string titulo_logar {
             get {
@@ -573,7 +600,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Loja.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Loja.
         /// </summary>
         internal static string titulo_loja {
             get {
@@ -663,7 +690,7 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Produto.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Produto.
         /// </summary>
         internal static string titulo_produto {
             get {
@@ -690,11 +717,29 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sair.
+        /// </summary>
+        internal static string titulo_sair {
+            get {
+                return ResourceManager.GetString("titulo_sair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Sexo:.
         /// </summary>
         internal static string titulo_sexo {
             get {
                 return ResourceManager.GetString("titulo_sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sobre.
+        /// </summary>
+        internal static string titulo_sobre {
+            get {
+                return ResourceManager.GetString("titulo_sobre", resourceCulture);
             }
         }
         
