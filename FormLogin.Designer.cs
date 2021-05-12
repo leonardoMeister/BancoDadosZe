@@ -120,7 +120,7 @@ namespace BancoDadosZe
             this.ClientSize = new System.Drawing.Size(377, 381);
             this.Controls.Add(this.painelFundo);
             this.Name = "FormLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Login";
             this.painelFundo.ResumeLayout(false);
             this.painelFundo.PerformLayout();

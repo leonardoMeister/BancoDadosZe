@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAreaAtuacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAreaAtuacao.Designer.cs">
+      <DependentUpon>FormAreaAtuacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="FormEntradas.Designer.cs">
       <DependentUpon>FormEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProduto.cs">
       <SubType>Form</SubType>
@@ -105,6 +117,9 @@
     <Compile Include="ControleUs.Designer.cs">
       <DependentUpon>ControleUs.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAreaAtuacao.resx">
+      <DependentUpon>FormAreaAtuacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormConfig.resx">
       <DependentUpon>FormConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoja.resx">
       <DependentUpon>FormLoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
@@ -201,6 +219,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\funcionarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControleEstoqueDao.DAO\ControleEstoqueDao.DAO.csproj">
+      <Project>{c12fd897-e8af-421b-96ad-96bf92dd971c}</Project>
+      <Name>ControleEstoqueDao.DAO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

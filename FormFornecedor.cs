@@ -51,6 +51,7 @@ namespace BancoDadosZe
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
 
 
+            //Controle user
             ControleUs userControl = new ControleUs();
             userControl.Dock = DockStyle.Bottom;
             panelFormulario.Controls.Add(userControl);

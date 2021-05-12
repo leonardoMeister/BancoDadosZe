@@ -34,6 +34,8 @@ namespace BancoDadosZe
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_marca = new System.Windows.Forms.Button();
             this.btn_entrar = new System.Windows.Forms.Button();
             this.btn_ajustes = new System.Windows.Forms.Button();
             this.btn_funcionario = new System.Windows.Forms.Button();
@@ -47,7 +49,7 @@ namespace BancoDadosZe
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_adicionar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDados = new System.Windows.Forms.DataGridView();
             this.contextMenuStripPrincipal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lojasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +66,7 @@ namespace BancoDadosZe
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLateral.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.contextMenuStripPrincipal.SuspendLayout();
             this.contextMenuStripIcone.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +80,8 @@ namespace BancoDadosZe
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelLateral.Controls.Add(this.button1);
+            this.panelLateral.Controls.Add(this.btn_marca);
             this.panelLateral.Controls.Add(this.btn_entrar);
             this.panelLateral.Controls.Add(this.btn_ajustes);
             this.panelLateral.Controls.Add(this.btn_funcionario);
@@ -89,8 +93,44 @@ namespace BancoDadosZe
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(287, 624);
+            this.panelLateral.Size = new System.Drawing.Size(372, 711);
             this.panelLateral.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::BancoDadosZe.Properties.Resources.funcionarios;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 418);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(372, 70);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Área de Atuação";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_area_atuacao);
+            // 
+            // btn_marca
+            // 
+            this.btn_marca.BackColor = System.Drawing.Color.DarkOrange;
+            this.btn_marca.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_marca.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_marca.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_marca.ForeColor = System.Drawing.Color.White;
+            this.btn_marca.Image = global::BancoDadosZe.Properties.Resources.funcionarios;
+            this.btn_marca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_marca.Location = new System.Drawing.Point(0, 349);
+            this.btn_marca.Name = "btn_marca";
+            this.btn_marca.Size = new System.Drawing.Size(372, 69);
+            this.btn_marca.TabIndex = 15;
+            this.btn_marca.Text = "Marcas";
+            this.btn_marca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_marca.UseVisualStyleBackColor = false;
+            this.btn_marca.Click += new System.EventHandler(this.btn_marca_Click);
             // 
             // btn_entrar
             // 
@@ -101,11 +141,11 @@ namespace BancoDadosZe
             this.btn_entrar.ForeColor = System.Drawing.Color.White;
             this.btn_entrar.Image = global::BancoDadosZe.Properties.Resources.enter_42;
             this.btn_entrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_entrar.Location = new System.Drawing.Point(0, 496);
+            this.btn_entrar.Location = new System.Drawing.Point(0, 583);
             this.btn_entrar.Name = "btn_entrar";
-            this.btn_entrar.Size = new System.Drawing.Size(287, 64);
+            this.btn_entrar.Size = new System.Drawing.Size(372, 64);
             this.btn_entrar.TabIndex = 14;
-            this.btn_entrar.Text = "Entrar";
+            this.btn_entrar.Text = "Entrar Banco";
             this.btn_entrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_entrar.UseVisualStyleBackColor = false;
             this.btn_entrar.Click += new System.EventHandler(this.btn_entrar_Click);
@@ -119,9 +159,9 @@ namespace BancoDadosZe
             this.btn_ajustes.ForeColor = System.Drawing.Color.White;
             this.btn_ajustes.Image = global::BancoDadosZe.Properties.Resources.settings_42;
             this.btn_ajustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ajustes.Location = new System.Drawing.Point(0, 560);
+            this.btn_ajustes.Location = new System.Drawing.Point(0, 647);
             this.btn_ajustes.Name = "btn_ajustes";
-            this.btn_ajustes.Size = new System.Drawing.Size(287, 64);
+            this.btn_ajustes.Size = new System.Drawing.Size(372, 64);
             this.btn_ajustes.TabIndex = 13;
             this.btn_ajustes.Text = "Ajustes";
             this.btn_ajustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -137,9 +177,9 @@ namespace BancoDadosZe
             this.btn_funcionario.ForeColor = System.Drawing.Color.White;
             this.btn_funcionario.Image = global::BancoDadosZe.Properties.Resources.funcionarios;
             this.btn_funcionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_funcionario.Location = new System.Drawing.Point(0, 332);
+            this.btn_funcionario.Location = new System.Drawing.Point(0, 278);
             this.btn_funcionario.Name = "btn_funcionario";
-            this.btn_funcionario.Size = new System.Drawing.Size(287, 83);
+            this.btn_funcionario.Size = new System.Drawing.Size(372, 71);
             this.btn_funcionario.TabIndex = 12;
             this.btn_funcionario.Text = "Funcionário";
             this.btn_funcionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -155,9 +195,9 @@ namespace BancoDadosZe
             this.btn_fornecedor.ForeColor = System.Drawing.Color.White;
             this.btn_fornecedor.Image = global::BancoDadosZe.Properties.Resources.fornecedor1;
             this.btn_fornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fornecedor.Location = new System.Drawing.Point(0, 249);
+            this.btn_fornecedor.Location = new System.Drawing.Point(0, 207);
             this.btn_fornecedor.Name = "btn_fornecedor";
-            this.btn_fornecedor.Size = new System.Drawing.Size(287, 83);
+            this.btn_fornecedor.Size = new System.Drawing.Size(372, 71);
             this.btn_fornecedor.TabIndex = 11;
             this.btn_fornecedor.Text = "Fornecedor";
             this.btn_fornecedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -173,11 +213,11 @@ namespace BancoDadosZe
             this.btn_entradas.ForeColor = System.Drawing.Color.White;
             this.btn_entradas.Image = global::BancoDadosZe.Properties.Resources.enter_68;
             this.btn_entradas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_entradas.Location = new System.Drawing.Point(0, 166);
+            this.btn_entradas.Location = new System.Drawing.Point(0, 136);
             this.btn_entradas.Name = "btn_entradas";
-            this.btn_entradas.Size = new System.Drawing.Size(287, 83);
+            this.btn_entradas.Size = new System.Drawing.Size(372, 71);
             this.btn_entradas.TabIndex = 10;
-            this.btn_entradas.Text = "Entradas";
+            this.btn_entradas.Text = "Entradas Estoque";
             this.btn_entradas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_entradas.UseVisualStyleBackColor = false;
             this.btn_entradas.Click += new System.EventHandler(this.btn_entradas_Click);
@@ -191,9 +231,9 @@ namespace BancoDadosZe
             this.btn_produtos.ForeColor = System.Drawing.Color.White;
             this.btn_produtos.Image = global::BancoDadosZe.Properties.Resources.produto_801;
             this.btn_produtos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_produtos.Location = new System.Drawing.Point(0, 83);
+            this.btn_produtos.Location = new System.Drawing.Point(0, 71);
             this.btn_produtos.Name = "btn_produtos";
-            this.btn_produtos.Size = new System.Drawing.Size(287, 83);
+            this.btn_produtos.Size = new System.Drawing.Size(372, 65);
             this.btn_produtos.TabIndex = 9;
             this.btn_produtos.Text = "Produtos";
             this.btn_produtos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,12 +251,12 @@ namespace BancoDadosZe
             this.btn_lojas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_lojas.Location = new System.Drawing.Point(0, 0);
             this.btn_lojas.Name = "btn_lojas";
-            this.btn_lojas.Size = new System.Drawing.Size(287, 83);
+            this.btn_lojas.Size = new System.Drawing.Size(372, 71);
             this.btn_lojas.TabIndex = 8;
             this.btn_lojas.Text = "Lojas";
             this.btn_lojas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_lojas.UseVisualStyleBackColor = false;
-            this.btn_lojas.Click += new System.EventHandler(this.button1_Click);
+            this.btn_lojas.Click += new System.EventHandler(this.btn_lojas_clic);
             // 
             // panel1
             // 
@@ -226,12 +266,12 @@ namespace BancoDadosZe
             this.panel1.Controls.Add(this.btn_editar);
             this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.btn_adicionar);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataGridViewDados);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(287, 0);
+            this.panel1.Location = new System.Drawing.Point(372, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 624);
+            this.panel1.Size = new System.Drawing.Size(859, 711);
             this.panel1.TabIndex = 1;
             // 
             // texto_escolha
@@ -239,7 +279,7 @@ namespace BancoDadosZe
             this.texto_escolha.BackColor = System.Drawing.Color.Moccasin;
             this.texto_escolha.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texto_escolha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.texto_escolha.Location = new System.Drawing.Point(19, 79);
+            this.texto_escolha.Location = new System.Drawing.Point(9, 75);
             this.texto_escolha.Name = "texto_escolha";
             this.texto_escolha.Size = new System.Drawing.Size(208, 37);
             this.texto_escolha.TabIndex = 5;
@@ -248,7 +288,7 @@ namespace BancoDadosZe
             // 
             // buscar_campo
             // 
-            this.buscar_campo.Location = new System.Drawing.Point(438, 64);
+            this.buscar_campo.Location = new System.Drawing.Point(350, 64);
             this.buscar_campo.Margin = new System.Windows.Forms.Padding(4);
             this.buscar_campo.Name = "buscar_campo";
             this.buscar_campo.Size = new System.Drawing.Size(173, 22);
@@ -263,7 +303,7 @@ namespace BancoDadosZe
             this.btn_editar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_editar.Image = global::BancoDadosZe.Properties.Resources.editar;
             this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_editar.Location = new System.Drawing.Point(757, 26);
+            this.btn_editar.Location = new System.Drawing.Point(669, 26);
             this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(83, 82);
@@ -280,7 +320,7 @@ namespace BancoDadosZe
             this.btn_buscar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_buscar.Image = global::BancoDadosZe.Properties.Resources.file_42;
             this.btn_buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_buscar.Location = new System.Drawing.Point(620, 26);
+            this.btn_buscar.Location = new System.Drawing.Point(532, 26);
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(83, 82);
@@ -297,7 +337,7 @@ namespace BancoDadosZe
             this.btn_adicionar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_adicionar.Image = global::BancoDadosZe.Properties.Resources.adicionar_42;
             this.btn_adicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_adicionar.Location = new System.Drawing.Point(848, 26);
+            this.btn_adicionar.Location = new System.Drawing.Point(760, 26);
             this.btn_adicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_adicionar.Name = "btn_adicionar";
             this.btn_adicionar.Size = new System.Drawing.Size(83, 82);
@@ -306,15 +346,15 @@ namespace BancoDadosZe
             this.btn_adicionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_adicionar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dataGridViewDados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 116);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 494);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDados.Location = new System.Drawing.Point(14, 116);
+            this.dataGridViewDados.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewDados.Name = "dataGridViewDados";
+            this.dataGridViewDados.RowHeadersWidth = 51;
+            this.dataGridViewDados.Size = new System.Drawing.Size(832, 541);
+            this.dataGridViewDados.TabIndex = 0;
             // 
             // contextMenuStripPrincipal
             // 
@@ -329,62 +369,62 @@ namespace BancoDadosZe
             this.logarToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.contextMenuStripPrincipal.Name = "contextMenuStripPrincipal";
-            this.contextMenuStripPrincipal.Size = new System.Drawing.Size(211, 224);
+            this.contextMenuStripPrincipal.Size = new System.Drawing.Size(186, 196);
             // 
             // lojasToolStripMenuItem
             // 
             this.lojasToolStripMenuItem.Name = "lojasToolStripMenuItem";
             this.lojasToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.lojasToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.lojasToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.lojasToolStripMenuItem.Text = "Lojas";
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             this.produtosToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.produtosToolStripMenuItem.Text = "Produtos";
             // 
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
             this.entradasToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.entradasToolStripMenuItem.Text = "Entradas";
             // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
             this.fornecedorToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             // 
             // ajustesToolStripMenuItem
             // 
             this.ajustesToolStripMenuItem.Name = "ajustesToolStripMenuItem";
             this.ajustesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.ajustesToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.ajustesToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.ajustesToolStripMenuItem.Text = "Ajustes";
             // 
             // logarToolStripMenuItem
             // 
             this.logarToolStripMenuItem.Name = "logarToolStripMenuItem";
             this.logarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.logarToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.logarToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.logarToolStripMenuItem.Text = "Entrar";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // notifyIconSystemTray
@@ -430,7 +470,7 @@ namespace BancoDadosZe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 624);
+            this.ClientSize = new System.Drawing.Size(1231, 711);
             this.ContextMenuStrip = this.contextMenuStripPrincipal;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLateral);
@@ -445,7 +485,7 @@ namespace BancoDadosZe
             this.panelLateral.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             this.contextMenuStripPrincipal.ResumeLayout(false);
             this.contextMenuStripIcone.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -459,7 +499,7 @@ namespace BancoDadosZe
         private System.Windows.Forms.Panel panelLateral;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_adicionar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDados;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.TextBox buscar_campo;
@@ -485,6 +525,8 @@ namespace BancoDadosZe
         private System.Windows.Forms.ToolStripMenuItem abrirAplicaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem encerrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.Button btn_marca;
+        private System.Windows.Forms.Button button1;
     }
 }
 

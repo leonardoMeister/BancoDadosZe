@@ -32,6 +32,19 @@ namespace BancoDadosZe
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.panelFundo = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.mk_pais = new System.Windows.Forms.MaskedTextBox();
+            this.mk_numero = new System.Windows.Forms.MaskedTextBox();
+            this.mk_rua = new System.Windows.Forms.MaskedTextBox();
+            this.mk_bairro = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cidade = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cep = new System.Windows.Forms.MaskedTextBox();
+            this.mk_email = new System.Windows.Forms.MaskedTextBox();
+            this.mk_data = new System.Windows.Forms.MaskedTextBox();
+            this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.mk_gerente = new System.Windows.Forms.MaskedTextBox();
+            this.mk_razaoSocial = new System.Windows.Forms.MaskedTextBox();
+            this.mk_cnpj = new System.Windows.Forms.MaskedTextBox();
+            this.mk_nomeFantasia = new System.Windows.Forms.MaskedTextBox();
             this.campoComplemento = new System.Windows.Forms.TextBox();
             this.textoBairro = new System.Windows.Forms.Label();
             this.textoRua = new System.Windows.Forms.Label();
@@ -51,19 +64,6 @@ namespace BancoDadosZe
             this.radioButtonFilial = new System.Windows.Forms.RadioButton();
             this.textoTipo = new System.Windows.Forms.Label();
             this.textoNomeFantasia = new System.Windows.Forms.Label();
-            this.mk_nomeFantasia = new System.Windows.Forms.MaskedTextBox();
-            this.mk_cnpj = new System.Windows.Forms.MaskedTextBox();
-            this.mk_razaoSocial = new System.Windows.Forms.MaskedTextBox();
-            this.mk_gerente = new System.Windows.Forms.MaskedTextBox();
-            this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
-            this.mk_data = new System.Windows.Forms.MaskedTextBox();
-            this.mk_email = new System.Windows.Forms.MaskedTextBox();
-            this.mk_cep = new System.Windows.Forms.MaskedTextBox();
-            this.mk_cidade = new System.Windows.Forms.MaskedTextBox();
-            this.mk_bairro = new System.Windows.Forms.MaskedTextBox();
-            this.mk_rua = new System.Windows.Forms.MaskedTextBox();
-            this.mk_numero = new System.Windows.Forms.MaskedTextBox();
-            this.mk_pais = new System.Windows.Forms.MaskedTextBox();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +118,104 @@ namespace BancoDadosZe
             this.panelFormulario.Name = "panelFormulario";
             this.panelFormulario.Size = new System.Drawing.Size(797, 347);
             this.panelFormulario.TabIndex = 2;
+            // 
+            // mk_pais
+            // 
+            this.mk_pais.Location = new System.Drawing.Point(515, 202);
+            this.mk_pais.Name = "mk_pais";
+            this.mk_pais.Size = new System.Drawing.Size(178, 22);
+            this.mk_pais.TabIndex = 95;
+            // 
+            // mk_numero
+            // 
+            this.mk_numero.Location = new System.Drawing.Point(515, 176);
+            this.mk_numero.Mask = "900000";
+            this.mk_numero.Name = "mk_numero";
+            this.mk_numero.Size = new System.Drawing.Size(65, 22);
+            this.mk_numero.TabIndex = 94;
+            this.mk_numero.ValidatingType = typeof(int);
+            // 
+            // mk_rua
+            // 
+            this.mk_rua.Location = new System.Drawing.Point(131, 263);
+            this.mk_rua.Name = "mk_rua";
+            this.mk_rua.Size = new System.Drawing.Size(212, 22);
+            this.mk_rua.TabIndex = 93;
+            // 
+            // mk_bairro
+            // 
+            this.mk_bairro.Location = new System.Drawing.Point(131, 231);
+            this.mk_bairro.Name = "mk_bairro";
+            this.mk_bairro.Size = new System.Drawing.Size(212, 22);
+            this.mk_bairro.TabIndex = 92;
+            // 
+            // mk_cidade
+            // 
+            this.mk_cidade.Location = new System.Drawing.Point(133, 200);
+            this.mk_cidade.Name = "mk_cidade";
+            this.mk_cidade.Size = new System.Drawing.Size(212, 22);
+            this.mk_cidade.TabIndex = 91;
+            // 
+            // mk_cep
+            // 
+            this.mk_cep.Location = new System.Drawing.Point(131, 172);
+            this.mk_cep.Mask = "00000000";
+            this.mk_cep.Name = "mk_cep";
+            this.mk_cep.Size = new System.Drawing.Size(77, 22);
+            this.mk_cep.TabIndex = 90;
+            // 
+            // mk_email
+            // 
+            this.mk_email.Location = new System.Drawing.Point(499, 118);
+            this.mk_email.Name = "mk_email";
+            this.mk_email.Size = new System.Drawing.Size(178, 22);
+            this.mk_email.TabIndex = 89;
+            // 
+            // mk_data
+            // 
+            this.mk_data.Location = new System.Drawing.Point(563, 82);
+            this.mk_data.Mask = "00/00/0000";
+            this.mk_data.Name = "mk_data";
+            this.mk_data.Size = new System.Drawing.Size(178, 22);
+            this.mk_data.TabIndex = 88;
+            this.mk_data.ValidatingType = typeof(System.DateTime);
+            // 
+            // mk_telefone
+            // 
+            this.mk_telefone.Location = new System.Drawing.Point(539, 50);
+            this.mk_telefone.Mask = "(999) 9000-0000";
+            this.mk_telefone.Name = "mk_telefone";
+            this.mk_telefone.Size = new System.Drawing.Size(109, 22);
+            this.mk_telefone.TabIndex = 87;
+            // 
+            // mk_gerente
+            // 
+            this.mk_gerente.Location = new System.Drawing.Point(165, 116);
+            this.mk_gerente.Name = "mk_gerente";
+            this.mk_gerente.Size = new System.Drawing.Size(178, 22);
+            this.mk_gerente.TabIndex = 86;
+            // 
+            // mk_razaoSocial
+            // 
+            this.mk_razaoSocial.Location = new System.Drawing.Point(165, 81);
+            this.mk_razaoSocial.Name = "mk_razaoSocial";
+            this.mk_razaoSocial.Size = new System.Drawing.Size(178, 22);
+            this.mk_razaoSocial.TabIndex = 85;
+            // 
+            // mk_cnpj
+            // 
+            this.mk_cnpj.Location = new System.Drawing.Point(165, 46);
+            this.mk_cnpj.Mask = "000.000.000-00";
+            this.mk_cnpj.Name = "mk_cnpj";
+            this.mk_cnpj.Size = new System.Drawing.Size(178, 22);
+            this.mk_cnpj.TabIndex = 84;
+            // 
+            // mk_nomeFantasia
+            // 
+            this.mk_nomeFantasia.Location = new System.Drawing.Point(165, 9);
+            this.mk_nomeFantasia.Name = "mk_nomeFantasia";
+            this.mk_nomeFantasia.Size = new System.Drawing.Size(178, 22);
+            this.mk_nomeFantasia.TabIndex = 83;
             // 
             // campoComplemento
             // 
@@ -314,104 +412,6 @@ namespace BancoDadosZe
             this.textoNomeFantasia.Text = "Nome Fantasia";
             this.textoNomeFantasia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mk_nomeFantasia
-            // 
-            this.mk_nomeFantasia.Location = new System.Drawing.Point(165, 9);
-            this.mk_nomeFantasia.Name = "mk_nomeFantasia";
-            this.mk_nomeFantasia.Size = new System.Drawing.Size(178, 22);
-            this.mk_nomeFantasia.TabIndex = 83;
-            // 
-            // mk_cnpj
-            // 
-            this.mk_cnpj.Location = new System.Drawing.Point(165, 46);
-            this.mk_cnpj.Mask = "000.000.000-00";
-            this.mk_cnpj.Name = "mk_cnpj";
-            this.mk_cnpj.Size = new System.Drawing.Size(178, 22);
-            this.mk_cnpj.TabIndex = 84;
-            // 
-            // mk_razaoSocial
-            // 
-            this.mk_razaoSocial.Location = new System.Drawing.Point(165, 81);
-            this.mk_razaoSocial.Name = "mk_razaoSocial";
-            this.mk_razaoSocial.Size = new System.Drawing.Size(178, 22);
-            this.mk_razaoSocial.TabIndex = 85;
-            // 
-            // mk_gerente
-            // 
-            this.mk_gerente.Location = new System.Drawing.Point(165, 116);
-            this.mk_gerente.Name = "mk_gerente";
-            this.mk_gerente.Size = new System.Drawing.Size(178, 22);
-            this.mk_gerente.TabIndex = 86;
-            // 
-            // mk_telefone
-            // 
-            this.mk_telefone.Location = new System.Drawing.Point(539, 50);
-            this.mk_telefone.Mask = "(999) 9000-0000";
-            this.mk_telefone.Name = "mk_telefone";
-            this.mk_telefone.Size = new System.Drawing.Size(109, 22);
-            this.mk_telefone.TabIndex = 87;
-            // 
-            // mk_data
-            // 
-            this.mk_data.Location = new System.Drawing.Point(563, 82);
-            this.mk_data.Mask = "00/00/0000";
-            this.mk_data.Name = "mk_data";
-            this.mk_data.Size = new System.Drawing.Size(178, 22);
-            this.mk_data.TabIndex = 88;
-            this.mk_data.ValidatingType = typeof(System.DateTime);
-            // 
-            // mk_email
-            // 
-            this.mk_email.Location = new System.Drawing.Point(499, 118);
-            this.mk_email.Name = "mk_email";
-            this.mk_email.Size = new System.Drawing.Size(178, 22);
-            this.mk_email.TabIndex = 89;
-            // 
-            // mk_cep
-            // 
-            this.mk_cep.Location = new System.Drawing.Point(131, 172);
-            this.mk_cep.Mask = "00000000";
-            this.mk_cep.Name = "mk_cep";
-            this.mk_cep.Size = new System.Drawing.Size(77, 22);
-            this.mk_cep.TabIndex = 90;
-            // 
-            // mk_cidade
-            // 
-            this.mk_cidade.Location = new System.Drawing.Point(133, 200);
-            this.mk_cidade.Name = "mk_cidade";
-            this.mk_cidade.Size = new System.Drawing.Size(212, 22);
-            this.mk_cidade.TabIndex = 91;
-            // 
-            // mk_bairro
-            // 
-            this.mk_bairro.Location = new System.Drawing.Point(131, 231);
-            this.mk_bairro.Name = "mk_bairro";
-            this.mk_bairro.Size = new System.Drawing.Size(212, 22);
-            this.mk_bairro.TabIndex = 92;
-            // 
-            // mk_rua
-            // 
-            this.mk_rua.Location = new System.Drawing.Point(131, 263);
-            this.mk_rua.Name = "mk_rua";
-            this.mk_rua.Size = new System.Drawing.Size(212, 22);
-            this.mk_rua.TabIndex = 93;
-            // 
-            // mk_numero
-            // 
-            this.mk_numero.Location = new System.Drawing.Point(515, 176);
-            this.mk_numero.Mask = "900000";
-            this.mk_numero.Name = "mk_numero";
-            this.mk_numero.Size = new System.Drawing.Size(65, 22);
-            this.mk_numero.TabIndex = 94;
-            this.mk_numero.ValidatingType = typeof(int);
-            // 
-            // mk_pais
-            // 
-            this.mk_pais.Location = new System.Drawing.Point(515, 202);
-            this.mk_pais.Name = "mk_pais";
-            this.mk_pais.Size = new System.Drawing.Size(178, 22);
-            this.mk_pais.TabIndex = 95;
-            // 
             // FormLoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,7 +421,7 @@ namespace BancoDadosZe
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormLoja";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastro Lojas";
             this.panelFundo.ResumeLayout(false);
             this.panelFormulario.ResumeLayout(false);

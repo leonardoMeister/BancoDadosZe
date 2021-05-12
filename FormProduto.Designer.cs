@@ -31,18 +31,22 @@ namespace BancoDadosZe
         {
             this.panelFundo = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.mk_nome = new System.Windows.Forms.MaskedTextBox();
+            this.mk_Valor = new System.Windows.Forms.MaskedTextBox();
             this.controleUs1 = new BancoDadosZe.ControleUs();
-            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.radioButtonInativo = new System.Windows.Forms.RadioButton();
             this.radioButtonAtivo = new System.Windows.Forms.RadioButton();
             this.textoStatus = new System.Windows.Forms.Label();
-            this.textoCategoria = new System.Windows.Forms.Label();
+            this.textoMarca = new System.Windows.Forms.Label();
             this.campoDescricao = new System.Windows.Forms.TextBox();
             this.textoDescrição = new System.Windows.Forms.Label();
             this.textoNome = new System.Windows.Forms.Label();
-            this.textoCodigo = new System.Windows.Forms.Label();
-            this.mk_codigo = new System.Windows.Forms.MaskedTextBox();
-            this.mk_nome = new System.Windows.Forms.MaskedTextBox();
+            this.textoValor = new System.Windows.Forms.Label();
+            this.comboArea = new System.Windows.Forms.ComboBox();
+            this.textoArea = new System.Windows.Forms.Label();
+            this.maskedTextBoxModelo = new System.Windows.Forms.MaskedTextBox();
+            this.labelModelo = new System.Windows.Forms.Label();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -55,52 +59,72 @@ namespace BancoDadosZe
             this.panelFundo.Location = new System.Drawing.Point(0, 0);
             this.panelFundo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFundo.Name = "panelFundo";
-            this.panelFundo.Size = new System.Drawing.Size(684, 245);
+            this.panelFundo.Size = new System.Drawing.Size(684, 357);
             this.panelFundo.TabIndex = 1;
             // 
             // panelFormulario
             // 
+            this.panelFormulario.Controls.Add(this.maskedTextBoxModelo);
+            this.panelFormulario.Controls.Add(this.labelModelo);
+            this.panelFormulario.Controls.Add(this.comboArea);
+            this.panelFormulario.Controls.Add(this.textoArea);
             this.panelFormulario.Controls.Add(this.mk_nome);
-            this.panelFormulario.Controls.Add(this.mk_codigo);
+            this.panelFormulario.Controls.Add(this.mk_Valor);
             this.panelFormulario.Controls.Add(this.controleUs1);
-            this.panelFormulario.Controls.Add(this.comboBoxCategoria);
+            this.panelFormulario.Controls.Add(this.comboBoxMarca);
             this.panelFormulario.Controls.Add(this.radioButtonInativo);
             this.panelFormulario.Controls.Add(this.radioButtonAtivo);
             this.panelFormulario.Controls.Add(this.textoStatus);
-            this.panelFormulario.Controls.Add(this.textoCategoria);
+            this.panelFormulario.Controls.Add(this.textoMarca);
             this.panelFormulario.Controls.Add(this.campoDescricao);
             this.panelFormulario.Controls.Add(this.textoDescrição);
             this.panelFormulario.Controls.Add(this.textoNome);
-            this.panelFormulario.Controls.Add(this.textoCodigo);
+            this.panelFormulario.Controls.Add(this.textoValor);
             this.panelFormulario.Location = new System.Drawing.Point(7, 14);
             this.panelFormulario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFormulario.Name = "panelFormulario";
-            this.panelFormulario.Size = new System.Drawing.Size(663, 215);
+            this.panelFormulario.Size = new System.Drawing.Size(663, 332);
             this.panelFormulario.TabIndex = 2;
+            // 
+            // mk_nome
+            // 
+            this.mk_nome.Location = new System.Drawing.Point(104, 48);
+            this.mk_nome.Name = "mk_nome";
+            this.mk_nome.Size = new System.Drawing.Size(200, 22);
+            this.mk_nome.TabIndex = 101;
+            // 
+            // mk_Valor
+            // 
+            this.mk_Valor.Location = new System.Drawing.Point(104, 6);
+            this.mk_Valor.Mask = "9990000";
+            this.mk_Valor.Name = "mk_Valor";
+            this.mk_Valor.Size = new System.Drawing.Size(67, 22);
+            this.mk_Valor.TabIndex = 100;
+            this.mk_Valor.ValidatingType = typeof(int);
             // 
             // controleUs1
             // 
-            this.controleUs1.Location = new System.Drawing.Point(-60, 160);
+            this.controleUs1.Location = new System.Drawing.Point(-52, 274);
             this.controleUs1.Margin = new System.Windows.Forms.Padding(5);
             this.controleUs1.Name = "controleUs1";
             this.controleUs1.Size = new System.Drawing.Size(771, 53);
             this.controleUs1.TabIndex = 4;
             // 
-            // comboBoxCategoria
+            // comboBoxMarca
             // 
-            this.comboBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCategoria.FormattingEnabled = true;
-            this.comboBoxCategoria.Items.AddRange(new object[] {
+            this.comboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Items.AddRange(new object[] {
             "Categoria 1",
             "Categoria 2",
             "Categoria 3",
             "Categoria 4"});
-            this.comboBoxCategoria.Location = new System.Drawing.Point(471, 46);
-            this.comboBoxCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxCategoria.Name = "comboBoxCategoria";
-            this.comboBoxCategoria.Size = new System.Drawing.Size(180, 24);
-            this.comboBoxCategoria.TabIndex = 99;
-            this.comboBoxCategoria.TabStop = false;
+            this.comboBoxMarca.Location = new System.Drawing.Point(471, 46);
+            this.comboBoxMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(180, 24);
+            this.comboBoxMarca.TabIndex = 99;
+            this.comboBoxMarca.TabStop = false;
             // 
             // radioButtonInativo
             // 
@@ -138,15 +162,15 @@ namespace BancoDadosZe
             this.textoStatus.Text = "Status";
             this.textoStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textoCategoria
+            // textoMarca
             // 
-            this.textoCategoria.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoCategoria.Location = new System.Drawing.Point(352, 46);
-            this.textoCategoria.Name = "textoCategoria";
-            this.textoCategoria.Size = new System.Drawing.Size(113, 24);
-            this.textoCategoria.TabIndex = 55;
-            this.textoCategoria.Text = "Categoria";
-            this.textoCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.textoMarca.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoMarca.Location = new System.Drawing.Point(352, 46);
+            this.textoMarca.Name = "textoMarca";
+            this.textoMarca.Size = new System.Drawing.Size(113, 24);
+            this.textoMarca.TabIndex = 55;
+            this.textoMarca.Text = "Marca";
+            this.textoMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // campoDescricao
             // 
@@ -154,7 +178,7 @@ namespace BancoDadosZe
             this.campoDescricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.campoDescricao.Multiline = true;
             this.campoDescricao.Name = "campoDescricao";
-            this.campoDescricao.Size = new System.Drawing.Size(337, 68);
+            this.campoDescricao.Size = new System.Drawing.Size(260, 68);
             this.campoDescricao.TabIndex = 3;
             // 
             // textoDescrição
@@ -177,37 +201,64 @@ namespace BancoDadosZe
             this.textoNome.Text = "Nome";
             this.textoNome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textoCodigo
+            // textoValor
             // 
-            this.textoCodigo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoCodigo.Location = new System.Drawing.Point(5, 5);
-            this.textoCodigo.Name = "textoCodigo";
-            this.textoCodigo.Size = new System.Drawing.Size(93, 24);
-            this.textoCodigo.TabIndex = 46;
-            this.textoCodigo.Text = "Código";
-            this.textoCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.textoValor.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoValor.Location = new System.Drawing.Point(5, 5);
+            this.textoValor.Name = "textoValor";
+            this.textoValor.Size = new System.Drawing.Size(93, 24);
+            this.textoValor.TabIndex = 46;
+            this.textoValor.Text = "Valor";
+            this.textoValor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mk_codigo
+            // comboArea
             // 
-            this.mk_codigo.Location = new System.Drawing.Point(104, 6);
-            this.mk_codigo.Mask = "9990000";
-            this.mk_codigo.Name = "mk_codigo";
-            this.mk_codigo.Size = new System.Drawing.Size(67, 22);
-            this.mk_codigo.TabIndex = 100;
-            this.mk_codigo.ValidatingType = typeof(int);
+            this.comboArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboArea.FormattingEnabled = true;
+            this.comboArea.Items.AddRange(new object[] {
+            "Categoria 1",
+            "Categoria 2",
+            "Categoria 3",
+            "Categoria 4"});
+            this.comboArea.Location = new System.Drawing.Point(471, 94);
+            this.comboArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboArea.Name = "comboArea";
+            this.comboArea.Size = new System.Drawing.Size(180, 24);
+            this.comboArea.TabIndex = 103;
+            this.comboArea.TabStop = false;
             // 
-            // mk_nome
+            // textoArea
             // 
-            this.mk_nome.Location = new System.Drawing.Point(104, 48);
-            this.mk_nome.Name = "mk_nome";
-            this.mk_nome.Size = new System.Drawing.Size(200, 22);
-            this.mk_nome.TabIndex = 101;
+            this.textoArea.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoArea.Location = new System.Drawing.Point(382, 94);
+            this.textoArea.Name = "textoArea";
+            this.textoArea.Size = new System.Drawing.Size(83, 24);
+            this.textoArea.TabIndex = 102;
+            this.textoArea.Text = "Area";
+            this.textoArea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // maskedTextBoxModelo
+            // 
+            this.maskedTextBoxModelo.Location = new System.Drawing.Point(104, 178);
+            this.maskedTextBoxModelo.Name = "maskedTextBoxModelo";
+            this.maskedTextBoxModelo.Size = new System.Drawing.Size(200, 22);
+            this.maskedTextBoxModelo.TabIndex = 105;
+            // 
+            // labelModelo
+            // 
+            this.labelModelo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelModelo.Location = new System.Drawing.Point(8, 176);
+            this.labelModelo.Name = "labelModelo";
+            this.labelModelo.Size = new System.Drawing.Size(90, 24);
+            this.labelModelo.TabIndex = 104;
+            this.labelModelo.Text = "Modelo";
+            this.labelModelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 245);
+            this.ClientSize = new System.Drawing.Size(684, 357);
             this.Controls.Add(this.panelFundo);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -226,16 +277,20 @@ namespace BancoDadosZe
         private System.Windows.Forms.Panel panelFundo;
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.Label textoStatus;
-        private System.Windows.Forms.Label textoCategoria;
+        private System.Windows.Forms.Label textoMarca;
         private System.Windows.Forms.TextBox campoDescricao;
         private System.Windows.Forms.Label textoDescrição;
         private System.Windows.Forms.Label textoNome;
-        private System.Windows.Forms.Label textoCodigo;
+        private System.Windows.Forms.Label textoValor;
         private System.Windows.Forms.RadioButton radioButtonInativo;
         private System.Windows.Forms.RadioButton radioButtonAtivo;
-        private System.Windows.Forms.ComboBox comboBoxCategoria;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
         private ControleUs controleUs1;
-        private System.Windows.Forms.MaskedTextBox mk_codigo;
+        private System.Windows.Forms.MaskedTextBox mk_Valor;
         private System.Windows.Forms.MaskedTextBox mk_nome;
+        private System.Windows.Forms.ComboBox comboArea;
+        private System.Windows.Forms.Label textoArea;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxModelo;
+        private System.Windows.Forms.Label labelModelo;
     }
 }

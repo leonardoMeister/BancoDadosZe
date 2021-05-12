@@ -23,6 +23,7 @@ namespace BancoDadosZe
         {
             InitializeComponent();
 
+
             //eventos
             // texto_loja.Enter += Texto_loja_Enter;
             //textoProdutos.Enter += new EventHandler(Funcoes.CampoEventoEnter);
@@ -44,7 +45,7 @@ namespace BancoDadosZe
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
 
             //evento de menu de contexto para Form
-            this.lojasToolStripMenuItem.Click += new EventHandler(textoLojas_Click);
+            this.lojasToolStripMenuItem.Click += new EventHandler(btn_lojas_clic);
             this.ajustesToolStripMenuItem.Click += new EventHandler(btn_ajustes_Click);
             this.produtosToolStripMenuItem.Click += new EventHandler(btn_produtos_Click);
             this.entradasToolStripMenuItem.Click += new EventHandler(btn_entradas_Click);
@@ -124,22 +125,13 @@ namespace BancoDadosZe
         {
             this.Close();
         }
-        /// <summary>
-        /// Abrindo Loja
-        /// </summary>
-        /// <param name="sender">referência ao objeto que gerou o evento</param>
-        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void textoLojas_Click(object sender, EventArgs e)
-        {
-            FormLoja loja = new FormLoja();
-            loja.ShowDialog();
-        }
+
         /// <summary>
         /// Abrindo loja
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_lojas_clic(object sender, EventArgs e)
         {
             FormLoja loja = new FormLoja();
             loja.ShowDialog();
@@ -152,6 +144,8 @@ namespace BancoDadosZe
         private void btn_produtos_Click(object sender, EventArgs e)
         {
             FormProduto prod = new FormProduto();
+            DataTable tabela = prod.AtualizarTela();
+            AtualizarTela(tabela);
             prod.ShowDialog();
         }
         /// <summary>
@@ -202,7 +196,8 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-
+            FormLogin login = new FormLogin();
+            login.ShowDialog();
         }
 
         /// <summary>
@@ -216,7 +211,31 @@ namespace BancoDadosZe
             WindowState = FormWindowState.Normal;
             notifyIconSystemTray.Visible = false;
         }
+        /// <summary>
+        /// Atualizar tela
+        /// </summary>
+        public void AtualizarTela(DataTable tb)
+        {
+            dataGridViewDados.Columns.Clear();
+            dataGridViewDados.AutoGenerateColumns = true;
+            dataGridViewDados.DataSource = tb;
+            dataGridViewDados.Refresh();
+        }
 
+        private void btn_marca_Click(object sender, EventArgs e)
+        {
+            FormMarca marca = new FormMarca();
+            DataTable tabela = marca.AtualizarTela();
+            AtualizarTela(tabela);
+            marca.ShowDialog();
+        }
 
+        private void btn_area_atuacao(object sender, EventArgs e)
+        {
+            FormAreaAtuacao areaAtuacao = new FormAreaAtuacao();
+            DataTable tabela = areaAtuacao.AtualizarTela();
+            AtualizarTela(tabela);
+            areaAtuacao.ShowDialog();
+        }
     }
 }

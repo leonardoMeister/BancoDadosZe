@@ -32,7 +32,11 @@ namespace BancoDadosZe
             this.grupBoxLingua = new System.Windows.Forms.GroupBox();
             this.comboBox_idioma = new System.Windows.Forms.ComboBox();
             this.btn_salvar = new System.Windows.Forms.Button();
+            this.grupBoxBanco = new System.Windows.Forms.GroupBox();
+            this.textBoxStringConexao = new System.Windows.Forms.TextBox();
+            this.comboBoxBanco = new System.Windows.Forms.ComboBox();
             this.grupBoxLingua.SuspendLayout();
+            this.grupBoxBanco.SuspendLayout();
             this.SuspendLayout();
             // 
             // grupBoxLingua
@@ -62,7 +66,7 @@ namespace BancoDadosZe
             // 
             // btn_salvar
             // 
-            this.btn_salvar.Location = new System.Drawing.Point(84, 109);
+            this.btn_salvar.Location = new System.Drawing.Point(545, 232);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(93, 37);
             this.btn_salvar.TabIndex = 1;
@@ -70,11 +74,47 @@ namespace BancoDadosZe
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
+            // grupBoxBanco
+            // 
+            this.grupBoxBanco.Controls.Add(this.textBoxStringConexao);
+            this.grupBoxBanco.Controls.Add(this.comboBoxBanco);
+            this.grupBoxBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grupBoxBanco.Location = new System.Drawing.Point(12, 91);
+            this.grupBoxBanco.Name = "grupBoxBanco";
+            this.grupBoxBanco.Size = new System.Drawing.Size(626, 130);
+            this.grupBoxBanco.TabIndex = 2;
+            this.grupBoxBanco.TabStop = false;
+            this.grupBoxBanco.Text = "Escolha Banco Dados";
+            // 
+            // textBoxStringConexao
+            // 
+            this.textBoxStringConexao.Enabled = false;
+            this.textBoxStringConexao.Location = new System.Drawing.Point(6, 87);
+            this.textBoxStringConexao.Name = "textBoxStringConexao";
+            this.textBoxStringConexao.ReadOnly = true;
+            this.textBoxStringConexao.Size = new System.Drawing.Size(614, 22);
+            this.textBoxStringConexao.TabIndex = 2;
+            // 
+            // comboBoxBanco
+            // 
+            this.comboBoxBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBanco.FormattingEnabled = true;
+            this.comboBoxBanco.IntegralHeight = false;
+            this.comboBoxBanco.Items.AddRange(new object[] {
+            "System.Data.SqlClient",
+            "MySql.Data.MySqlClient"});
+            this.comboBoxBanco.Location = new System.Drawing.Point(6, 34);
+            this.comboBoxBanco.Name = "comboBoxBanco";
+            this.comboBoxBanco.Size = new System.Drawing.Size(392, 24);
+            this.comboBoxBanco.TabIndex = 1;
+            this.comboBoxBanco.SelectedIndexChanged += new System.EventHandler(this.comboBoxBanco_SelectedIndexChanged);
+            // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 158);
+            this.ClientSize = new System.Drawing.Size(650, 281);
+            this.Controls.Add(this.grupBoxBanco);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.grupBoxLingua);
             this.KeyPreview = true;
@@ -82,6 +122,8 @@ namespace BancoDadosZe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurações";
             this.grupBoxLingua.ResumeLayout(false);
+            this.grupBoxBanco.ResumeLayout(false);
+            this.grupBoxBanco.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -91,5 +133,8 @@ namespace BancoDadosZe
         private System.Windows.Forms.GroupBox grupBoxLingua;
         private System.Windows.Forms.ComboBox comboBox_idioma;
         private System.Windows.Forms.Button btn_salvar;
+        private System.Windows.Forms.GroupBox grupBoxBanco;
+        private System.Windows.Forms.ComboBox comboBoxBanco;
+        private System.Windows.Forms.TextBox textBoxStringConexao;
     }
 }
