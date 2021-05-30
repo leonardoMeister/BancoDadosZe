@@ -13,6 +13,7 @@ namespace BancoDadosZe
         string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly MarcaDAO dao;
         private Marca marca;
+        ControleUsBTN userControl;
 
         /// <summary>
         /// Construtor
@@ -22,17 +23,19 @@ namespace BancoDadosZe
             //inicializando componentes
             InitializeComponent();
 
+            //Enter
+            textBoxMarca.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            //leave
+            textBoxMarca.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+
             //criando objeto DAO
             dao = new MarcaDAO();
-
-            //atualizando tela
-            AtualizarTela();
 
             //evento de teclado para tab no enter e Esc
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
 
             //Controle user
-            ControleUs userControl = new ControleUs();
+            userControl = new ControleUsBTN();
             userControl.Dock = DockStyle.Bottom;
             panelFormulario.Controls.Add(userControl);
             //EVENTOS dos botões
@@ -40,34 +43,71 @@ namespace BancoDadosZe
             userControl.btnRemover.Click += BtnRemover_Click;
             userControl.btnSalvar.Click += BtnSalvar_Click;
         }
+
+        /// <summary>
+        /// Pegar DataTable para grid
+        /// </summary>
+        /// <returns></returns>
+        public DataTable PegarGrid(string aux)
+        {
+            DataTable auxTable = dao.SelectDbProvider(provider, strConnection, new Marca(0, aux));
+            return auxTable;
+        }
+
+
         /// <summary>
         /// Atualizar tela
         /// </summary>
-        public DataTable AtualizarTela()
+        public void PegaPreencherFormComDadosBanco(int id)
         {
             marca = new Marca();
             //Preenche objeto
-            marca.IdMarca = 0;
-            marca.Nome = "";
+            marca.IdMarca = id;
             try
             {
-                //chama o método para buscar todos os dados da nossa camada model
-                DataTable linhas = dao.SelectDbProvider(provider, strConnection, marca);
-                // seta o datasouce do dataGridView com os dados retornados
-
-                
-                dataGridViewMarcas.Columns.Clear();
-                dataGridViewMarcas.AutoGenerateColumns = true;
-                dataGridViewMarcas.DataSource = linhas;
-                dataGridViewMarcas.Refresh();
-                
-                return linhas;
+                if (marca.IdMarca != 0)
+                {
+                    //Pegando o item do select e retornando ele 
+                    DataTable tabela = dao.SelectDbProvider(provider, strConnection, marca);
+                    foreach (DataRow row in tabela.Rows)
+                    {
+                        mk_id.Text = row[0].ToString();
+                        textBoxMarca.Text = row[1].ToString();
+                        userControl.btnAdicionar.Visible = false;
+                        this.ShowDialog();
+                        userControl.btnAdicionar.Visible = true;
+                        return;
+                    }
+                }
+                else
+                {
+                    mk_id.Text = "";
+                    textBoxMarca.Text = "";
+                    this.ShowDialog();
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return null;
+                throw new Exception(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Removendo dados do banco
+        /// </summary>
+        private void RemoveDbProvider()
+        {
+            try
+            {
+                //pegando o id selecionado
+                int id = Convert.ToInt32(mk_id.Text);
+                dao.RemoverDbProvider(provider, strConnection, id);
+                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                ClassFuncoes.FecharTela(this);
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -79,13 +119,26 @@ namespace BancoDadosZe
             //Instância objeto
             marca = new Marca();
             //Preenche objeto com os dados da view
-            marca.IdMarca = 0;
+
+            //Definindo se vai para edição ou adição
+            if (mk_id.Text != "" && mk_id.Text != null)
+            {
+                marca.IdMarca = Convert.ToInt32(mk_id.Text);
+            }
+            else marca.IdMarca = 0;
+
             marca.Nome = textBoxMarca.Text;
             try
             {
                 // chama o método para inserir da camada model
                 dao.InserirDbProvider(provider, strConnection, marca);
-                MessageBox.Show("Dados inseridos com sucesso!", provider);
+                if (marca.IdMarca != 0)
+                {
+                    MessageBox.Show("Dados Salvos com sucesso!", provider);
+                }
+                else MessageBox.Show("Dados inseridos com sucesso!", provider);
+
+                ClassFuncoes.FecharTela(this);
             }
             catch (Exception ex)
             {
@@ -100,7 +153,7 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você clicou em algo na tela de lojas");
+            InsertDbProvider();
         }
 
         /// <summary>
@@ -110,8 +163,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você clicou em algo na tela de lojas");
+            RemoveDbProvider();
         }
+
+
 
 
         /// <summary>
@@ -122,7 +177,6 @@ namespace BancoDadosZe
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             InsertDbProvider();
-            AtualizarTela();
         }
     }
 }

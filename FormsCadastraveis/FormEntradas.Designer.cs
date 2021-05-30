@@ -30,6 +30,13 @@ namespace BancoDadosZe
         private void InitializeComponent()
         {
             this.panelFundo = new System.Windows.Forms.Panel();
+            this.mk_dataEntrada = new System.Windows.Forms.MaskedTextBox();
+            this.mk_quantidade = new System.Windows.Forms.MaskedTextBox();
+            this.mk_transportadora = new System.Windows.Forms.MaskedTextBox();
+            this.mk_lote = new System.Windows.Forms.MaskedTextBox();
+            this.mk_valor = new System.Windows.Forms.MaskedTextBox();
+            this.mk_marca = new System.Windows.Forms.MaskedTextBox();
+            this.mk_validade = new System.Windows.Forms.MaskedTextBox();
             this.textoTransportadora = new System.Windows.Forms.Label();
             this.textoValidade = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -49,13 +56,6 @@ namespace BancoDadosZe
             this.campoLaranja = new System.Windows.Forms.TextBox();
             this.textoNotaFiscal = new System.Windows.Forms.Label();
             this.textoLote = new System.Windows.Forms.Label();
-            this.mk_validade = new System.Windows.Forms.MaskedTextBox();
-            this.mk_marca = new System.Windows.Forms.MaskedTextBox();
-            this.mk_valor = new System.Windows.Forms.MaskedTextBox();
-            this.mk_lote = new System.Windows.Forms.MaskedTextBox();
-            this.mk_transportadora = new System.Windows.Forms.MaskedTextBox();
-            this.mk_quantidade = new System.Windows.Forms.MaskedTextBox();
-            this.mk_dataEntrada = new System.Windows.Forms.MaskedTextBox();
             this.panelFundo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,70 @@ namespace BancoDadosZe
             this.panelFundo.Name = "panelFundo";
             this.panelFundo.Size = new System.Drawing.Size(647, 300);
             this.panelFundo.TabIndex = 1;
+            // 
+            // mk_dataEntrada
+            // 
+            this.mk_dataEntrada.Location = new System.Drawing.Point(443, 199);
+            this.mk_dataEntrada.Mask = "00/00/0000";
+            this.mk_dataEntrada.Name = "mk_dataEntrada";
+            this.mk_dataEntrada.Size = new System.Drawing.Size(89, 22);
+            this.mk_dataEntrada.TabIndex = 136;
+            this.mk_dataEntrada.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mk_dataEntrada.ValidatingType = typeof(System.DateTime);
+            // 
+            // mk_quantidade
+            // 
+            this.mk_quantidade.Location = new System.Drawing.Point(121, 199);
+            this.mk_quantidade.Mask = "000000";
+            this.mk_quantidade.Name = "mk_quantidade";
+            this.mk_quantidade.Size = new System.Drawing.Size(67, 22);
+            this.mk_quantidade.TabIndex = 135;
+            this.mk_quantidade.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mk_quantidade.ValidatingType = typeof(int);
+            // 
+            // mk_transportadora
+            // 
+            this.mk_transportadora.Location = new System.Drawing.Point(442, 130);
+            this.mk_transportadora.Name = "mk_transportadora";
+            this.mk_transportadora.Size = new System.Drawing.Size(193, 22);
+            this.mk_transportadora.TabIndex = 134;
+            this.mk_transportadora.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mk_lote
+            // 
+            this.mk_lote.Location = new System.Drawing.Point(472, 94);
+            this.mk_lote.Mask = "00000";
+            this.mk_lote.Name = "mk_lote";
+            this.mk_lote.Size = new System.Drawing.Size(60, 22);
+            this.mk_lote.TabIndex = 133;
+            this.mk_lote.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mk_lote.ValidatingType = typeof(int);
+            // 
+            // mk_valor
+            // 
+            this.mk_valor.Location = new System.Drawing.Point(121, 131);
+            this.mk_valor.Name = "mk_valor";
+            this.mk_valor.Size = new System.Drawing.Size(126, 22);
+            this.mk_valor.TabIndex = 132;
+            this.mk_valor.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mk_marca
+            // 
+            this.mk_marca.Location = new System.Drawing.Point(472, 59);
+            this.mk_marca.Name = "mk_marca";
+            this.mk_marca.Size = new System.Drawing.Size(126, 22);
+            this.mk_marca.TabIndex = 131;
+            this.mk_marca.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mk_validade
+            // 
+            this.mk_validade.Location = new System.Drawing.Point(472, 20);
+            this.mk_validade.Mask = "00/00/0000";
+            this.mk_validade.Name = "mk_validade";
+            this.mk_validade.Size = new System.Drawing.Size(97, 22);
+            this.mk_validade.TabIndex = 130;
+            this.mk_validade.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mk_validade.ValidatingType = typeof(System.DateTime);
             // 
             // textoTransportadora
             // 
@@ -303,63 +367,6 @@ namespace BancoDadosZe
             this.textoLote.TabIndex = 105;
             this.textoLote.Text = "Lote";
             this.textoLote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // mk_validade
-            // 
-            this.mk_validade.Location = new System.Drawing.Point(472, 20);
-            this.mk_validade.Mask = "00/00/0000";
-            this.mk_validade.Name = "mk_validade";
-            this.mk_validade.Size = new System.Drawing.Size(97, 22);
-            this.mk_validade.TabIndex = 130;
-            this.mk_validade.ValidatingType = typeof(System.DateTime);
-            // 
-            // mk_marca
-            // 
-            this.mk_marca.Location = new System.Drawing.Point(472, 59);
-            this.mk_marca.Name = "mk_marca";
-            this.mk_marca.Size = new System.Drawing.Size(126, 22);
-            this.mk_marca.TabIndex = 131;
-            // 
-            // mk_valor
-            // 
-            this.mk_valor.Location = new System.Drawing.Point(121, 131);
-            this.mk_valor.Name = "mk_valor";
-            this.mk_valor.Size = new System.Drawing.Size(126, 22);
-            this.mk_valor.TabIndex = 132;
-            // 
-            // mk_lote
-            // 
-            this.mk_lote.Location = new System.Drawing.Point(472, 94);
-            this.mk_lote.Mask = "00000";
-            this.mk_lote.Name = "mk_lote";
-            this.mk_lote.Size = new System.Drawing.Size(60, 22);
-            this.mk_lote.TabIndex = 133;
-            this.mk_lote.ValidatingType = typeof(int);
-            // 
-            // mk_transportadora
-            // 
-            this.mk_transportadora.Location = new System.Drawing.Point(442, 130);
-            this.mk_transportadora.Name = "mk_transportadora";
-            this.mk_transportadora.Size = new System.Drawing.Size(193, 22);
-            this.mk_transportadora.TabIndex = 134;
-            // 
-            // mk_quantidade
-            // 
-            this.mk_quantidade.Location = new System.Drawing.Point(121, 199);
-            this.mk_quantidade.Mask = "000000";
-            this.mk_quantidade.Name = "mk_quantidade";
-            this.mk_quantidade.Size = new System.Drawing.Size(67, 22);
-            this.mk_quantidade.TabIndex = 135;
-            this.mk_quantidade.ValidatingType = typeof(int);
-            // 
-            // mk_dataEntrada
-            // 
-            this.mk_dataEntrada.Location = new System.Drawing.Point(443, 199);
-            this.mk_dataEntrada.Mask = "00/00/0000";
-            this.mk_dataEntrada.Name = "mk_dataEntrada";
-            this.mk_dataEntrada.Size = new System.Drawing.Size(89, 22);
-            this.mk_dataEntrada.TabIndex = 136;
-            this.mk_dataEntrada.ValidatingType = typeof(System.DateTime);
             // 
             // FormEntradas
             // 

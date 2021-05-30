@@ -16,17 +16,13 @@ namespace BancoDadosZe
     /// </summary>
     public partial class FormMenu : Form
     {
+        private Form auxFormSelecionado;
         /// <summary>
         /// Inicializando Componentes
         /// </summary>
         public FormMenu()
         {
             InitializeComponent();
-
-
-            //eventos
-            // texto_loja.Enter += Texto_loja_Enter;
-            //textoProdutos.Enter += new EventHandler(Funcoes.CampoEventoEnter);
 
             //Pegando dados para abrir o Form
             this.btn_lojas.Text = Properties.Resources.ResourceManager.GetString("titulo_loja");
@@ -36,9 +32,7 @@ namespace BancoDadosZe
             this.btn_produtos.Text = Properties.Resources.ResourceManager.GetString("titulo_produto");
             this.btn_ajustes.Text = Properties.Resources.ResourceManager.GetString("titulo_ajustes");
             this.btn_entrar.Text = Properties.Resources.ResourceManager.GetString("titulo_logar");
-            this.btn_adicionar.Text = Properties.Resources.ResourceManager.GetString("btn_adicionar");
             this.btn_buscar.Text = Properties.Resources.ResourceManager.GetString("btn_busca");
-            this.btn_editar.Text = Properties.Resources.ResourceManager.GetString("btn_editar");
             this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("campo_escolha");
 
             //evento de teclado para tab no enter e Esc
@@ -52,6 +46,7 @@ namespace BancoDadosZe
             this.fornecedorToolStripMenuItem.Click += new EventHandler(btn_fornecedor_Click);
             this.funcionáriosToolStripMenuItem.Click += new EventHandler(btn_funcionario_Click);
             this.sairToolStripMenuItem.Click += new EventHandler(Sair);
+
 
             //evento de menu de contexto Icone
             this.abrirAplicaçãoToolStripMenuItem.Click += new EventHandler(Abrir);
@@ -77,6 +72,9 @@ namespace BancoDadosZe
             this.notifyIconSystemTray.BalloonTipText = Properties.Resources.ResourceManager.GetString("titulo_ballonText");
             this.notifyIconSystemTray.BalloonTipTitle = Properties.Resources.ResourceManager.GetString("titulo_ballonTitulo");
         }
+
+        //Métodos para funcionalidades privados do sistema  
+        #region
 
         /// <summary>
         /// Exibindo mensagem na tela sobre a aplicação
@@ -127,27 +125,18 @@ namespace BancoDadosZe
         }
 
         /// <summary>
-        /// Abrindo loja
+        /// Abrindo o app da bandeja com duplo click no icone
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_lojas_clic(object sender, EventArgs e)
+        private void notifyIconSystemTray_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            FormLoja loja = new FormLoja();
-            loja.ShowDialog();
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconSystemTray.Visible = false;
         }
-        /// <summary>
-        /// Abrindo form produtos
-        /// </summary>
-        /// <param name="sender">referência ao objeto que gerou o evento</param>
-        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_produtos_Click(object sender, EventArgs e)
-        {
-            FormProduto prod = new FormProduto();
-            DataTable tabela = prod.AtualizarTela();
-            AtualizarTela(tabela);
-            prod.ShowDialog();
-        }
+        #endregion 
+
         /// <summary>
         /// Abrindo form entradas
         /// </summary>
@@ -158,26 +147,8 @@ namespace BancoDadosZe
             FormEntradas ent = new FormEntradas();
             ent.ShowDialog();
         }
-        /// <summary>
-        /// abrindo form fornecedor
-        /// </summary>
-        /// <param name="sender">referência ao objeto que gerou o evento</param>
-        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_fornecedor_Click(object sender, EventArgs e)
-        {
-            FormFornecedor forn = new FormFornecedor();
-            forn.ShowDialog();
-        }
-        /// <summary>
-        /// abrindo form funcionario
-        /// </summary>
-        /// <param name="sender">referência ao objeto que gerou o evento</param>
-        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_funcionario_Click(object sender, EventArgs e)
-        {
-            FormFuncionario fun = new FormFuncionario();
-            fun.ShowDialog();
-        }
+
+
         /// <summary>
         /// abrindo form ajustes
         /// </summary>
@@ -187,6 +158,21 @@ namespace BancoDadosZe
         {
             FormConfig conf = new FormConfig();
             conf.ShowDialog();
+        }
+
+        /// <summary>
+        /// Atualizar tela
+        /// </summary>
+        public void AtualizarTela(DataTable tb)
+        {
+            dataGridViewDados.Columns.Clear();
+            dataGridViewDados.AutoGenerateColumns = true;
+            if (tb.Rows.Count == 0)
+            {
+                MessageBox.Show("Busca Sem Valores");
+            }
+            dataGridViewDados.DataSource = tb;
+            dataGridViewDados.Refresh();
         }
 
         /// <summary>
@@ -201,41 +187,202 @@ namespace BancoDadosZe
         }
 
         /// <summary>
-        /// Abrindo o app da bandeja com duplo click no icone
+        /// Pegando o form desejado e carregando no grid
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void notifyIconSystemTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void btn_produtos_Click(object sender, EventArgs e)
         {
-            Show();
-            WindowState = FormWindowState.Normal;
-            notifyIconSystemTray.Visible = false;
+            auxFormSelecionado = new FormProduto();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_produto");
+        }
+
+        /// <summary>
+        /// Pegando o form desejado e carregando no grid
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
+        private void btn_fornecedor_Click(object sender, EventArgs e)
+        {
+            auxFormSelecionado = new FormFornecedor();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_fornecedor");
+        }
+
+        /// <summary>
+        /// Pegando o form desejado e carregando no grid
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
+        private void btn_funcionario_Click(object sender, EventArgs e)
+        {
+            auxFormSelecionado = new FormFuncionario();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_funcionario");
         }
         /// <summary>
-        /// Atualizar tela
+        /// Pegando o form desejado e carregando no grid
         /// </summary>
-        public void AtualizarTela(DataTable tb)
-        {
-            dataGridViewDados.Columns.Clear();
-            dataGridViewDados.AutoGenerateColumns = true;
-            dataGridViewDados.DataSource = tb;
-            dataGridViewDados.Refresh();
-        }
-
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_marca_Click(object sender, EventArgs e)
         {
-            FormMarca marca = new FormMarca();
-            DataTable tabela = marca.AtualizarTela();
-            AtualizarTela(tabela);
-            marca.ShowDialog();
+            auxFormSelecionado = new FormMarca();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_marca");
         }
-
+        /// <summary>
+        /// Pegando o form desejado e carregando no grid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_area_atuacao(object sender, EventArgs e)
         {
-            FormAreaAtuacao areaAtuacao = new FormAreaAtuacao();
-            DataTable tabela = areaAtuacao.AtualizarTela();
-            AtualizarTela(tabela);
-            areaAtuacao.ShowDialog();
+            auxFormSelecionado = new FormAreaAtuacao();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_atuacao");
+        }
+
+        /// <summary>
+        /// Pegando o form desejado e carregando no grid
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
+        private void btn_lojas_clic(object sender, EventArgs e)
+        {
+            auxFormSelecionado = new FormLoja();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_loja");
+        }
+        /// <summary>
+        /// Evento de clicar na linha do dataGrid 
+        /// Usa polimorfismo para mostrar form desejado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewDados_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int id = 0;
+            if (dataGridViewDados.SelectedCells.Count > 0)
+            {
+                //pega a primeira coluna, que esta com o ID, da linha selecionada
+                DataGridViewRow selectedRow = dataGridViewDados.Rows[dataGridViewDados.SelectedCells[0].RowIndex];
+                id = Convert.ToInt32(selectedRow.Cells[0].Value);
+            }
+
+            //AtualizarTelaONE(id);
+            ExibirForm(id);
+
+        }
+
+        /// <summary>
+        /// Pesquisar no banco
+        /// </summary>
+        public void PesquisaParaAtualizarGrid()
+        {
+            if (auxFormSelecionado is FormMarca)
+            {
+                AtualizarTela(((FormMarca)auxFormSelecionado).PegarGrid(buscar_campo.Text));
+            }
+            else if (auxFormSelecionado is FormProduto)
+            {
+                AtualizarTela(((FormProduto)auxFormSelecionado).PegarGrid(buscar_campo.Text));
+            }
+            else if (auxFormSelecionado is FormLoja)
+            {
+                AtualizarTela(((FormLoja)auxFormSelecionado).PegarGrid(buscar_campo.Text));
+            }
+            else if (auxFormSelecionado is FormFuncionario)
+            {
+                AtualizarTela(((FormFuncionario)auxFormSelecionado).PegarGrid(buscar_campo.Text));
+            }
+            else if (auxFormSelecionado is FormFornecedor)
+            {
+                AtualizarTela(((FormFornecedor)auxFormSelecionado).PegarGrid(buscar_campo.Text));
+            }
+            else if (auxFormSelecionado is FormEntradas)
+            {
+                // ((FormEntradas)auxFormSelecionado).AtualizarTela(id);
+            }
+            else if (auxFormSelecionado is FormAreaAtuacao)
+            {
+                AtualizarTela(((FormAreaAtuacao)auxFormSelecionado).PegarGrid(buscar_campo.Text));
+            }
+            else
+            {
+                MessageBox.Show("Escolha um Formulario!");
+            }
+            
+
+        }
+
+        /// <summary>
+        /// Exibe o formulario selecionado
+        /// </summary>
+        /// <param name="id">Define se vai puxar um dado do banco ou não</param>
+        private void ExibirForm(int id)
+        {
+            if (auxFormSelecionado is FormMarca)
+            {
+                ((FormMarca)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
+            }
+            else if (auxFormSelecionado is FormProduto)
+            {
+                ((FormProduto)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
+            }
+            else if (auxFormSelecionado is FormLoja)
+            {
+                ((FormLoja)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
+            }
+            else if (auxFormSelecionado is FormFuncionario)
+            {
+                ((FormFuncionario)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
+            }
+            else if (auxFormSelecionado is FormFornecedor)
+            {
+                ((FormFornecedor)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
+            }
+            else if (auxFormSelecionado is FormEntradas)
+            {
+                // ((FormEntradas)auxFormSelecionado).AtualizarTela(id);
+            }
+            else if (auxFormSelecionado is FormAreaAtuacao)
+            {
+                ((FormAreaAtuacao)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
+            }
+        }
+
+        /// <summary>
+        /// Abrindo Form para cadastro de um novo dado desejado
+        /// De acordo com o Form do menu selecionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_adicionar_Click(object sender, EventArgs e)
+        {
+            if (!(auxFormSelecionado is null))
+            {
+                ExibirForm(0);
+            }
+            else MessageBox.Show("Selecione um menu primeiro");
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {          
+                PesquisaParaAtualizarGrid();
         }
     }
 }

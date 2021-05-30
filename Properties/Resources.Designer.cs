@@ -246,6 +246,16 @@ namespace BancoDadosZe.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imagemApp {
+            get {
+                object obj = ResourceManager.GetObject("imagemApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap produto_80 {
             get {
                 object obj = ResourceManager.GetObject("produto_80", resourceCulture);

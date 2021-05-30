@@ -15,12 +15,12 @@ namespace BancoDadosZe
     /// <summary>
     /// Classe de controle de usuario
     /// </summary>
-    public partial class ControleUs : UserControl
+    public partial class ControleUsBTN : UserControl
     {
         /// <summary>
         /// Inicializado os componentes do controle de usuario
         /// </summary>
-        public ControleUs()
+        public ControleUsBTN()
         {
             InitializeComponent();
             this.btnAdicionar.Text = Properties.Resources.ResourceManager.GetString("btn_adicionar");

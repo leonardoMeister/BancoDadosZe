@@ -29,72 +29,81 @@ namespace BancoDadosZe
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelArea = new System.Windows.Forms.Label();
+            this.textoArea = new System.Windows.Forms.Label();
             this.textBoxArea = new System.Windows.Forms.TextBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
-            this.dataGridViewAreaAtuazao = new System.Windows.Forms.DataGridView();
+            this.mk_id = new System.Windows.Forms.TextBox();
+            this.textoId = new System.Windows.Forms.Label();
             this.panelFormulario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAreaAtuazao)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelArea
+            // textoArea
             // 
-            this.labelArea.AutoSize = true;
-            this.labelArea.Location = new System.Drawing.Point(232, 117);
-            this.labelArea.Name = "labelArea";
-            this.labelArea.Size = new System.Drawing.Size(94, 17);
-            this.labelArea.TabIndex = 0;
-            this.labelArea.Text = "Area Atuação";
+            this.textoArea.AutoSize = true;
+            this.textoArea.Location = new System.Drawing.Point(72, 28);
+            this.textoArea.Name = "textoArea";
+            this.textoArea.Size = new System.Drawing.Size(94, 17);
+            this.textoArea.TabIndex = 0;
+            this.textoArea.Text = "Area Atuação";
             // 
             // textBoxArea
             // 
-            this.textBoxArea.Location = new System.Drawing.Point(349, 117);
+            this.textBoxArea.Location = new System.Drawing.Point(189, 28);
             this.textBoxArea.Name = "textBoxArea";
             this.textBoxArea.Size = new System.Drawing.Size(100, 22);
             this.textBoxArea.TabIndex = 1;
             // 
             // panelFormulario
             // 
-            this.panelFormulario.Controls.Add(this.dataGridViewAreaAtuazao);
+            this.panelFormulario.Controls.Add(this.mk_id);
+            this.panelFormulario.Controls.Add(this.textoId);
             this.panelFormulario.Controls.Add(this.textBoxArea);
-            this.panelFormulario.Controls.Add(this.labelArea);
+            this.panelFormulario.Controls.Add(this.textoArea);
             this.panelFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormulario.Location = new System.Drawing.Point(0, 0);
             this.panelFormulario.Name = "panelFormulario";
-            this.panelFormulario.Size = new System.Drawing.Size(800, 450);
+            this.panelFormulario.Size = new System.Drawing.Size(734, 111);
             this.panelFormulario.TabIndex = 2;
             // 
-            // dataGridViewAreaAtuazao
+            // mk_id
             // 
-            this.dataGridViewAreaAtuazao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAreaAtuazao.Location = new System.Drawing.Point(142, 184);
-            this.dataGridViewAreaAtuazao.Name = "dataGridViewAreaAtuazao";
-            this.dataGridViewAreaAtuazao.RowHeadersWidth = 51;
-            this.dataGridViewAreaAtuazao.RowTemplate.Height = 24;
-            this.dataGridViewAreaAtuazao.Size = new System.Drawing.Size(477, 222);
-            this.dataGridViewAreaAtuazao.TabIndex = 2;
+            this.mk_id.Enabled = false;
+            this.mk_id.Location = new System.Drawing.Point(527, 28);
+            this.mk_id.Name = "mk_id";
+            this.mk_id.Size = new System.Drawing.Size(100, 22);
+            this.mk_id.TabIndex = 3;
+            // 
+            // textoId
+            // 
+            this.textoId.AutoSize = true;
+            this.textoId.Location = new System.Drawing.Point(469, 30);
+            this.textoId.Name = "textoId";
+            this.textoId.Size = new System.Drawing.Size(19, 17);
+            this.textoId.TabIndex = 2;
+            this.textoId.Text = "Id";
             // 
             // FormAreaAtuacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(734, 111);
             this.Controls.Add(this.panelFormulario);
+            this.KeyPreview = true;
             this.Name = "FormAreaAtuacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAreaAtuacao";
             this.panelFormulario.ResumeLayout(false);
             this.panelFormulario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAreaAtuazao)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label labelArea;
+        private System.Windows.Forms.Label textoArea;
         private System.Windows.Forms.TextBox textBoxArea;
         private System.Windows.Forms.Panel panelFormulario;
-        private System.Windows.Forms.DataGridView dataGridViewAreaAtuazao;
+        private System.Windows.Forms.TextBox mk_id;
+        private System.Windows.Forms.Label textoId;
     }
 }

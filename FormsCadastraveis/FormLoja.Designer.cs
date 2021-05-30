@@ -32,31 +32,18 @@ namespace BancoDadosZe
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.panelFundo = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
-            this.mk_pais = new System.Windows.Forms.MaskedTextBox();
-            this.mk_numero = new System.Windows.Forms.MaskedTextBox();
-            this.mk_rua = new System.Windows.Forms.MaskedTextBox();
-            this.mk_bairro = new System.Windows.Forms.MaskedTextBox();
-            this.mk_cidade = new System.Windows.Forms.MaskedTextBox();
-            this.mk_cep = new System.Windows.Forms.MaskedTextBox();
+            this.mk_id = new System.Windows.Forms.MaskedTextBox();
+            this.texto_id = new System.Windows.Forms.Label();
+            this.mk_IE = new System.Windows.Forms.MaskedTextBox();
+            this.textoIe = new System.Windows.Forms.Label();
+            this.comboBoxGerente = new System.Windows.Forms.ComboBox();
             this.mk_email = new System.Windows.Forms.MaskedTextBox();
-            this.mk_data = new System.Windows.Forms.MaskedTextBox();
             this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
-            this.mk_gerente = new System.Windows.Forms.MaskedTextBox();
             this.mk_razaoSocial = new System.Windows.Forms.MaskedTextBox();
             this.mk_cnpj = new System.Windows.Forms.MaskedTextBox();
             this.mk_nomeFantasia = new System.Windows.Forms.MaskedTextBox();
-            this.campoComplemento = new System.Windows.Forms.TextBox();
-            this.textoBairro = new System.Windows.Forms.Label();
-            this.textoRua = new System.Windows.Forms.Label();
-            this.textoNumero = new System.Windows.Forms.Label();
-            this.textoComplemento = new System.Windows.Forms.Label();
-            this.textoCep = new System.Windows.Forms.Label();
-            this.textoCidade = new System.Windows.Forms.Label();
-            this.textoPais = new System.Windows.Forms.Label();
-            this.textoEndereco = new System.Windows.Forms.Label();
             this.textoEmail = new System.Windows.Forms.Label();
             this.textoGerente = new System.Windows.Forms.Label();
-            this.textoData = new System.Windows.Forms.Label();
             this.textoTelefone = new System.Windows.Forms.Label();
             this.textoRazaoSocial = new System.Windows.Forms.Label();
             this.textoCnpj = new System.Windows.Forms.Label();
@@ -64,6 +51,7 @@ namespace BancoDadosZe
             this.radioButtonFilial = new System.Windows.Forms.RadioButton();
             this.textoTipo = new System.Windows.Forms.Label();
             this.textoNomeFantasia = new System.Windows.Forms.Label();
+            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -76,36 +64,24 @@ namespace BancoDadosZe
             this.panelFundo.Location = new System.Drawing.Point(0, 0);
             this.panelFundo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFundo.Name = "panelFundo";
-            this.panelFundo.Size = new System.Drawing.Size(821, 367);
+            this.panelFundo.Size = new System.Drawing.Size(821, 417);
             this.panelFundo.TabIndex = 1;
             // 
             // panelFormulario
             // 
-            this.panelFormulario.Controls.Add(this.mk_pais);
-            this.panelFormulario.Controls.Add(this.mk_numero);
-            this.panelFormulario.Controls.Add(this.mk_rua);
-            this.panelFormulario.Controls.Add(this.mk_bairro);
-            this.panelFormulario.Controls.Add(this.mk_cidade);
-            this.panelFormulario.Controls.Add(this.mk_cep);
+            this.panelFormulario.Controls.Add(this.controleUsEndereco);
+            this.panelFormulario.Controls.Add(this.mk_id);
+            this.panelFormulario.Controls.Add(this.texto_id);
+            this.panelFormulario.Controls.Add(this.mk_IE);
+            this.panelFormulario.Controls.Add(this.textoIe);
+            this.panelFormulario.Controls.Add(this.comboBoxGerente);
             this.panelFormulario.Controls.Add(this.mk_email);
-            this.panelFormulario.Controls.Add(this.mk_data);
             this.panelFormulario.Controls.Add(this.mk_telefone);
-            this.panelFormulario.Controls.Add(this.mk_gerente);
             this.panelFormulario.Controls.Add(this.mk_razaoSocial);
             this.panelFormulario.Controls.Add(this.mk_cnpj);
             this.panelFormulario.Controls.Add(this.mk_nomeFantasia);
-            this.panelFormulario.Controls.Add(this.campoComplemento);
-            this.panelFormulario.Controls.Add(this.textoBairro);
-            this.panelFormulario.Controls.Add(this.textoRua);
-            this.panelFormulario.Controls.Add(this.textoNumero);
-            this.panelFormulario.Controls.Add(this.textoComplemento);
-            this.panelFormulario.Controls.Add(this.textoCep);
-            this.panelFormulario.Controls.Add(this.textoCidade);
-            this.panelFormulario.Controls.Add(this.textoPais);
-            this.panelFormulario.Controls.Add(this.textoEndereco);
             this.panelFormulario.Controls.Add(this.textoEmail);
             this.panelFormulario.Controls.Add(this.textoGerente);
-            this.panelFormulario.Controls.Add(this.textoData);
             this.panelFormulario.Controls.Add(this.textoTelefone);
             this.panelFormulario.Controls.Add(this.textoRazaoSocial);
             this.panelFormulario.Controls.Add(this.textoCnpj);
@@ -116,69 +92,68 @@ namespace BancoDadosZe
             this.panelFormulario.Location = new System.Drawing.Point(9, 14);
             this.panelFormulario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFormulario.Name = "panelFormulario";
-            this.panelFormulario.Size = new System.Drawing.Size(797, 347);
+            this.panelFormulario.Size = new System.Drawing.Size(797, 401);
             this.panelFormulario.TabIndex = 2;
             // 
-            // mk_pais
+            // mk_id
             // 
-            this.mk_pais.Location = new System.Drawing.Point(515, 202);
-            this.mk_pais.Name = "mk_pais";
-            this.mk_pais.Size = new System.Drawing.Size(178, 22);
-            this.mk_pais.TabIndex = 95;
+            this.mk_id.Enabled = false;
+            this.mk_id.Location = new System.Drawing.Point(656, 120);
+            this.mk_id.Name = "mk_id";
+            this.mk_id.Size = new System.Drawing.Size(77, 22);
+            this.mk_id.TabIndex = 119;
+            this.mk_id.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // mk_numero
+            // texto_id
             // 
-            this.mk_numero.Location = new System.Drawing.Point(515, 176);
-            this.mk_numero.Mask = "900000";
-            this.mk_numero.Name = "mk_numero";
-            this.mk_numero.Size = new System.Drawing.Size(65, 22);
-            this.mk_numero.TabIndex = 94;
-            this.mk_numero.ValidatingType = typeof(int);
+            this.texto_id.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texto_id.Location = new System.Drawing.Point(575, 118);
+            this.texto_id.Name = "texto_id";
+            this.texto_id.Size = new System.Drawing.Size(65, 22);
+            this.texto_id.TabIndex = 118;
+            this.texto_id.Text = "Id";
+            this.texto_id.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mk_rua
+            // mk_IE
             // 
-            this.mk_rua.Location = new System.Drawing.Point(131, 263);
-            this.mk_rua.Name = "mk_rua";
-            this.mk_rua.Size = new System.Drawing.Size(212, 22);
-            this.mk_rua.TabIndex = 93;
+            this.mk_IE.Location = new System.Drawing.Point(465, 120);
+            this.mk_IE.Name = "mk_IE";
+            this.mk_IE.Size = new System.Drawing.Size(77, 22);
+            this.mk_IE.TabIndex = 89;
+            this.mk_IE.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // mk_bairro
+            // textoIe
             // 
-            this.mk_bairro.Location = new System.Drawing.Point(131, 231);
-            this.mk_bairro.Name = "mk_bairro";
-            this.mk_bairro.Size = new System.Drawing.Size(212, 22);
-            this.mk_bairro.TabIndex = 92;
+            this.textoIe.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoIe.Location = new System.Drawing.Point(384, 118);
+            this.textoIe.Name = "textoIe";
+            this.textoIe.Size = new System.Drawing.Size(65, 22);
+            this.textoIe.TabIndex = 116;
+            this.textoIe.Text = "IE";
+            this.textoIe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mk_cidade
+            // comboBoxGerente
             // 
-            this.mk_cidade.Location = new System.Drawing.Point(133, 200);
-            this.mk_cidade.Name = "mk_cidade";
-            this.mk_cidade.Size = new System.Drawing.Size(212, 22);
-            this.mk_cidade.TabIndex = 91;
-            // 
-            // mk_cep
-            // 
-            this.mk_cep.Location = new System.Drawing.Point(131, 172);
-            this.mk_cep.Mask = "00000000";
-            this.mk_cep.Name = "mk_cep";
-            this.mk_cep.Size = new System.Drawing.Size(77, 22);
-            this.mk_cep.TabIndex = 90;
+            this.comboBoxGerente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGerente.FormattingEnabled = true;
+            this.comboBoxGerente.Items.AddRange(new object[] {
+            "Categoria 1",
+            "Categoria 2",
+            "Categoria 3",
+            "Categoria 4"});
+            this.comboBoxGerente.Location = new System.Drawing.Point(165, 118);
+            this.comboBoxGerente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxGerente.Name = "comboBoxGerente";
+            this.comboBoxGerente.Size = new System.Drawing.Size(180, 24);
+            this.comboBoxGerente.TabIndex = 86;
             // 
             // mk_email
             // 
-            this.mk_email.Location = new System.Drawing.Point(499, 118);
+            this.mk_email.Location = new System.Drawing.Point(539, 82);
             this.mk_email.Name = "mk_email";
             this.mk_email.Size = new System.Drawing.Size(178, 22);
-            this.mk_email.TabIndex = 89;
-            // 
-            // mk_data
-            // 
-            this.mk_data.Location = new System.Drawing.Point(563, 82);
-            this.mk_data.Mask = "00/00/0000";
-            this.mk_data.Name = "mk_data";
-            this.mk_data.Size = new System.Drawing.Size(178, 22);
-            this.mk_data.TabIndex = 88;
-            this.mk_data.ValidatingType = typeof(System.DateTime);
+            this.mk_email.TabIndex = 88;
+            this.mk_email.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mk_telefone
             // 
@@ -187,13 +162,7 @@ namespace BancoDadosZe
             this.mk_telefone.Name = "mk_telefone";
             this.mk_telefone.Size = new System.Drawing.Size(109, 22);
             this.mk_telefone.TabIndex = 87;
-            // 
-            // mk_gerente
-            // 
-            this.mk_gerente.Location = new System.Drawing.Point(165, 116);
-            this.mk_gerente.Name = "mk_gerente";
-            this.mk_gerente.Size = new System.Drawing.Size(178, 22);
-            this.mk_gerente.TabIndex = 86;
+            this.mk_telefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mk_razaoSocial
             // 
@@ -201,6 +170,7 @@ namespace BancoDadosZe
             this.mk_razaoSocial.Name = "mk_razaoSocial";
             this.mk_razaoSocial.Size = new System.Drawing.Size(178, 22);
             this.mk_razaoSocial.TabIndex = 85;
+            this.mk_razaoSocial.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mk_cnpj
             // 
@@ -209,6 +179,7 @@ namespace BancoDadosZe
             this.mk_cnpj.Name = "mk_cnpj";
             this.mk_cnpj.Size = new System.Drawing.Size(178, 22);
             this.mk_cnpj.TabIndex = 84;
+            this.mk_cnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mk_nomeFantasia
             // 
@@ -216,100 +187,12 @@ namespace BancoDadosZe
             this.mk_nomeFantasia.Name = "mk_nomeFantasia";
             this.mk_nomeFantasia.Size = new System.Drawing.Size(178, 22);
             this.mk_nomeFantasia.TabIndex = 83;
-            // 
-            // campoComplemento
-            // 
-            this.campoComplemento.Location = new System.Drawing.Point(515, 234);
-            this.campoComplemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.campoComplemento.Multiline = true;
-            this.campoComplemento.Name = "campoComplemento";
-            this.campoComplemento.Size = new System.Drawing.Size(244, 58);
-            this.campoComplemento.TabIndex = 14;
-            // 
-            // textoBairro
-            // 
-            this.textoBairro.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoBairro.Location = new System.Drawing.Point(52, 231);
-            this.textoBairro.Name = "textoBairro";
-            this.textoBairro.Size = new System.Drawing.Size(73, 22);
-            this.textoBairro.TabIndex = 82;
-            this.textoBairro.Text = "Bairro";
-            this.textoBairro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoRua
-            // 
-            this.textoRua.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoRua.Location = new System.Drawing.Point(76, 262);
-            this.textoRua.Name = "textoRua";
-            this.textoRua.Size = new System.Drawing.Size(49, 22);
-            this.textoRua.TabIndex = 76;
-            this.textoRua.Text = "Rua";
-            this.textoRua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoNumero
-            // 
-            this.textoNumero.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoNumero.Location = new System.Drawing.Point(420, 174);
-            this.textoNumero.Name = "textoNumero";
-            this.textoNumero.Size = new System.Drawing.Size(89, 22);
-            this.textoNumero.TabIndex = 77;
-            this.textoNumero.Text = "Número";
-            this.textoNumero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoComplemento
-            // 
-            this.textoComplemento.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoComplemento.Location = new System.Drawing.Point(380, 234);
-            this.textoComplemento.Name = "textoComplemento";
-            this.textoComplemento.Size = new System.Drawing.Size(129, 22);
-            this.textoComplemento.TabIndex = 78;
-            this.textoComplemento.Text = "Complemento";
-            this.textoComplemento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoCep
-            // 
-            this.textoCep.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoCep.Location = new System.Drawing.Point(77, 172);
-            this.textoCep.Name = "textoCep";
-            this.textoCep.Size = new System.Drawing.Size(48, 22);
-            this.textoCep.TabIndex = 79;
-            this.textoCep.Text = "Cep";
-            this.textoCep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoCidade
-            // 
-            this.textoCidade.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoCidade.Location = new System.Drawing.Point(48, 201);
-            this.textoCidade.Name = "textoCidade";
-            this.textoCidade.Size = new System.Drawing.Size(79, 22);
-            this.textoCidade.TabIndex = 80;
-            this.textoCidade.Text = "Cidade";
-            this.textoCidade.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoPais
-            // 
-            this.textoPais.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoPais.Location = new System.Drawing.Point(456, 202);
-            this.textoPais.Name = "textoPais";
-            this.textoPais.Size = new System.Drawing.Size(53, 22);
-            this.textoPais.TabIndex = 81;
-            this.textoPais.Text = "Pais";
-            this.textoPais.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoEndereco
-            // 
-            this.textoEndereco.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoEndereco.Location = new System.Drawing.Point(22, 146);
-            this.textoEndereco.Name = "textoEndereco";
-            this.textoEndereco.Size = new System.Drawing.Size(109, 22);
-            this.textoEndereco.TabIndex = 63;
-            this.textoEndereco.Text = "Endereço:";
-            this.textoEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mk_nomeFantasia.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // textoEmail
             // 
             this.textoEmail.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoEmail.Location = new System.Drawing.Point(432, 117);
+            this.textoEmail.Location = new System.Drawing.Point(458, 80);
             this.textoEmail.Name = "textoEmail";
             this.textoEmail.Size = new System.Drawing.Size(65, 22);
             this.textoEmail.TabIndex = 61;
@@ -319,22 +202,12 @@ namespace BancoDadosZe
             // textoGerente
             // 
             this.textoGerente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoGerente.Location = new System.Drawing.Point(34, 115);
+            this.textoGerente.Location = new System.Drawing.Point(36, 118);
             this.textoGerente.Name = "textoGerente";
             this.textoGerente.Size = new System.Drawing.Size(91, 22);
             this.textoGerente.TabIndex = 59;
             this.textoGerente.Text = "Gerente";
             this.textoGerente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoData
-            // 
-            this.textoData.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoData.Location = new System.Drawing.Point(500, 81);
-            this.textoData.Name = "textoData";
-            this.textoData.Size = new System.Drawing.Size(57, 22);
-            this.textoData.TabIndex = 57;
-            this.textoData.Text = "Data";
-            this.textoData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textoTelefone
             // 
@@ -412,11 +285,18 @@ namespace BancoDadosZe
             this.textoNomeFantasia.Text = "Nome Fantasia";
             this.textoNomeFantasia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // controleUsEndereco
+            // 
+            this.controleUsEndereco.Location = new System.Drawing.Point(21, 148);
+            this.controleUsEndereco.Name = "controleUsEndereco";
+            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
+            this.controleUsEndereco.TabIndex = 120;
+            // 
             // FormLoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 367);
+            this.ClientSize = new System.Drawing.Size(821, 417);
             this.Controls.Add(this.panelFundo);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -434,18 +314,8 @@ namespace BancoDadosZe
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Panel panelFundo;
         private System.Windows.Forms.Panel panelFormulario;
-        private System.Windows.Forms.TextBox campoComplemento;
-        private System.Windows.Forms.Label textoBairro;
-        private System.Windows.Forms.Label textoRua;
-        private System.Windows.Forms.Label textoNumero;
-        private System.Windows.Forms.Label textoComplemento;
-        private System.Windows.Forms.Label textoCep;
-        private System.Windows.Forms.Label textoCidade;
-        private System.Windows.Forms.Label textoPais;
-        private System.Windows.Forms.Label textoEndereco;
         private System.Windows.Forms.Label textoEmail;
         private System.Windows.Forms.Label textoGerente;
-        private System.Windows.Forms.Label textoData;
         private System.Windows.Forms.Label textoTelefone;
         private System.Windows.Forms.Label textoRazaoSocial;
         private System.Windows.Forms.Label textoCnpj;
@@ -453,18 +323,16 @@ namespace BancoDadosZe
         private System.Windows.Forms.RadioButton radioButtonFilial;
         private System.Windows.Forms.Label textoTipo;
         private System.Windows.Forms.Label textoNomeFantasia;
-        private System.Windows.Forms.MaskedTextBox mk_pais;
-        private System.Windows.Forms.MaskedTextBox mk_numero;
-        private System.Windows.Forms.MaskedTextBox mk_rua;
-        private System.Windows.Forms.MaskedTextBox mk_bairro;
-        private System.Windows.Forms.MaskedTextBox mk_cidade;
-        private System.Windows.Forms.MaskedTextBox mk_cep;
         private System.Windows.Forms.MaskedTextBox mk_email;
-        private System.Windows.Forms.MaskedTextBox mk_data;
         private System.Windows.Forms.MaskedTextBox mk_telefone;
-        private System.Windows.Forms.MaskedTextBox mk_gerente;
         private System.Windows.Forms.MaskedTextBox mk_razaoSocial;
         private System.Windows.Forms.MaskedTextBox mk_cnpj;
         private System.Windows.Forms.MaskedTextBox mk_nomeFantasia;
+        public System.Windows.Forms.ComboBox comboBoxGerente;
+        private System.Windows.Forms.MaskedTextBox mk_IE;
+        private System.Windows.Forms.Label textoIe;
+        private System.Windows.Forms.MaskedTextBox mk_id;
+        private System.Windows.Forms.Label texto_id;
+        private ControleEndereco controleUsEndereco;
     }
 }

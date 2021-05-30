@@ -60,7 +60,7 @@ namespace BancoDadosZe
             this.btnAcesso.Location = new System.Drawing.Point(160, 307);
             this.btnAcesso.Name = "btnAcesso";
             this.btnAcesso.Size = new System.Drawing.Size(147, 43);
-            this.btnAcesso.TabIndex = 1;
+            this.btnAcesso.TabIndex = 5;
             this.btnAcesso.Text = "Acessar";
             this.btnAcesso.UseVisualStyleBackColor = false;
             // 
@@ -73,8 +73,7 @@ namespace BancoDadosZe
             this.textoBoxNome.Name = "textoBoxNome";
             this.textoBoxNome.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.textoBoxNome.Size = new System.Drawing.Size(205, 44);
-            this.textoBoxNome.TabIndex = 0;
-            this.textoBoxNome.TabStop = false;
+            this.textoBoxNome.TabIndex = 3;
             this.textoBoxNome.Text = "Matrícula";
             // 
             // textBoxSenha
@@ -86,8 +85,7 @@ namespace BancoDadosZe
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.textBoxSenha.Size = new System.Drawing.Size(205, 44);
-            this.textBoxSenha.TabIndex = 0;
-            this.textBoxSenha.TabStop = false;
+            this.textBoxSenha.TabIndex = 4;
             this.textBoxSenha.Text = "Senha";
             // 
             // painelSuperior

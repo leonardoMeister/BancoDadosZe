@@ -1,7 +1,7 @@
 ﻿
 namespace BancoDadosZe
 {
-    partial class ControleUs
+    partial class ControleUsBTN
     {
         /// <summary> 
         /// Variável de designer necessária.

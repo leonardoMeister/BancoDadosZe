@@ -12,6 +12,7 @@ namespace BancoDadosZe
         string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly AreaAtuacaoDAO dao;
         private AreaAtuacao areaAtuacao;
+        ControleUsBTN userControl;
 
         /// <summary>
         /// 
@@ -20,17 +21,20 @@ namespace BancoDadosZe
         {
             //inicializando componentes
             InitializeComponent();
+
+            //Enter
+            textBoxArea.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
+            //leave
+            textBoxArea.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
+
             //criando objeto DAO
             dao = new AreaAtuacaoDAO();
-
-            //atualizando tela depois de criar os campos necessarios
-            AtualizarTela();
 
             //evento de teclado para tab no enter e Esc
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
 
             //Controle user
-            ControleUs userControl = new ControleUs();
+            userControl = new ControleUsBTN();
             userControl.Dock = DockStyle.Bottom;
             panelFormulario.Controls.Add(userControl);
             //EVENTOS dos botões
@@ -38,35 +42,103 @@ namespace BancoDadosZe
             userControl.btnRemover.Click += BtnRemover_Click;
             userControl.btnSalvar.Click += BtnSalvar_Click;
 
+
+        }
+
+        private void RemoveDbProvider()
+        {
+            try
+            {
+                //pegando o id selecionado
+                int id = Convert.ToInt32(mk_id.Text);
+                dao.RemoverDbProvider(provider, strConnection, id);
+                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                ClassFuncoes.FecharTela(this);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /// <summary>
         /// Atualizar tela
         /// </summary>
-        public DataTable AtualizarTela()
+        public void PegaPreencherFormComDadosBanco(int id)
         {
-            areaAtuacao = new AreaAtuacao();
-            //Preenche objeto
-            areaAtuacao.IdArea = 0;
-            areaAtuacao.Area = "";
             try
             {
-                //chama o método para buscar todos os dados da nossa camada model
-                DataTable linhas = dao.SelectDbProvider(provider, strConnection, areaAtuacao);
-                // seta o datasouce do dataGridView com os dados retornados
+                if (id != 0)
+                {
+                    //Pegando o item do select e retornando ele 
+                    DataTable tabela = dao.SelectDbProvider(provider, strConnection, new AreaAtuacao(id, ""));
+                    foreach (DataRow row in tabela.Rows)
+                    {
+                        textBoxArea.Text = row[1].ToString();
+                        mk_id.Text = row[0].ToString();
 
-                dataGridViewAreaAtuazao.Columns.Clear();
-                dataGridViewAreaAtuazao.AutoGenerateColumns = true;
-                dataGridViewAreaAtuazao.DataSource = linhas;
-                dataGridViewAreaAtuazao.Refresh();
+                        userControl.btnAdicionar.Visible = false;
+                        this.ShowDialog();
+                        userControl.btnAdicionar.Visible = true;
+                        return;
+                    }
 
-                return linhas;
 
+                }
+                else if (id == 0)
+                {
+                    textBoxArea.Text = "";
+                    mk_id.Text = "";
+                    this.ShowDialog();
+                    return;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
+            }
+        }
+
+        /// <summary>
+        /// Pegar DataTable para grid
+        /// </summary>
+        /// <returns></returns>
+        public DataTable PegarGrid(string nome)
+        {
+            DataTable auxTable = dao.SelectDbProvider(provider, strConnection, new AreaAtuacao(0, nome));
+            return auxTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void InsertDbProvider()
+        {
+            //Instância objeto
+            areaAtuacao = new AreaAtuacao();
+            //Preenche objeto com os dados da view
+            if (mk_id.Text != "" && mk_id.Text != null)
+            {
+                areaAtuacao.IdArea = Convert.ToInt32(mk_id.Text);
+            }
+            else areaAtuacao.IdArea = 0;
+
+            areaAtuacao.Area = textBoxArea.Text;
+            try
+            {
+                // chama o método para inserir da camada model
+                dao.InserirDbProvider(provider, strConnection, areaAtuacao);
+                if (areaAtuacao.IdArea != 0)
+                {
+                    MessageBox.Show("Dados Salvos com sucesso!", provider);
+                }
+                else MessageBox.Show("Dados inseridos com sucesso!", provider);
+
+                ClassFuncoes.FecharTela(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -77,28 +149,7 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você clicou em algo na tela de lojas");
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public void InsertDbProvider()
-        {
-            //Instância objeto
-            areaAtuacao = new AreaAtuacao();
-            //Preenche objeto com os dados da view
-            areaAtuacao.IdArea = 0;
-            areaAtuacao.Area = textBoxArea.Text;
-            try
-            {
-                // chama o método para inserir da camada model
-                dao.InserirDbProvider(provider, strConnection, areaAtuacao);
-                MessageBox.Show("Dados inseridos com sucesso!", provider);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            InsertDbProvider();
         }
 
         /// <summary>
@@ -108,9 +159,8 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você clicou em algo na tela de lojas");
+            RemoveDbProvider();
         }
-
 
         /// <summary>
         /// evento adicionar
@@ -120,7 +170,6 @@ namespace BancoDadosZe
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             InsertDbProvider();
-            AtualizarTela();
         }
     }
 

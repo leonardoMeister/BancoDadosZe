@@ -46,7 +46,7 @@ namespace BancoDadosZe
             this.grupBoxLingua.Location = new System.Drawing.Point(12, 12);
             this.grupBoxLingua.Name = "grupBoxLingua";
             this.grupBoxLingua.Size = new System.Drawing.Size(200, 73);
-            this.grupBoxLingua.TabIndex = 0;
+            this.grupBoxLingua.TabIndex = 2;
             this.grupBoxLingua.TabStop = false;
             this.grupBoxLingua.Text = "Escolha Idioma";
             // 
@@ -62,14 +62,14 @@ namespace BancoDadosZe
             this.comboBox_idioma.Location = new System.Drawing.Point(32, 34);
             this.comboBox_idioma.Name = "comboBox_idioma";
             this.comboBox_idioma.Size = new System.Drawing.Size(121, 24);
-            this.comboBox_idioma.TabIndex = 1;
+            this.comboBox_idioma.TabIndex = 3;
             // 
             // btn_salvar
             // 
             this.btn_salvar.Location = new System.Drawing.Point(545, 232);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(93, 37);
-            this.btn_salvar.TabIndex = 1;
+            this.btn_salvar.TabIndex = 7;
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
@@ -82,7 +82,7 @@ namespace BancoDadosZe
             this.grupBoxBanco.Location = new System.Drawing.Point(12, 91);
             this.grupBoxBanco.Name = "grupBoxBanco";
             this.grupBoxBanco.Size = new System.Drawing.Size(626, 130);
-            this.grupBoxBanco.TabIndex = 2;
+            this.grupBoxBanco.TabIndex = 4;
             this.grupBoxBanco.TabStop = false;
             this.grupBoxBanco.Text = "Escolha Banco Dados";
             // 
@@ -93,7 +93,8 @@ namespace BancoDadosZe
             this.textBoxStringConexao.Name = "textBoxStringConexao";
             this.textBoxStringConexao.ReadOnly = true;
             this.textBoxStringConexao.Size = new System.Drawing.Size(614, 22);
-            this.textBoxStringConexao.TabIndex = 2;
+            this.textBoxStringConexao.TabIndex = 6;
+            this.textBoxStringConexao.TabStop = false;
             // 
             // comboBoxBanco
             // 
@@ -106,7 +107,7 @@ namespace BancoDadosZe
             this.comboBoxBanco.Location = new System.Drawing.Point(6, 34);
             this.comboBoxBanco.Name = "comboBoxBanco";
             this.comboBoxBanco.Size = new System.Drawing.Size(392, 24);
-            this.comboBoxBanco.TabIndex = 1;
+            this.comboBoxBanco.TabIndex = 5;
             this.comboBoxBanco.SelectedIndexChanged += new System.EventHandler(this.comboBoxBanco_SelectedIndexChanged);
             // 
             // FormConfig

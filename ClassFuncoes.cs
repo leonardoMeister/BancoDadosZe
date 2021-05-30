@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace BancoDadosZe
@@ -10,6 +13,57 @@ namespace BancoDadosZe
     /// </summary>
     class ClassFuncoes
     {
+
+        /// <summary>
+        /// Criptografar senha
+        /// </summary>
+        /// <param name="senha"></param>
+        /// <returns></returns>
+        public static string sha256(string senha)
+        {
+            var crypt = new SHA256Managed();
+            var hash = new StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(senha));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
+        /// <summary>
+        //pictureBoxCompanyLogo.Image = ConverteByteArrayParaImagem((byte[]) byteimage);
+        /// </summary>
+        /// <param name="pData"></param>
+        /// <returns></returns>
+        public static Image ConverteByteArrayParaImagem(byte[] pData)
+        {
+            try
+            {
+                ImageConverter imgConverter = new ImageConverter();
+                return imgConverter.ConvertFrom(pData) as Image;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Converte image para array
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="pictureBox"></param>
+        /// <returns></returns>
+        public static byte[] ConverteImagemParaByteArray(Image img, PictureBox pictureBox)
+        {
+            MemoryStream ms = new MemoryStream();
+            if (pictureBox.Image != null)
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            return ms.ToArray();
+        }
         /// <summary>
         /// Dando Destaque para o campo de texto selecionado
         /// </summary>
@@ -78,11 +132,19 @@ namespace BancoDadosZe
             else if (e.KeyCode == Keys.Escape)
             {
                 DialogResult confirm = MessageBox.Show("Deseja Sair?", "Salvar Arquivo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                if (confirm.ToString().ToUpper() =="YES")
+                if (confirm.ToString().ToUpper() == "YES")
                 {
                     form.Close();
                 }
             }
+        }
+
+        /// <summary>
+        /// Fechando a tela
+        /// </summary>
+        public static void FecharTela(Form form)
+        {
+            form.Close();
         }
 
         //Métodos de campos mascarados   -----------------------------------------------------------------------------------------------------

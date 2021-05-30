@@ -117,248 +117,251 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="file_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="titulo_numero" xml:space="preserve">
+    <value>Número</value>
   </data>
-  <data name="diagram-49_24468" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diagram-49_24468.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="store_78" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\store_78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enter_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enter_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fornecedor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fornecedor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="store_icon-icons.com_54371" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\store_icon-icons.com_54371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3646694" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3646694.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fornecedor_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fornecedor_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="produto_801" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\produto_801.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fornecedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fornecedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enter_icon-icons.com_71207" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enter_icon-icons.com_71207.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="produto_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\produto_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="adicionar_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adicionar_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enter_68" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enter_68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="funcionarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\funcionarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_adicionar" xml:space="preserve">
-    <value>&amp;Adicionar</value>
-  </data>
-  <data name="btn_busca" xml:space="preserve">
-    <value>&amp;Buscar</value>
-  </data>
-  <data name="btn_editar" xml:space="preserve">
-    <value>&amp;Editar</value>
-  </data>
-  <data name="btn_remover" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="campo_escolha" xml:space="preserve">
-    <value>Escolha</value>
-  </data>
-  <data name="titulo_ajustes" xml:space="preserve">
-    <value>A&amp;justes</value>
-  </data>
-  <data name="titulo_entradas" xml:space="preserve">
-    <value>E&amp;ntradas</value>
-  </data>
-  <data name="titulo_fornecedor" xml:space="preserve">
-    <value>&amp;Fornecedor</value>
-  </data>
-  <data name="titulo_funcionario" xml:space="preserve">
-    <value>F&amp;uncionários</value>
-  </data>
-  <data name="titulo_logar" xml:space="preserve">
-    <value>Ent&amp;rar</value>
-  </data>
-  <data name="titulo_loja" xml:space="preserve">
-    <value>&amp;Loja</value>
-  </data>
-  <data name="titulo_produto" xml:space="preserve">
-    <value>&amp;Produto</value>
-  </data>
-  <data name="btn_importar" xml:space="preserve">
-    <value>Importar XML</value>
-  </data>
-  <data name="btn_salvar" xml:space="preserve">
-    <value>Salvar</value>
-  </data>
-  <data name="radio_ativo" xml:space="preserve">
-    <value>Ativo</value>
-  </data>
-  <data name="radio_feminino" xml:space="preserve">
-    <value>Feminino</value>
-  </data>
-  <data name="radio_filial" xml:space="preserve">
-    <value>Filial</value>
-  </data>
-  <data name="radio_inativo" xml:space="preserve">
-    <value>Inativo</value>
-  </data>
-  <data name="radio_masculino" xml:space="preserve">
-    <value>Masculino</value>
-  </data>
-  <data name="radio_matriz" xml:space="preserve">
-    <value>Matriz</value>
-  </data>
-  <data name="titulo_atuacao" xml:space="preserve">
-    <value>Área de Atuação</value>
-  </data>
-  <data name="titulo_bairro" xml:space="preserve">
-    <value>Bairro</value>
-  </data>
-  <data name="titulo_cargo" xml:space="preserve">
-    <value>Cargo</value>
-  </data>
-  <data name="titulo_categoria" xml:space="preserve">
-    <value>Categoria</value>
-  </data>
-  <data name="titulo_cep" xml:space="preserve">
-    <value>Cep</value>
-  </data>
-  <data name="titulo_cidade" xml:space="preserve">
-    <value>Cidade</value>
-  </data>
-  <data name="titulo_cnpj" xml:space="preserve">
-    <value>CNPJ</value>
-  </data>
-  <data name="titulo_codigo" xml:space="preserve">
-    <value>Código</value>
-  </data>
-  <data name="titulo_complemento" xml:space="preserve">
-    <value>Complemento</value>
-  </data>
-  <data name="titulo_contato" xml:space="preserve">
-    <value>Contato</value>
-  </data>
-  <data name="titulo_cpf" xml:space="preserve">
-    <value>CPF</value>
-  </data>
-  <data name="titulo_data" xml:space="preserve">
-    <value>Data Entrada</value>
-  </data>
-  <data name="titulo_dataNascimento" xml:space="preserve">
-    <value>Data Nascimento</value>
-  </data>
-  <data name="titulo_descricao" xml:space="preserve">
-    <value>Descrição</value>
-  </data>
-  <data name="titulo_email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="titulo_endereco" xml:space="preserve">
-    <value>Endereço:</value>
-  </data>
-  <data name="titulo_enderecoFisico" xml:space="preserve">
-    <value>Endereço Fisíco</value>
-  </data>
-  <data name="titulo_gerente" xml:space="preserve">
-    <value>Gerente</value>
-  </data>
-  <data name="titulo_grupo" xml:space="preserve">
-    <value>Grupo</value>
-  </data>
-  <data name="titulo_lote" xml:space="preserve">
-    <value>Lote</value>
-  </data>
-  <data name="titulo_marca" xml:space="preserve">
-    <value>Marca</value>
-  </data>
-  <data name="titulo_matricula" xml:space="preserve">
-    <value>Matricula</value>
-  </data>
-  <data name="titulo_modelo" xml:space="preserve">
-    <value>Modelo</value>
+  <data name="titulo_ballonTitulo" xml:space="preserve">
+    <value>Controle Estoque Zé</value>
   </data>
   <data name="titulo_nome" xml:space="preserve">
     <value>Nome</value>
   </data>
-  <data name="titulo_nomeFantasia" xml:space="preserve">
-    <value>Nome Fantasia</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fornecedor_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fornecedor_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="titulo_notaFiscal" xml:space="preserve">
-    <value>Nota Fiscal</value>
+  <data name="produto_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\produto_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="titulo_numero" xml:space="preserve">
-    <value>Número</value>
+  <data name="radio_masculino" xml:space="preserve">
+    <value>Masculino</value>
   </data>
-  <data name="titulo_pais" xml:space="preserve">
-    <value>Pais</value>
+  <data name="btn_editar" xml:space="preserve">
+    <value>&amp;Editar</value>
   </data>
-  <data name="titulo_quantidade" xml:space="preserve">
-    <value>Quantidade</value>
+  <data name="adicionar_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adicionar_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="titulo_rua" xml:space="preserve">
-    <value>Rua</value>
+  <data name="btn_adicionar" xml:space="preserve">
+    <value>&amp;Adicionar</value>
   </data>
-  <data name="titulo_sexo" xml:space="preserve">
-    <value>Sexo:</value>
+  <data name="titulo_fornecedor" xml:space="preserve">
+    <value>&amp;Fornecedor</value>
   </data>
-  <data name="titulo_social" xml:space="preserve">
-    <value>Razão Social</value>
+  <data name="settings_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="produto_801" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\produto_801.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="store_icon-icons.com_54371" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\store_icon-icons.com_54371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="titulo_status" xml:space="preserve">
     <value>Status:</value>
   </data>
-  <data name="titulo_telefone" xml:space="preserve">
-    <value>Telefone</value>
+  <data name="titulo_cpf" xml:space="preserve">
+    <value>CPF</value>
   </data>
-  <data name="titulo_tipo" xml:space="preserve">
-    <value>Tipo:</value>
+  <data name="enter_68" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter_68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="titulo_transportadora" xml:space="preserve">
-    <value>Transportadora</value>
+  <data name="titulo_sexo" xml:space="preserve">
+    <value>Sexo:</value>
   </data>
-  <data name="titulo_validade" xml:space="preserve">
-    <value>Validade</value>
+  <data name="titulo_atuacao" xml:space="preserve">
+    <value>Área de Atuação</value>
   </data>
-  <data name="titulo_valor" xml:space="preserve">
-    <value>Valor</value>
+  <data name="titulo_funcionario" xml:space="preserve">
+    <value>F&amp;uncionários</value>
   </data>
-  <data name="titulo_idioma" xml:space="preserve">
-    <value>Escolher Idioma</value>
+  <data name="radio_filial" xml:space="preserve">
+    <value>Filial</value>
   </data>
-  <data name="titulo_sair" xml:space="preserve">
-    <value>Sair</value>
+  <data name="btn_salvar" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="titulo_social" xml:space="preserve">
+    <value>Razão Social</value>
+  </data>
+  <data name="3646694" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3646694.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_rua" xml:space="preserve">
+    <value>Rua</value>
+  </data>
+  <data name="titulo_endereco" xml:space="preserve">
+    <value>Endereço:</value>
+  </data>
+  <data name="titulo_contato" xml:space="preserve">
+    <value>Contato</value>
+  </data>
+  <data name="enter_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="titulo_abrir" xml:space="preserve">
     <value>Abrir</value>
   </data>
+  <data name="funcionarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\funcionarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_modelo" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="titulo_idioma" xml:space="preserve">
+    <value>Escolher Idioma</value>
+  </data>
+  <data name="titulo_quantidade" xml:space="preserve">
+    <value>Quantidade</value>
+  </data>
   <data name="titulo_sobre" xml:space="preserve">
     <value>Sobre</value>
+  </data>
+  <data name="titulo_notaFiscal" xml:space="preserve">
+    <value>Nota Fiscal</value>
+  </data>
+  <data name="radio_feminino" xml:space="preserve">
+    <value>Feminino</value>
+  </data>
+  <data name="titulo_valor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="btn_busca" xml:space="preserve">
+    <value>&amp;Buscar</value>
+  </data>
+  <data name="titulo_lote" xml:space="preserve">
+    <value>Lote</value>
+  </data>
+  <data name="titulo_categoria" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="titulo_bairro" xml:space="preserve">
+    <value>Bairro</value>
+  </data>
+  <data name="titulo_descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="titulo_tipo" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="titulo_dataNascimento" xml:space="preserve">
+    <value>Data Nascimento</value>
+  </data>
+  <data name="titulo_matricula" xml:space="preserve">
+    <value>Matricula</value>
   </data>
   <data name="titulo_ballonText" xml:space="preserve">
     <value>Aplicação continua executando na bandeja.</value>
   </data>
-  <data name="titulo_ballonTitulo" xml:space="preserve">
-    <value>Controle Estoque Zé</value>
+  <data name="enter_icon-icons.com_71207" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter_icon-icons.com_71207.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_cep" xml:space="preserve">
+    <value>Cep</value>
+  </data>
+  <data name="titulo_gerente" xml:space="preserve">
+    <value>Gerente</value>
+  </data>
+  <data name="titulo_pais" xml:space="preserve">
+    <value>Pais</value>
+  </data>
+  <data name="titulo_sair" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="titulo_validade" xml:space="preserve">
+    <value>Validade</value>
+  </data>
+  <data name="titulo_cargo" xml:space="preserve">
+    <value>Cargo</value>
+  </data>
+  <data name="titulo_telefone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="titulo_logar" xml:space="preserve">
+    <value>Ent&amp;rar</value>
+  </data>
+  <data name="radio_inativo" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
+  <data name="campo_escolha" xml:space="preserve">
+    <value>Escolha</value>
+  </data>
+  <data name="titulo_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="titulo_codigo" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="titulo_produto" xml:space="preserve">
+    <value>&amp;Produto</value>
+  </data>
+  <data name="radio_matriz" xml:space="preserve">
+    <value>Matriz</value>
+  </data>
+  <data name="titulo_cidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="fornecedor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fornecedor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_data" xml:space="preserve">
+    <value>Data Entrada</value>
+  </data>
+  <data name="fornecedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fornecedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_loja" xml:space="preserve">
+    <value>&amp;Loja</value>
+  </data>
+  <data name="radio_ativo" xml:space="preserve">
+    <value>Ativo</value>
+  </data>
+  <data name="titulo_grupo" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="btn_importar" xml:space="preserve">
+    <value>Importar XML</value>
+  </data>
+  <data name="diagram-49_24468" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagram-49_24468.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_transportadora" xml:space="preserve">
+    <value>Transportadora</value>
+  </data>
+  <data name="titulo_nomeFantasia" xml:space="preserve">
+    <value>Nome Fantasia</value>
+  </data>
+  <data name="file_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file_42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_complemento" xml:space="preserve">
+    <value>Complemento</value>
+  </data>
+  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_enderecoFisico" xml:space="preserve">
+    <value>Endereço Fisíco</value>
+  </data>
+  <data name="titulo_entradas" xml:space="preserve">
+    <value>E&amp;ntradas</value>
+  </data>
+  <data name="titulo_ajustes" xml:space="preserve">
+    <value>A&amp;justes</value>
+  </data>
+  <data name="btn_remover" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="titulo_marca" xml:space="preserve">
+    <value>Marca</value>
+  </data>
+  <data name="store_78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\store_78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titulo_cnpj" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="imagemApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagemApp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -43,12 +43,11 @@ namespace BancoDadosZe
             this.btn_entradas = new System.Windows.Forms.Button();
             this.btn_produtos = new System.Windows.Forms.Button();
             this.btn_lojas = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelFundoGrid = new System.Windows.Forms.Panel();
+            this.btn_adicionar = new System.Windows.Forms.Button();
             this.texto_escolha = new System.Windows.Forms.Label();
             this.buscar_campo = new System.Windows.Forms.TextBox();
-            this.btn_editar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.btn_adicionar = new System.Windows.Forms.Button();
             this.dataGridViewDados = new System.Windows.Forms.DataGridView();
             this.contextMenuStripPrincipal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lojasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +64,7 @@ namespace BancoDadosZe
             this.encerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLateral.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelFundoGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).BeginInit();
             this.contextMenuStripPrincipal.SuspendLayout();
             this.contextMenuStripIcone.SuspendLayout();
@@ -108,7 +107,7 @@ namespace BancoDadosZe
             this.button1.Location = new System.Drawing.Point(0, 418);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(372, 70);
-            this.button1.TabIndex = 16;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Área de Atuação";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
@@ -126,7 +125,7 @@ namespace BancoDadosZe
             this.btn_marca.Location = new System.Drawing.Point(0, 349);
             this.btn_marca.Name = "btn_marca";
             this.btn_marca.Size = new System.Drawing.Size(372, 69);
-            this.btn_marca.TabIndex = 15;
+            this.btn_marca.TabIndex = 13;
             this.btn_marca.Text = "Marcas";
             this.btn_marca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_marca.UseVisualStyleBackColor = false;
@@ -144,7 +143,7 @@ namespace BancoDadosZe
             this.btn_entrar.Location = new System.Drawing.Point(0, 583);
             this.btn_entrar.Name = "btn_entrar";
             this.btn_entrar.Size = new System.Drawing.Size(372, 64);
-            this.btn_entrar.TabIndex = 14;
+            this.btn_entrar.TabIndex = 15;
             this.btn_entrar.Text = "Entrar Banco";
             this.btn_entrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_entrar.UseVisualStyleBackColor = false;
@@ -162,7 +161,7 @@ namespace BancoDadosZe
             this.btn_ajustes.Location = new System.Drawing.Point(0, 647);
             this.btn_ajustes.Name = "btn_ajustes";
             this.btn_ajustes.Size = new System.Drawing.Size(372, 64);
-            this.btn_ajustes.TabIndex = 13;
+            this.btn_ajustes.TabIndex = 16;
             this.btn_ajustes.Text = "Ajustes";
             this.btn_ajustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ajustes.UseVisualStyleBackColor = false;
@@ -258,21 +257,38 @@ namespace BancoDadosZe
             this.btn_lojas.UseVisualStyleBackColor = false;
             this.btn_lojas.Click += new System.EventHandler(this.btn_lojas_clic);
             // 
-            // panel1
+            // panelFundoGrid
             // 
-            this.panel1.BackColor = System.Drawing.Color.Moccasin;
-            this.panel1.Controls.Add(this.texto_escolha);
-            this.panel1.Controls.Add(this.buscar_campo);
-            this.panel1.Controls.Add(this.btn_editar);
-            this.panel1.Controls.Add(this.btn_buscar);
-            this.panel1.Controls.Add(this.btn_adicionar);
-            this.panel1.Controls.Add(this.dataGridViewDados);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(372, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(859, 711);
-            this.panel1.TabIndex = 1;
+            this.panelFundoGrid.BackColor = System.Drawing.Color.Moccasin;
+            this.panelFundoGrid.Controls.Add(this.btn_adicionar);
+            this.panelFundoGrid.Controls.Add(this.texto_escolha);
+            this.panelFundoGrid.Controls.Add(this.buscar_campo);
+            this.panelFundoGrid.Controls.Add(this.btn_buscar);
+            this.panelFundoGrid.Controls.Add(this.dataGridViewDados);
+            this.panelFundoGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFundoGrid.Location = new System.Drawing.Point(372, 0);
+            this.panelFundoGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelFundoGrid.Name = "panelFundoGrid";
+            this.panelFundoGrid.Size = new System.Drawing.Size(859, 711);
+            this.panelFundoGrid.TabIndex = 1;
+            // 
+            // btn_adicionar
+            // 
+            this.btn_adicionar.BackColor = System.Drawing.Color.Moccasin;
+            this.btn_adicionar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_adicionar.FlatAppearance.BorderSize = 0;
+            this.btn_adicionar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_adicionar.Image = global::BancoDadosZe.Properties.Resources.adicionar_42;
+            this.btn_adicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_adicionar.Location = new System.Drawing.Point(763, 26);
+            this.btn_adicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_adicionar.Name = "btn_adicionar";
+            this.btn_adicionar.Size = new System.Drawing.Size(83, 82);
+            this.btn_adicionar.TabIndex = 18;
+            this.btn_adicionar.Text = "Adicionar";
+            this.btn_adicionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_adicionar.UseVisualStyleBackColor = false;
+            this.btn_adicionar.Click += new System.EventHandler(this.btn_adicionar_Click);
             // 
             // texto_escolha
             // 
@@ -281,7 +297,7 @@ namespace BancoDadosZe
             this.texto_escolha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.texto_escolha.Location = new System.Drawing.Point(9, 75);
             this.texto_escolha.Name = "texto_escolha";
-            this.texto_escolha.Size = new System.Drawing.Size(208, 37);
+            this.texto_escolha.Size = new System.Drawing.Size(334, 37);
             this.texto_escolha.TabIndex = 5;
             this.texto_escolha.Text = "Escolha";
             this.texto_escolha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,23 +311,6 @@ namespace BancoDadosZe
             this.buscar_campo.TabIndex = 4;
             this.buscar_campo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btn_editar
-            // 
-            this.btn_editar.BackColor = System.Drawing.Color.Moccasin;
-            this.btn_editar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btn_editar.FlatAppearance.BorderSize = 0;
-            this.btn_editar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_editar.Image = global::BancoDadosZe.Properties.Resources.editar;
-            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_editar.Location = new System.Drawing.Point(669, 26);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(83, 82);
-            this.btn_editar.TabIndex = 3;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_editar.UseVisualStyleBackColor = false;
-            // 
             // btn_buscar
             // 
             this.btn_buscar.BackColor = System.Drawing.Color.Moccasin;
@@ -324,37 +323,31 @@ namespace BancoDadosZe
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(83, 82);
-            this.btn_buscar.TabIndex = 2;
-            this.btn_buscar.Text = "buscar";
+            this.btn_buscar.TabIndex = 17;
+            this.btn_buscar.Text = "Buscar";
             this.btn_buscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_buscar.UseVisualStyleBackColor = false;
-            // 
-            // btn_adicionar
-            // 
-            this.btn_adicionar.BackColor = System.Drawing.Color.Moccasin;
-            this.btn_adicionar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btn_adicionar.FlatAppearance.BorderSize = 0;
-            this.btn_adicionar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_adicionar.Image = global::BancoDadosZe.Properties.Resources.adicionar_42;
-            this.btn_adicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_adicionar.Location = new System.Drawing.Point(760, 26);
-            this.btn_adicionar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_adicionar.Name = "btn_adicionar";
-            this.btn_adicionar.Size = new System.Drawing.Size(83, 82);
-            this.btn_adicionar.TabIndex = 1;
-            this.btn_adicionar.Text = "Adicionar";
-            this.btn_adicionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_adicionar.UseVisualStyleBackColor = false;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // dataGridViewDados
             // 
+            this.dataGridViewDados.AllowUserToAddRows = false;
+            this.dataGridViewDados.AllowUserToDeleteRows = false;
+            this.dataGridViewDados.AllowUserToResizeColumns = false;
+            this.dataGridViewDados.AllowUserToResizeRows = false;
+            this.dataGridViewDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewDados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewDados.Location = new System.Drawing.Point(14, 116);
             this.dataGridViewDados.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewDados.MultiSelect = false;
             this.dataGridViewDados.Name = "dataGridViewDados";
             this.dataGridViewDados.RowHeadersWidth = 51;
+            this.dataGridViewDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDados.Size = new System.Drawing.Size(832, 541);
-            this.dataGridViewDados.TabIndex = 0;
+            this.dataGridViewDados.TabIndex = 20;
+            this.dataGridViewDados.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewDados_CellMouseDoubleClick);
             // 
             // contextMenuStripPrincipal
             // 
@@ -472,7 +465,7 @@ namespace BancoDadosZe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 711);
             this.ContextMenuStrip = this.contextMenuStripPrincipal;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelFundoGrid);
             this.Controls.Add(this.panelLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
@@ -483,8 +476,8 @@ namespace BancoDadosZe
             this.Text = "Menu";
             this.Resize += new System.EventHandler(this.FormMenu_Resize);
             this.panelLateral.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelFundoGrid.ResumeLayout(false);
+            this.panelFundoGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDados)).EndInit();
             this.contextMenuStripPrincipal.ResumeLayout(false);
             this.contextMenuStripIcone.ResumeLayout(false);
@@ -497,11 +490,9 @@ namespace BancoDadosZe
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Panel panelLateral;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_adicionar;
+        private System.Windows.Forms.Panel panelFundoGrid;
         private System.Windows.Forms.DataGridView dataGridViewDados;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.TextBox buscar_campo;
         private System.Windows.Forms.Label texto_escolha;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripPrincipal;
@@ -527,6 +518,7 @@ namespace BancoDadosZe
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.Button btn_marca;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_adicionar;
     }
 }
 
