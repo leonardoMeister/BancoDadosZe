@@ -230,12 +230,6 @@
     <None Include="Resources\funcionarios.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ControleEstoqueDao.DAO\ControleEstoqueDao.DAO.csproj">
-      <Project>{c12fd897-e8af-421b-96ad-96bf92dd971c}</Project>
-      <Name>ControleEstoqueDao.DAO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\imagemApp.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +300,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cadeado100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ControleEstoqueDao.DAO\ControleEstoqueDao.DAO.csproj">
+      <Project>{aff66ad5-65ba-4f67-ae4c-6b660f4b8d35}</Project>
+      <Name>ControleEstoqueDao.DAO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
