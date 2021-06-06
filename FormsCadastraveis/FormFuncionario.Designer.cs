@@ -33,6 +33,7 @@ namespace BancoDadosZe
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.mk_id = new System.Windows.Forms.MaskedTextBox();
             this.textId = new System.Windows.Forms.Label();
+            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
             this.mk_senha = new System.Windows.Forms.MaskedTextBox();
             this.textoSenha = new System.Windows.Forms.Label();
             this.mk_email = new System.Windows.Forms.MaskedTextBox();
@@ -54,7 +55,8 @@ namespace BancoDadosZe
             this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
             this.textoSexo = new System.Windows.Forms.Label();
             this.textoNome = new System.Windows.Forms.Label();
-            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
+            this.comboBoxLoja = new System.Windows.Forms.ComboBox();
+            this.textoLoja = new System.Windows.Forms.Label();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +74,8 @@ namespace BancoDadosZe
             // 
             // panelFormulario
             // 
+            this.panelFormulario.Controls.Add(this.comboBoxLoja);
+            this.panelFormulario.Controls.Add(this.textoLoja);
             this.panelFormulario.Controls.Add(this.mk_id);
             this.panelFormulario.Controls.Add(this.textId);
             this.panelFormulario.Controls.Add(this.controleUsEndereco);
@@ -121,6 +125,13 @@ namespace BancoDadosZe
             this.textId.Text = "Id";
             this.textId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // controleUsEndereco
+            // 
+            this.controleUsEndereco.Location = new System.Drawing.Point(26, 149);
+            this.controleUsEndereco.Name = "controleUsEndereco";
+            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
+            this.controleUsEndereco.TabIndex = 107;
+            // 
             // mk_senha
             // 
             this.mk_senha.Location = new System.Drawing.Point(344, 17);
@@ -132,9 +143,9 @@ namespace BancoDadosZe
             // textoSenha
             // 
             this.textoSenha.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoSenha.Location = new System.Drawing.Point(281, 17);
+            this.textoSenha.Location = new System.Drawing.Point(251, 17);
             this.textoSenha.Name = "textoSenha";
-            this.textoSenha.Size = new System.Drawing.Size(57, 22);
+            this.textoSenha.Size = new System.Drawing.Size(87, 22);
             this.textoSenha.TabIndex = 105;
             this.textoSenha.Text = "Senha";
             this.textoSenha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -168,21 +179,21 @@ namespace BancoDadosZe
             // 
             // mk_dataNascimento
             // 
-            this.mk_dataNascimento.Location = new System.Drawing.Point(179, 86);
+            this.mk_dataNascimento.Location = new System.Drawing.Point(196, 50);
             this.mk_dataNascimento.Mask = "0000/00/00";
             this.mk_dataNascimento.Name = "mk_dataNascimento";
             this.mk_dataNascimento.Size = new System.Drawing.Size(139, 22);
-            this.mk_dataNascimento.TabIndex = 100;
+            this.mk_dataNascimento.TabIndex = 99;
             this.mk_dataNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mk_dataNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // mk_cpf
             // 
-            this.mk_cpf.Location = new System.Drawing.Point(179, 51);
+            this.mk_cpf.Location = new System.Drawing.Point(108, 82);
             this.mk_cpf.Mask = "000.000.000-00";
             this.mk_cpf.Name = "mk_cpf";
             this.mk_cpf.Size = new System.Drawing.Size(120, 22);
-            this.mk_cpf.TabIndex = 99;
+            this.mk_cpf.TabIndex = 100;
             this.mk_cpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mk_nome
@@ -207,11 +218,6 @@ namespace BancoDadosZe
             // 
             this.comboBoxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCargo.FormattingEnabled = true;
-            this.comboBoxCargo.Items.AddRange(new object[] {
-            "Socio",
-            "Gerente",
-            "Atendente",
-            "Almoxarife"});
             this.comboBoxCargo.Location = new System.Drawing.Point(111, 120);
             this.comboBoxCargo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCargo.Name = "comboBoxCargo";
@@ -221,12 +227,6 @@ namespace BancoDadosZe
             // comboBoxGrupo
             // 
             this.comboBoxGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGrupo.Items.AddRange(new object[] {
-            "Tipo 1",
-            "Tipo 2",
-            "Tipo 3",
-            "Tipo 4",
-            "Tipo 5"});
             this.comboBoxGrupo.Location = new System.Drawing.Point(342, 120);
             this.comboBoxGrupo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxGrupo.Name = "comboBoxGrupo";
@@ -276,7 +276,7 @@ namespace BancoDadosZe
             // textoDataNascimento
             // 
             this.textoDataNascimento.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoDataNascimento.Location = new System.Drawing.Point(0, 85);
+            this.textoDataNascimento.Location = new System.Drawing.Point(17, 49);
             this.textoDataNascimento.Name = "textoDataNascimento";
             this.textoDataNascimento.Size = new System.Drawing.Size(173, 22);
             this.textoDataNascimento.TabIndex = 52;
@@ -286,9 +286,9 @@ namespace BancoDadosZe
             // textoCpf
             // 
             this.textoCpf.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoCpf.Location = new System.Drawing.Point(36, 50);
+            this.textoCpf.Location = new System.Drawing.Point(3, 81);
             this.textoCpf.Name = "textoCpf";
-            this.textoCpf.Size = new System.Drawing.Size(137, 23);
+            this.textoCpf.Size = new System.Drawing.Size(99, 23);
             this.textoCpf.TabIndex = 50;
             this.textoCpf.Text = "CPF";
             this.textoCpf.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -339,12 +339,25 @@ namespace BancoDadosZe
             this.textoNome.Text = "Nome";
             this.textoNome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // controleUsEndereco
+            // comboBoxLoja
             // 
-            this.controleUsEndereco.Location = new System.Drawing.Point(26, 149);
-            this.controleUsEndereco.Name = "controleUsEndereco";
-            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
-            this.controleUsEndereco.TabIndex = 107;
+            this.comboBoxLoja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLoja.FormattingEnabled = true;
+            this.comboBoxLoja.Location = new System.Drawing.Point(343, 82);
+            this.comboBoxLoja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxLoja.Name = "comboBoxLoja";
+            this.comboBoxLoja.Size = new System.Drawing.Size(120, 24);
+            this.comboBoxLoja.TabIndex = 111;
+            // 
+            // textoLoja
+            // 
+            this.textoLoja.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoLoja.Location = new System.Drawing.Point(248, 82);
+            this.textoLoja.Name = "textoLoja";
+            this.textoLoja.Size = new System.Drawing.Size(82, 20);
+            this.textoLoja.TabIndex = 110;
+            this.textoLoja.Text = "Loja";
+            this.textoLoja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormFuncionario
             // 
@@ -392,5 +405,7 @@ namespace BancoDadosZe
         private System.Windows.Forms.Label textoNome;
         private System.Windows.Forms.MaskedTextBox mk_id;
         private System.Windows.Forms.Label textId;
+        private System.Windows.Forms.ComboBox comboBoxLoja;
+        private System.Windows.Forms.Label textoLoja;
     }
 }

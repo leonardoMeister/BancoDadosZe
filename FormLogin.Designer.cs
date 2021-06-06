@@ -31,8 +31,8 @@ namespace BancoDadosZe
         {
             this.painelFundo = new System.Windows.Forms.Panel();
             this.btnAcesso = new System.Windows.Forms.Button();
-            this.textoBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.mk_cpf = new System.Windows.Forms.TextBox();
+            this.mk_senha = new System.Windows.Forms.TextBox();
             this.painelSuperior = new System.Windows.Forms.Panel();
             this.textoLogin = new System.Windows.Forms.Label();
             this.painelFundo.SuspendLayout();
@@ -43,8 +43,8 @@ namespace BancoDadosZe
             // 
             this.painelFundo.BackColor = System.Drawing.Color.Moccasin;
             this.painelFundo.Controls.Add(this.btnAcesso);
-            this.painelFundo.Controls.Add(this.textoBoxNome);
-            this.painelFundo.Controls.Add(this.textBoxSenha);
+            this.painelFundo.Controls.Add(this.mk_cpf);
+            this.painelFundo.Controls.Add(this.mk_senha);
             this.painelFundo.Controls.Add(this.painelSuperior);
             this.painelFundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painelFundo.Location = new System.Drawing.Point(0, 0);
@@ -63,30 +63,31 @@ namespace BancoDadosZe
             this.btnAcesso.TabIndex = 5;
             this.btnAcesso.Text = "Acessar";
             this.btnAcesso.UseVisualStyleBackColor = false;
+            this.btnAcesso.Click += new System.EventHandler(this.btnAcesso_Click);
             // 
-            // textoBoxNome
+            // mk_cpf
             // 
-            this.textoBoxNome.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textoBoxNome.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoBoxNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textoBoxNome.Location = new System.Drawing.Point(83, 152);
-            this.textoBoxNome.Name = "textoBoxNome";
-            this.textoBoxNome.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textoBoxNome.Size = new System.Drawing.Size(205, 44);
-            this.textoBoxNome.TabIndex = 3;
-            this.textoBoxNome.Text = "Matrícula";
+            this.mk_cpf.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.mk_cpf.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mk_cpf.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mk_cpf.Location = new System.Drawing.Point(83, 152);
+            this.mk_cpf.Name = "mk_cpf";
+            this.mk_cpf.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.mk_cpf.Size = new System.Drawing.Size(205, 44);
+            this.mk_cpf.TabIndex = 3;
+            this.mk_cpf.Text = "CPF";
             // 
-            // textBoxSenha
+            // mk_senha
             // 
-            this.textBoxSenha.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBoxSenha.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSenha.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxSenha.Location = new System.Drawing.Point(83, 212);
-            this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBoxSenha.Size = new System.Drawing.Size(205, 44);
-            this.textBoxSenha.TabIndex = 4;
-            this.textBoxSenha.Text = "Senha";
+            this.mk_senha.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.mk_senha.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mk_senha.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mk_senha.Location = new System.Drawing.Point(83, 212);
+            this.mk_senha.Name = "mk_senha";
+            this.mk_senha.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.mk_senha.Size = new System.Drawing.Size(205, 44);
+            this.mk_senha.TabIndex = 4;
+            this.mk_senha.Text = "Senha";
             // 
             // painelSuperior
             // 
@@ -132,8 +133,8 @@ namespace BancoDadosZe
         private System.Windows.Forms.Panel painelFundo;
         private System.Windows.Forms.Panel painelSuperior;
         private System.Windows.Forms.Label textoLogin;
-        private System.Windows.Forms.TextBox textBoxSenha;
-        private System.Windows.Forms.TextBox textoBoxNome;
+        private System.Windows.Forms.TextBox mk_senha;
+        private System.Windows.Forms.TextBox mk_cpf;
         private System.Windows.Forms.Button btnAcesso;
     }
 }

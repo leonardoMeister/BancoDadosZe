@@ -238,5 +238,74 @@
   <ItemGroup>
     <None Include="Resources\imagemApp.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marcas60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\areas60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\areas601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\produto60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fornecedores60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lojas60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\areas30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marcas30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fornecedores30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\produto30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lojas30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionariosq120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionariosq100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadeado100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

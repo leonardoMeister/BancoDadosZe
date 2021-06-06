@@ -12,13 +12,15 @@ namespace BancoDadosZe
     public partial class FormFuncionario : Form
     {
         //criando os objetos necessarios
-        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
-        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        readonly string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        readonly string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly FuncionarioDAO dao;
         private Funcionario funcionario;
         private Endereco endereco;
-        private EnderecoDAO daoEndereco;
-        ControleUsBTN userControl;
+        private Loja loja;
+        readonly private EnderecoDAO daoEndereco;
+        readonly private LojaDAO daoLoja;
+        readonly ControleUsBTN userControl;
         /// <summary>
         /// inicializando os componentes
         /// </summary>
@@ -29,6 +31,7 @@ namespace BancoDadosZe
             //Objetos para Banco
             dao = new FuncionarioDAO();
             daoEndereco = new EnderecoDAO();
+            daoLoja = new LojaDAO();
 
             //evento de destaque de campo
             mk_cpf.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
@@ -46,6 +49,7 @@ namespace BancoDadosZe
             mk_email.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
 
             //tradução
+            this.Text = Properties.Resources.ResourceManager.GetString("titulo_funcionario1");
             this.textoCargo.Text = Properties.Resources.ResourceManager.GetString("titulo_cargo");
             this.textoMatricula.Text = Properties.Resources.ResourceManager.GetString("titulo_matricula");
             this.textoCpf.Text = Properties.Resources.ResourceManager.GetString("titulo_cpf");
@@ -96,47 +100,73 @@ namespace BancoDadosZe
 
                 //inicializa o endereço sem valores na tela
                 controleUsEndereco.PegaPreencherFormComDadosBanco(0, new DataTable());
+
+                userControl.btnRemover.Enabled = false;
+                userControl.btnSalvar.Enabled = false;
                 this.ShowDialog();
+                userControl.btnRemover.Enabled = true;
+                userControl.btnSalvar.Enabled = true;
+
                 return;
             }
             else
             {
-                DataTable tabela = dao.SelectDbProvider(provider, strConnection, new Funcionario(id ,""));
+                //pega os dados do funcionario 
+                DataTable tabela = dao.SelectDbProvider(provider, strConnection, new Funcionario(id, ""));
+
                 int idEndereco = 0;
+                int idLoja = 0;
                 foreach (DataRow row in tabela.Rows)
                 {
                     mk_id.Text = row[0].ToString();
-                    mk_telefone.Text = row[9].ToString();
+                    mk_telefone.Text = row[8].ToString();
                     mk_nome.Text = row[1].ToString();
                     mk_cpf.Text = row[2].ToString();
                     string dia, mes, ano;
-                    dia = row[7].ToString().Substring(0, 2);
-                    mes = row[7].ToString().Substring(3, 2);
-                    ano = row[7].ToString().Substring(6, 4);
+                    dia = row[6].ToString().Substring(0, 2);
+                    mes = row[6].ToString().Substring(3, 2);
+                    ano = row[6].ToString().Substring(6, 4);
                     mk_dataNascimento.Text = ano + "/" + mes + "/" + dia;
-                    mk_email.Text = row[10].ToString();
+                    mk_email.Text = row[9].ToString();
                     mk_matricula.Text = row[3].ToString();
-                    radioButtonFeminino.Checked = (row[8].ToString() == "F") ? true : false;
-                    radioButtonMasculino.Checked = (row[8].ToString() == "M") ? true : false;
-                    comboBoxCargo.SelectedItem = row[6].ToString();
-                    comboBoxGrupo.SelectedIndex = Convert.ToInt32(row[5].ToString());
-                    //pegando o id do endereço
-                    idEndereco = Convert.ToInt32(row[11].ToString());
+                    radioButtonFeminino.Checked = (row[7].ToString() == "F") ? true : false;
+                    radioButtonMasculino.Checked = (row[7].ToString() == "M") ? true : false;
+                    comboBoxCargo.SelectedItem = row[5].ToString();
+                    comboBoxGrupo.SelectedIndex = Convert.ToInt32(row[4].ToString());
+
+                    //pegando o id do endereço que esta dentro da tabela funcionario
+                    idEndereco = Convert.ToInt32(row[10].ToString());
+                    idLoja = Convert.ToInt32(row[11].ToString());
                 }
 
-                //pegando endereco
+                DataTable tabelaLoja = daoLoja.SelectDbProvider(provider,strConnection,new Loja(idLoja,""));
+                foreach (DataRow row in tabela.Rows)
+                {
+                    for (int i = 0; i < comboBoxLoja.Items.Count; i++)
+                    {
+                        if (((Loja)comboBoxLoja.Items[i]).IdLoja == Convert.ToInt32(idLoja))
+                        {
+                            comboBoxLoja.SelectedIndex = i;
+                        }
+                    }
+                }
+
+
+
+                //pegando endereco correspondente ao id endereço
                 DataTable auxTabela = daoEndereco.SelectDbProvider(provider, strConnection, idEndereco);
+
                 //inicializando com os dados de endereço na tela
                 controleUsEndereco.PegaPreencherFormComDadosBanco(idEndereco, auxTabela);
 
 
-                userControl.btnAdicionar.Visible = false;
-                mk_senha.Visible = false;
-                textoSenha.Visible = false;
+                userControl.btnAdicionar.Enabled = false;
+                mk_senha.Enabled = false;
+                textoSenha.Enabled = false;
                 this.ShowDialog();
-                userControl.btnAdicionar.Visible = true;
-                textoSenha.Visible = true;
-                mk_senha.Visible = true;
+                userControl.btnAdicionar.Enabled = true;
+                textoSenha.Enabled = true;
+                mk_senha.Enabled = true;
 
                 return;
             }
@@ -150,6 +180,15 @@ namespace BancoDadosZe
             //atualizando ou preenchendo os comboBox com os dados para selecionar
             try
             {
+                //Combo Box Lojas id
+                comboBoxLoja.Items.Clear();
+                DataTable tabela = daoLoja.SelectDbProvider(provider, strConnection, new Loja(0, ""));
+                foreach (DataRow row in tabela.Rows)
+                {
+                    loja = new Loja(Convert.ToInt32(row[0].ToString()), row[4].ToString());
+                    comboBoxLoja.Items.Add(loja);
+                }
+
                 //Combo Box Cargo Funcionario
                 comboBoxCargo.Items.Clear();
                 comboBoxCargo.Items.Add("Administrador");
@@ -178,7 +217,7 @@ namespace BancoDadosZe
                 //pegando o id selecionado
                 int id = Convert.ToInt32(controleUsEndereco.mk_id.Text);
                 dao.RemoverDbProvider(provider, strConnection, id);
-                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosRemovidos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception)
@@ -219,7 +258,7 @@ namespace BancoDadosZe
                 endereco.Numero = controleUsEndereco.mk_numero.Text;
                 endereco.Pais = controleUsEndereco.comboBoxPais.Text;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -237,14 +276,15 @@ namespace BancoDadosZe
                 funcionario.DataNascimento = data;
                 funcionario.Email = mk_email.Text;
                 funcionario.Grupo = comboBoxGrupo.SelectedIndex;
+                funcionario.LojaId = ((Loja)comboBoxLoja.SelectedItem).IdLoja;
                 funcionario.Matricula = mk_matricula.Text;
                 funcionario.Nome = mk_nome.Text;
-                funcionario.Senha = ClassFuncoes.sha256(mk_senha.Text);
+                funcionario.Senha = ClassFuncoes.Sha256(mk_senha.Text);
                 funcionario.Sexo = (radioButtonFeminino.Checked) ? 'F' : 'M';
                 funcionario.Telefone = mk_telefone.Text;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -257,18 +297,18 @@ namespace BancoDadosZe
                     endereco.IdEndereco = daoEndereco.InserirDbProvider(provider, strConnection, endereco);
                     funcionario.EnderecoId = endereco.IdEndereco;
                 }
-                else daoEndereco.InserirDbProvider(provider,strConnection,endereco);
-                
-                
+                else daoEndereco.InserirDbProvider(provider, strConnection, endereco);
 
-                 dao.InserirDbProvider(provider, strConnection, funcionario);
+
+
+                dao.InserirDbProvider(provider, strConnection, funcionario);
 
 
                 if (funcionario.IdFuncionario != 0)
                 {
-                    MessageBox.Show("Dados Salvos com sucesso", provider);
+                    MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosSalvos"), provider);
                 }
-                else MessageBox.Show("Dados inseridos com sucesso", provider);
+                else MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosAdicionados"), provider);
 
 
                 ClassFuncoes.FecharTela(this);
@@ -306,7 +346,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            RemoveDbProvider();
+            if (ClassFuncoes.PerguntaSeDeletarDados())
+            {
+                RemoveDbProvider();
+            }
         }
 
 

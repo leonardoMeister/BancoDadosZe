@@ -13,14 +13,14 @@ namespace BancoDadosZe
     {
 
         //Criando objetos para usar
-        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
-        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        readonly string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        readonly string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly LojaDAO dao;
         private readonly FuncionarioDAO daoFuncionario;
         private readonly EnderecoDAO daoEndereco;
         private Loja loja;
         private Endereco endereco;
-        ControleUsBTN userControl;
+        readonly ControleUsBTN userControl;
 
 
         /// <summary>
@@ -53,11 +53,11 @@ namespace BancoDadosZe
             //tradução
             this.textoCnpj.Text = Properties.Resources.ResourceManager.GetString("titulo_cnpj");
             this.textoEmail.Text = Properties.Resources.ResourceManager.GetString("titulo_email");
-            this.textoGerente.Text = Properties.Resources.ResourceManager.GetString("titulo_gerente");
             this.textoNomeFantasia.Text = Properties.Resources.ResourceManager.GetString("titulo_nomeFantasia");
             this.textoRazaoSocial.Text = Properties.Resources.ResourceManager.GetString("titulo_social");
             this.textoTelefone.Text = Properties.Resources.ResourceManager.GetString("titulo_telefone");
             this.textoTipo.Text = Properties.Resources.ResourceManager.GetString("titulo_tipo");
+            this.Text = Properties.Resources.ResourceManager.GetString("titulo_loja1");
             this.radioButtonFilial.Text = Properties.Resources.ResourceManager.GetString("radio_filial");
             this.radioButtonMatriz.Text = Properties.Resources.ResourceManager.GetString("radio_matriz");
 
@@ -84,7 +84,6 @@ namespace BancoDadosZe
         {
             AtualizarTela();
 
-
             if (id == 0)
             {
                 mk_cnpj.Text = "";
@@ -97,35 +96,32 @@ namespace BancoDadosZe
                 //inicializa o endereço sem valores na tela
                 controleUsEndereco.PegaPreencherFormComDadosBanco(0, new DataTable());
 
+                userControl.btnRemover.Enabled = false;
+                userControl.btnSalvar.Enabled = false;
                 this.ShowDialog();
+                userControl.btnRemover.Enabled = true;
+                userControl.btnSalvar.Enabled = true;
                 return;
             }
             else
             {
-                DataTable tabela = dao.SelectDbProvider(provider, strConnection, new Loja(id, ""));
+                DataTable tabela = dao.SelectDbProvider(provider, strConnection, new Loja(id, "")); // tirar gerente do Select;
                 int idEndereco = 0;
                 foreach (DataRow row in tabela.Rows)
                 {
                     mk_cnpj.Text = row[1].ToString();
-                    mk_email.Text = row[7].ToString();
+                    mk_email.Text = row[6].ToString();
                     mk_IE.Text = row[2].ToString();
                     mk_nomeFantasia.Text = row[4].ToString();
                     mk_razaoSocial.Text = row[3].ToString();
-                    mk_telefone.Text = row[6].ToString();
+                    mk_telefone.Text = row[5].ToString();
                     mk_id.Text = row[0].ToString();
 
-                    radioButtonMatriz.Checked = (Convert.ToInt32(row[10].ToString()) == 1) ? true : false;
-                    radioButtonFilial.Checked = (Convert.ToInt32(row[10].ToString()) == 0) ? true : false;
+                    radioButtonMatriz.Checked = (Convert.ToInt32(row[9].ToString()) == 1) ? true : false;
+                    radioButtonFilial.Checked = (Convert.ToInt32(row[9].ToString()) == 0) ? true : false;
 
                     //Preenchendo o combo box com os dados certos do banco
-                    for (int i = 0; i < comboBoxGerente.Items.Count; i++)
-                    {
-                        if (((Funcionario)comboBoxGerente.Items[i]).Nome == row[5].ToString())
-                        {
-                            comboBoxGerente.SelectedIndex = i;
-                            break;
-                        }
-                    }
+                   
 
                     //pegando o id do endereço
                     idEndereco = Convert.ToInt32(row[9].ToString());
@@ -136,9 +132,10 @@ namespace BancoDadosZe
                 //inicializando com os dados de endereço na tela
                 controleUsEndereco.PegaPreencherFormComDadosBanco(idEndereco, auxTabela);
 
-                userControl.btnAdicionar.Visible = false;
+                userControl.btnAdicionar.Enabled = false;
                 this.ShowDialog();
-                userControl.btnAdicionar.Visible = true;
+                userControl.btnAdicionar.Enabled = true;
+
                 return;
             }
         }
@@ -150,14 +147,7 @@ namespace BancoDadosZe
                 //chama o método para buscar todos os dados da nossa camada model
                 DataTable linhasFornecedor = daoFuncionario.SelectDbProviderFuncionarioID(provider, strConnection);
                 //limpa o nosso combo box
-                comboBoxGerente.Items.Clear();
-                radioButtonFilial.Select();
-
-                //preenche o nosso combo box
-                foreach (DataRow row in linhasFornecedor.Rows)
-                {
-                    comboBoxGerente.Items.Add(new Funcionario(Convert.ToInt32(row["id_funcionario"].ToString()), row["Nome Gerente"].ToString()));
-                }
+                radioButtonFilial.Select();               
             }
             catch (Exception ex)
             {
@@ -185,7 +175,7 @@ namespace BancoDadosZe
                 //pegando o id selecionado
                 int id = Convert.ToInt32(controleUsEndereco.mk_id.Text);
                 dao.RemoverDbProvider(provider, strConnection, id);
-                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosRemovidos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception)
@@ -215,7 +205,6 @@ namespace BancoDadosZe
                 endereco.IdEndereco = 0;
             }
 
-            int enderecoId;
             //Preenchendo Endereço com os dados da view
             try
             {
@@ -236,13 +225,10 @@ namespace BancoDadosZe
             //Preenchendo Loja com os dados da view
             try
             {
-                Funcionario aux = comboBoxGerente.SelectedItem as Funcionario;
-
                 loja.Cnpj = mk_cnpj.Text;
                 loja.Email = mk_email.Text;
 
                 loja.Tipo = (radioButtonFilial.Checked) ? 0 : 1;
-                loja.Gerente_Id = aux.IdFuncionario;
                 loja.Ie = mk_IE.Text;
                 loja.NomeFantasia = mk_nomeFantasia.Text;
                 loja.RazaoSocial = mk_razaoSocial.Text;
@@ -265,16 +251,13 @@ namespace BancoDadosZe
                 }
                 else daoEndereco.InserirDbProvider(provider, strConnection, endereco);
 
-
-
-
                 //salvando ou alterando a loja
                 dao.InserirDbProvider(provider, strConnection, loja);
                 if (loja.IdLoja == 0)
                 {
-                    MessageBox.Show("Dados inserido com sucesso!", provider);
+                    MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosAdicionados"), provider);
                 }
-                else MessageBox.Show("Dados salvos com sucesso!", provider);
+                else MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosSalvos"), provider);
 
 
                 ClassFuncoes.FecharTela(this);
@@ -302,7 +285,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            RemoveDbProvider();
+            if (ClassFuncoes.PerguntaSeDeletarDados())
+            {
+                RemoveDbProvider();
+            }
         }
 
         /// <summary>

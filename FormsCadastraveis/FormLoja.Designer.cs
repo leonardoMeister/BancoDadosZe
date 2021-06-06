@@ -32,18 +32,17 @@ namespace BancoDadosZe
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.panelFundo = new System.Windows.Forms.Panel();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
             this.mk_id = new System.Windows.Forms.MaskedTextBox();
             this.texto_id = new System.Windows.Forms.Label();
             this.mk_IE = new System.Windows.Forms.MaskedTextBox();
             this.textoIe = new System.Windows.Forms.Label();
-            this.comboBoxGerente = new System.Windows.Forms.ComboBox();
             this.mk_email = new System.Windows.Forms.MaskedTextBox();
             this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
             this.mk_razaoSocial = new System.Windows.Forms.MaskedTextBox();
             this.mk_cnpj = new System.Windows.Forms.MaskedTextBox();
             this.mk_nomeFantasia = new System.Windows.Forms.MaskedTextBox();
             this.textoEmail = new System.Windows.Forms.Label();
-            this.textoGerente = new System.Windows.Forms.Label();
             this.textoTelefone = new System.Windows.Forms.Label();
             this.textoRazaoSocial = new System.Windows.Forms.Label();
             this.textoCnpj = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@ namespace BancoDadosZe
             this.radioButtonFilial = new System.Windows.Forms.RadioButton();
             this.textoTipo = new System.Windows.Forms.Label();
             this.textoNomeFantasia = new System.Windows.Forms.Label();
-            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -74,14 +72,12 @@ namespace BancoDadosZe
             this.panelFormulario.Controls.Add(this.texto_id);
             this.panelFormulario.Controls.Add(this.mk_IE);
             this.panelFormulario.Controls.Add(this.textoIe);
-            this.panelFormulario.Controls.Add(this.comboBoxGerente);
             this.panelFormulario.Controls.Add(this.mk_email);
             this.panelFormulario.Controls.Add(this.mk_telefone);
             this.panelFormulario.Controls.Add(this.mk_razaoSocial);
             this.panelFormulario.Controls.Add(this.mk_cnpj);
             this.panelFormulario.Controls.Add(this.mk_nomeFantasia);
             this.panelFormulario.Controls.Add(this.textoEmail);
-            this.panelFormulario.Controls.Add(this.textoGerente);
             this.panelFormulario.Controls.Add(this.textoTelefone);
             this.panelFormulario.Controls.Add(this.textoRazaoSocial);
             this.panelFormulario.Controls.Add(this.textoCnpj);
@@ -95,10 +91,17 @@ namespace BancoDadosZe
             this.panelFormulario.Size = new System.Drawing.Size(797, 401);
             this.panelFormulario.TabIndex = 2;
             // 
+            // controleUsEndereco
+            // 
+            this.controleUsEndereco.Location = new System.Drawing.Point(21, 148);
+            this.controleUsEndereco.Name = "controleUsEndereco";
+            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
+            this.controleUsEndereco.TabIndex = 120;
+            // 
             // mk_id
             // 
             this.mk_id.Enabled = false;
-            this.mk_id.Location = new System.Drawing.Point(656, 120);
+            this.mk_id.Location = new System.Drawing.Point(539, 120);
             this.mk_id.Name = "mk_id";
             this.mk_id.Size = new System.Drawing.Size(77, 22);
             this.mk_id.TabIndex = 119;
@@ -107,7 +110,7 @@ namespace BancoDadosZe
             // texto_id
             // 
             this.texto_id.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.texto_id.Location = new System.Drawing.Point(575, 118);
+            this.texto_id.Location = new System.Drawing.Point(458, 118);
             this.texto_id.Name = "texto_id";
             this.texto_id.Size = new System.Drawing.Size(65, 22);
             this.texto_id.TabIndex = 118;
@@ -116,7 +119,7 @@ namespace BancoDadosZe
             // 
             // mk_IE
             // 
-            this.mk_IE.Location = new System.Drawing.Point(465, 120);
+            this.mk_IE.Location = new System.Drawing.Point(165, 118);
             this.mk_IE.Name = "mk_IE";
             this.mk_IE.Size = new System.Drawing.Size(77, 22);
             this.mk_IE.TabIndex = 89;
@@ -125,27 +128,12 @@ namespace BancoDadosZe
             // textoIe
             // 
             this.textoIe.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoIe.Location = new System.Drawing.Point(384, 118);
+            this.textoIe.Location = new System.Drawing.Point(62, 118);
             this.textoIe.Name = "textoIe";
             this.textoIe.Size = new System.Drawing.Size(65, 22);
             this.textoIe.TabIndex = 116;
             this.textoIe.Text = "IE";
             this.textoIe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // comboBoxGerente
-            // 
-            this.comboBoxGerente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGerente.FormattingEnabled = true;
-            this.comboBoxGerente.Items.AddRange(new object[] {
-            "Categoria 1",
-            "Categoria 2",
-            "Categoria 3",
-            "Categoria 4"});
-            this.comboBoxGerente.Location = new System.Drawing.Point(165, 118);
-            this.comboBoxGerente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxGerente.Name = "comboBoxGerente";
-            this.comboBoxGerente.Size = new System.Drawing.Size(180, 24);
-            this.comboBoxGerente.TabIndex = 86;
             // 
             // mk_email
             // 
@@ -198,16 +186,6 @@ namespace BancoDadosZe
             this.textoEmail.TabIndex = 61;
             this.textoEmail.Text = "Email";
             this.textoEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textoGerente
-            // 
-            this.textoGerente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoGerente.Location = new System.Drawing.Point(36, 118);
-            this.textoGerente.Name = "textoGerente";
-            this.textoGerente.Size = new System.Drawing.Size(91, 22);
-            this.textoGerente.TabIndex = 59;
-            this.textoGerente.Text = "Gerente";
-            this.textoGerente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textoTelefone
             // 
@@ -285,13 +263,6 @@ namespace BancoDadosZe
             this.textoNomeFantasia.Text = "Nome Fantasia";
             this.textoNomeFantasia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // controleUsEndereco
-            // 
-            this.controleUsEndereco.Location = new System.Drawing.Point(21, 148);
-            this.controleUsEndereco.Name = "controleUsEndereco";
-            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
-            this.controleUsEndereco.TabIndex = 120;
-            // 
             // FormLoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,7 +286,6 @@ namespace BancoDadosZe
         private System.Windows.Forms.Panel panelFundo;
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.Label textoEmail;
-        private System.Windows.Forms.Label textoGerente;
         private System.Windows.Forms.Label textoTelefone;
         private System.Windows.Forms.Label textoRazaoSocial;
         private System.Windows.Forms.Label textoCnpj;
@@ -328,7 +298,6 @@ namespace BancoDadosZe
         private System.Windows.Forms.MaskedTextBox mk_razaoSocial;
         private System.Windows.Forms.MaskedTextBox mk_cnpj;
         private System.Windows.Forms.MaskedTextBox mk_nomeFantasia;
-        public System.Windows.Forms.ComboBox comboBoxGerente;
         private System.Windows.Forms.MaskedTextBox mk_IE;
         private System.Windows.Forms.Label textoIe;
         private System.Windows.Forms.MaskedTextBox mk_id;

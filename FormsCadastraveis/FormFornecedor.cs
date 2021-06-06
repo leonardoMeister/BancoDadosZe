@@ -15,13 +15,13 @@ namespace BancoDadosZe
     public partial class FormFornecedor : Form
     {
         //declarando os objetos necessarios
-        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
-        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        readonly string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        readonly string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly FornecedorDAO dao;
         private readonly AreaAtuacaoDAO daoAreaAtuacao;
         private readonly FornecedorAreasAtuacaoDAO daoFornecedorAreaAtuacao;
         private readonly EnderecoDAO daoEndereco;
-        ControleUsBTN userControl;
+        readonly ControleUsBTN userControl;
         private List<AreaAtuacao> listaArea;
         private Fornecedor fornecedor;
         private Endereco endereco;
@@ -57,10 +57,12 @@ namespace BancoDadosZe
             mk_razaoSocial.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
             mk_telefone.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
             //tradução
+            this.Text = Properties.Resources.ResourceManager.GetString("titulo_fornecedor1");
             this.textoCnpj.Text = Properties.Resources.ResourceManager.GetString("titulo_cnpj");
             this.textoContato.Text = Properties.Resources.ResourceManager.GetString("titulo_contato");
             this.textoEmail.Text = Properties.Resources.ResourceManager.GetString("titulo_email");
-            //this.textoIE.Text = Properties.Resources.ResourceManager.GetString("titulo_endereco");
+            this.textoListaAreaAtuacaoFinal.Text = Properties.Resources.ResourceManager.GetString("titulo_areaFornecedor");
+            this.textoListaAreaAtuacaoInicio.Text = Properties.Resources.ResourceManager.GetString("titulo_areaCadastrada");
             this.textoNomeFantasia.Text = Properties.Resources.ResourceManager.GetString("titulo_nomeFantasia");
             this.textoRazaoSocial.Text = Properties.Resources.ResourceManager.GetString("titulo_social");
             this.textoTelefone.Text = Properties.Resources.ResourceManager.GetString("titulo_telefone");
@@ -87,8 +89,6 @@ namespace BancoDadosZe
         public void PegaPreencherFormComDadosBanco(int id)
         {
             AtualizarTela();
-
-
             if (id == 0)
             {
 
@@ -103,7 +103,11 @@ namespace BancoDadosZe
                 //inicializa o endereço sem valores na tela
                 controleUsEndereco.PegaPreencherFormComDadosBanco(0, new DataTable());
 
+                userControl.btnRemover.Enabled = false;
+                userControl.btnSalvar.Enabled = false;
                 this.ShowDialog();
+                userControl.btnRemover.Enabled = true;
+                userControl.btnSalvar.Enabled = true;
                 return;
             }
             else
@@ -139,15 +143,15 @@ namespace BancoDadosZe
                 {
                     listBoxAreaFornecedor.Items.Add(new AreaAtuacao(Convert.ToInt32(row[0].ToString()), row[1].ToString()));
                 }
-
+                
                 //pegando endereco
                 DataTable auxTabela = daoEndereco.SelectDbProvider(provider, strConnection, idEndereco);
                 //inicializando com os dados de endereço na tela
                 controleUsEndereco.PegaPreencherFormComDadosBanco(idEndereco, auxTabela);
 
-                userControl.btnAdicionar.Visible = false;
+                userControl.btnAdicionar.Enabled = false;
                 this.ShowDialog();
-                userControl.btnAdicionar.Visible = true;
+                userControl.btnAdicionar.Enabled = true;
                 return;
             }
         }
@@ -179,7 +183,7 @@ namespace BancoDadosZe
                 //pegando o id selecionado
                 int id = Convert.ToInt32(controleUsEndereco.mk_id.Text);
                 dao.RemoverDbProvider(provider, strConnection, id);
-                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosRemovidos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception)
@@ -217,10 +221,11 @@ namespace BancoDadosZe
                 if (listaArea.Count == 0)
                 {
                     //lançando erro caso n selecione nada
-                    throw new Exception("Nenhuma Area De Atuação Selecionada");
+                    throw new Exception(Properties.Resources.ResourceManager.GetString("titulo_areaSelecionada"));
                 }
+                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -287,9 +292,15 @@ namespace BancoDadosZe
                 {
                     FornecedorAreasAtuacao fornecedorAreasAtuacao = new FornecedorAreasAtuacao(listaArea[i].IdArea, fornecedorId);
                     daoFornecedorAreaAtuacao.InserirDbProvider(provider, strConnection, fornecedorAreasAtuacao);
-                    MessageBox.Show("Area inserida com sucesso!", provider);
-                    ClassFuncoes.FecharTela(this);
+                    
                 }
+                if (fornecedor.IdFornecedor != 0)
+                {
+                    MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosSalvos"), provider);
+                }
+                else MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosAdicionados"), provider);
+
+                ClassFuncoes.FecharTela(this);
 
             }
             catch (Exception ex)
@@ -324,7 +335,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            RemoveDbProvider();
+            if (ClassFuncoes.PerguntaSeDeletarDados())
+            {
+                RemoveDbProvider();
+            }
         }
 
         /// <summary>
@@ -350,7 +364,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listBoxAreasInicio_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxAreasInicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListBox aux = ((ListBox)sender);
 
@@ -382,7 +396,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void listBoxAreaFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxAreaFornecedor_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListBox aux = ((ListBox)sender);
 

@@ -6,14 +6,17 @@ using System.Data;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// Classe Marca
+    /// </summary>
     public partial class FormMarca : Form
     {
 
-        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
-        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        readonly string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        readonly string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly MarcaDAO dao;
         private Marca marca;
-        ControleUsBTN userControl;
+        readonly ControleUsBTN userControl;
 
         /// <summary>
         /// Construtor
@@ -23,6 +26,8 @@ namespace BancoDadosZe
             //inicializando componentes
             InitializeComponent();
 
+            this.text_marca.Text = Properties.Resources.ResourceManager.GetString("titulo_marca");
+            this.Text = Properties.Resources.ResourceManager.GetString("titulo_marca");
             //Enter
             textBoxMarca.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             //leave
@@ -72,18 +77,24 @@ namespace BancoDadosZe
                     foreach (DataRow row in tabela.Rows)
                     {
                         mk_id.Text = row[0].ToString();
-                        textBoxMarca.Text = row[1].ToString();
-                        userControl.btnAdicionar.Visible = false;
-                        this.ShowDialog();
-                        userControl.btnAdicionar.Visible = true;
-                        return;
+                        textBoxMarca.Text = row[1].ToString();                     
                     }
+
+                    userControl.btnAdicionar.Enabled = false;
+                    this.ShowDialog();
+                    userControl.btnAdicionar.Enabled = true;
+                    return;
                 }
                 else
                 {
                     mk_id.Text = "";
                     textBoxMarca.Text = "";
+                    userControl.btnRemover.Enabled = false;
+                    userControl.btnSalvar.Enabled = false;
                     this.ShowDialog();
+                    userControl.btnRemover.Enabled = true;
+                    userControl.btnSalvar.Enabled = true;
+                    
                 }
 
             }
@@ -97,12 +108,12 @@ namespace BancoDadosZe
         /// </summary>
         private void RemoveDbProvider()
         {
-            try
+            try 
             {
                 //pegando o id selecionado
                 int id = Convert.ToInt32(mk_id.Text);
                 dao.RemoverDbProvider(provider, strConnection, id);
-                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosRemovidos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception)
@@ -134,9 +145,9 @@ namespace BancoDadosZe
                 dao.InserirDbProvider(provider, strConnection, marca);
                 if (marca.IdMarca != 0)
                 {
-                    MessageBox.Show("Dados Salvos com sucesso!", provider);
+                    MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosSalvos"), provider);
                 }
-                else MessageBox.Show("Dados inseridos com sucesso!", provider);
+                else MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosAdicionados"), provider);
 
                 ClassFuncoes.FecharTela(this);
             }
@@ -163,7 +174,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            RemoveDbProvider();
+            if (ClassFuncoes.PerguntaSeDeletarDados())
+            {
+                RemoveDbProvider();
+            }
         }
 
 

@@ -6,13 +6,16 @@ using System.Data;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// Classe Area atuacao
+    /// </summary>
     public partial class FormAreaAtuacao : Form
     {
-        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
-        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        readonly string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        readonly string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly AreaAtuacaoDAO dao;
         private AreaAtuacao areaAtuacao;
-        ControleUsBTN userControl;
+        readonly ControleUsBTN userControl;
 
         /// <summary>
         /// 
@@ -22,6 +25,8 @@ namespace BancoDadosZe
             //inicializando componentes
             InitializeComponent();
 
+            this.Text = Properties.Resources.ResourceManager.GetString("titulo_atuacao");
+            this.textoArea.Text = Properties.Resources.ResourceManager.GetString("titulo_atuacao");
             //Enter
             textBoxArea.Enter += new EventHandler(ClassFuncoes.CampoEventoEnter);
             //leave
@@ -52,7 +57,7 @@ namespace BancoDadosZe
                 //pegando o id selecionado
                 int id = Convert.ToInt32(mk_id.Text);
                 dao.RemoverDbProvider(provider, strConnection, id);
-                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosRemovidos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception)
@@ -77,9 +82,9 @@ namespace BancoDadosZe
                         textBoxArea.Text = row[1].ToString();
                         mk_id.Text = row[0].ToString();
 
-                        userControl.btnAdicionar.Visible = false;
+                        userControl.btnAdicionar.Enabled = false;
                         this.ShowDialog();
-                        userControl.btnAdicionar.Visible = true;
+                        userControl.btnAdicionar.Enabled = true;
                         return;
                     }
 
@@ -89,7 +94,14 @@ namespace BancoDadosZe
                 {
                     textBoxArea.Text = "";
                     mk_id.Text = "";
+
+
+                    userControl.btnRemover.Enabled = false;
+                    userControl.btnSalvar.Enabled = false;
                     this.ShowDialog();
+                    userControl.btnRemover.Enabled = true;
+                    userControl.btnSalvar.Enabled = true;
+
                     return;
                 }
             }
@@ -130,9 +142,9 @@ namespace BancoDadosZe
                 dao.InserirDbProvider(provider, strConnection, areaAtuacao);
                 if (areaAtuacao.IdArea != 0)
                 {
-                    MessageBox.Show("Dados Salvos com sucesso!", provider);
+                    MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosSalvos"), provider);
                 }
-                else MessageBox.Show("Dados inseridos com sucesso!", provider);
+                else MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosAdicionados"), provider);
 
                 ClassFuncoes.FecharTela(this);
             }
@@ -159,7 +171,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            RemoveDbProvider();
+            if (ClassFuncoes.PerguntaSeDeletarDados())
+            {
+                RemoveDbProvider();
+            }
         }
 
         /// <summary>

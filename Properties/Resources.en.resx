@@ -126,6 +126,9 @@
   <data name="btn_editar" xml:space="preserve">
     <value>&amp;To edit</value>
   </data>
+  <data name="btn_editar1" xml:space="preserve">
+    <value>To edit</value>
+  </data>
   <data name="btn_importar" xml:space="preserve">
     <value>Import XML</value>
   </data>
@@ -162,8 +165,26 @@
   <data name="titulo_abrir" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="titulo_adicionar" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="titulo_ajustes" xml:space="preserve">
     <value>&amp;Settings</value>
+  </data>
+  <data name="titulo_ajustes1" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="titulo_areaAtuacao" xml:space="preserve">
+    <value>Occupation area</value>
+  </data>
+  <data name="titulo_areaCadastrada" xml:space="preserve">
+    <value>Registered Practice Area</value>
+  </data>
+  <data name="titulo_areaFornecedor" xml:space="preserve">
+    <value>Supplier Acting Area</value>
+  </data>
+  <data name="titulo_areaSelecionada" xml:space="preserve">
+    <value>No Practice Areas Selected</value>
   </data>
   <data name="titulo_atuacao" xml:space="preserve">
     <value>Occupation area</value>
@@ -184,7 +205,7 @@
     <value>Category</value>
   </data>
   <data name="titulo_cep" xml:space="preserve">
-    <value>Cep</value>
+    <value>Zip code</value>
   </data>
   <data name="titulo_cidade" xml:space="preserve">
     <value>City</value>
@@ -204,14 +225,32 @@
   <data name="titulo_cpf" xml:space="preserve">
     <value>CPF</value>
   </data>
+  <data name="titulo_dadosAdicionados" xml:space="preserve">
+    <value>Data Added Successfully</value>
+  </data>
+  <data name="titulo_dadosRemovidos" xml:space="preserve">
+    <value>Data Removed Successfully</value>
+  </data>
+  <data name="titulo_dadosSalvos" xml:space="preserve">
+    <value>Data Saved Successfully</value>
+  </data>
   <data name="titulo_data" xml:space="preserve">
     <value>Date Entry</value>
   </data>
   <data name="titulo_dataNascimento" xml:space="preserve">
     <value>Birth date</value>
   </data>
+  <data name="titulo_deletar" xml:space="preserve">
+    <value>Delete File</value>
+  </data>
   <data name="titulo_descricao" xml:space="preserve">
     <value>Description</value>
+  </data>
+  <data name="titulo_desejaDeletar" xml:space="preserve">
+    <value>Do you want to Delete the Bank Item?</value>
+  </data>
+  <data name="titulo_desejaSair" xml:space="preserve">
+    <value>Do you want to exit?</value>
   </data>
   <data name="titulo_email" xml:space="preserve">
     <value>Email</value>
@@ -225,11 +264,26 @@
   <data name="titulo_entradas" xml:space="preserve">
     <value>&amp;Appetizer</value>
   </data>
+  <data name="titulo_entradas1" xml:space="preserve">
+    <value>Appetizer</value>
+  </data>
+  <data name="titulo_escolhaBanco" xml:space="preserve">
+    <value>Choose Database</value>
+  </data>
+  <data name="titulo_estado" xml:space="preserve">
+    <value>state</value>
+  </data>
   <data name="titulo_fornecedor" xml:space="preserve">
     <value>Supp&amp;lier</value>
   </data>
+  <data name="titulo_fornecedor1" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
   <data name="titulo_funcionario" xml:space="preserve">
     <value>&amp;Employees</value>
+  </data>
+  <data name="titulo_funcionario1" xml:space="preserve">
+    <value>Employees</value>
   </data>
   <data name="titulo_gerente" xml:space="preserve">
     <value>Manager</value>
@@ -243,8 +297,17 @@
   <data name="titulo_logar" xml:space="preserve">
     <value>&amp;Get in</value>
   </data>
+  <data name="titulo_logar1" xml:space="preserve">
+    <value>Get in</value>
+  </data>
+  <data name="titulo_logradouro" xml:space="preserve">
+    <value>Public place</value>
+  </data>
   <data name="titulo_loja" xml:space="preserve">
     <value>&amp;Store</value>
+  </data>
+  <data name="titulo_loja1" xml:space="preserve">
+    <value>Store</value>
   </data>
   <data name="titulo_lote" xml:space="preserve">
     <value>Batch</value>
@@ -276,14 +339,20 @@
   <data name="titulo_produto" xml:space="preserve">
     <value>&amp;Product</value>
   </data>
+  <data name="titulo_produto1" xml:space="preserve">
+    <value>Product</value>
+  </data>
   <data name="titulo_quantidade" xml:space="preserve">
-    <value>Amount</value>
+    <value>Stock Quantity</value>
   </data>
   <data name="titulo_rua" xml:space="preserve">
     <value>Street</value>
   </data>
   <data name="titulo_sair" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="titulo_salvar" xml:space="preserve">
+    <value>Save File</value>
   </data>
   <data name="titulo_sexo" xml:space="preserve">
     <value>Sex:</value>

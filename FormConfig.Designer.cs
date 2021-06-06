@@ -72,7 +72,7 @@ namespace BancoDadosZe
             this.btn_salvar.TabIndex = 7;
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = true;
-            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
+            this.btn_salvar.Click += new System.EventHandler(this.Btn_salvar_Click);
             // 
             // grupBoxBanco
             // 
@@ -108,7 +108,7 @@ namespace BancoDadosZe
             this.comboBoxBanco.Name = "comboBoxBanco";
             this.comboBoxBanco.Size = new System.Drawing.Size(392, 24);
             this.comboBoxBanco.TabIndex = 5;
-            this.comboBoxBanco.SelectedIndexChanged += new System.EventHandler(this.comboBoxBanco_SelectedIndexChanged);
+            this.comboBoxBanco.SelectedIndexChanged += new System.EventHandler(this.ComboBoxBanco_SelectedIndexChanged);
             // 
             // FormConfig
             // 

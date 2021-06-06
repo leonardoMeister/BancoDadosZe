@@ -19,7 +19,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="senha"></param>
         /// <returns></returns>
-        public static string sha256(string senha)
+        public static string Sha256(string senha)
         {
             var crypt = new SHA256Managed();
             var hash = new StringBuilder();
@@ -32,7 +32,7 @@ namespace BancoDadosZe
         }
 
         /// <summary>
-        //pictureBoxCompanyLogo.Image = ConverteByteArrayParaImagem((byte[]) byteimage);
+        /// Converte imagens
         /// </summary>
         /// <param name="pData"></param>
         /// <returns></returns>
@@ -131,12 +131,27 @@ namespace BancoDadosZe
             //verifica se foi pressionado ESC
             else if (e.KeyCode == Keys.Escape)
             {
-                DialogResult confirm = MessageBox.Show("Deseja Sair?", "Salvar Arquivo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                
+                DialogResult confirm = MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_desejaSair"), Properties.Resources.ResourceManager.GetString("titulo_salvar"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 if (confirm.ToString().ToUpper() == "YES")
                 {
                     form.Close();
                 }
             }
+        }
+
+        /// <summary>
+        /// Método de solicitar confirmação para deletar dados do banco
+        /// </summary>
+        /// <returns></returns>
+        public static bool PerguntaSeDeletarDados()
+        {
+            DialogResult confirm = MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_desejaDeletar"), Properties.Resources.ResourceManager.GetString("titulo_deletar"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                return true;
+            }
+            else return false;
         }
 
         /// <summary>

@@ -120,8 +120,14 @@
   <data name="btn_adicionar" xml:space="preserve">
     <value>A&amp;gregar</value>
   </data>
+  <data name="btn_adicionar1" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
   <data name="btn_busca" xml:space="preserve">
     <value>&amp;Buscar</value>
+  </data>
+  <data name="btn_busca1" xml:space="preserve">
+    <value>Buscar</value>
   </data>
   <data name="btn_editar" xml:space="preserve">
     <value>Ed&amp;itar</value>
@@ -162,8 +168,26 @@
   <data name="titulo_abrir" xml:space="preserve">
     <value>Abierto</value>
   </data>
+  <data name="titulo_adicionar" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
   <data name="titulo_ajustes" xml:space="preserve">
     <value>A&amp;justes</value>
+  </data>
+  <data name="titulo_ajustes1" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="titulo_areaAtuacao" xml:space="preserve">
+    <value>Área de ocupación</value>
+  </data>
+  <data name="titulo_areaCadastrada" xml:space="preserve">
+    <value>Área de práctica registrada</value>
+  </data>
+  <data name="titulo_areaFornecedor" xml:space="preserve">
+    <value>Área de actuación del proveedor</value>
+  </data>
+  <data name="titulo_areaSelecionada" xml:space="preserve">
+    <value>No se seleccionaron áreas de práctica</value>
   </data>
   <data name="titulo_atuacao" xml:space="preserve">
     <value>Área de actuación</value>
@@ -204,14 +228,32 @@
   <data name="titulo_cpf" xml:space="preserve">
     <value>CPF</value>
   </data>
+  <data name="titulo_dadosAdicionados" xml:space="preserve">
+    <value>Datos agregados con éxito</value>
+  </data>
+  <data name="titulo_dadosRemovidos" xml:space="preserve">
+    <value>Datos eliminados con éxito</value>
+  </data>
+  <data name="titulo_dadosSalvos" xml:space="preserve">
+    <value>Datos guardados exitosamente</value>
+  </data>
   <data name="titulo_data" xml:space="preserve">
     <value>Entrada de fecha</value>
   </data>
   <data name="titulo_dataNascimento" xml:space="preserve">
     <value>Fecha de nacimiento</value>
   </data>
+  <data name="titulo_deletar" xml:space="preserve">
+    <value>Borrar archivo</value>
+  </data>
   <data name="titulo_descricao" xml:space="preserve">
     <value>Descripción</value>
+  </data>
+  <data name="titulo_desejaDeletar" xml:space="preserve">
+    <value>¿Quieres eliminar el artículo bancario?</value>
+  </data>
+  <data name="titulo_desejaSair" xml:space="preserve">
+    <value>¿Quieres irte?</value>
   </data>
   <data name="titulo_email" xml:space="preserve">
     <value>Email</value>
@@ -225,8 +267,20 @@
   <data name="titulo_entradas" xml:space="preserve">
     <value>&amp;Aperitivo</value>
   </data>
+  <data name="titulo_entradas1" xml:space="preserve">
+    <value>Aperitivo</value>
+  </data>
+  <data name="titulo_escolhaBanco" xml:space="preserve">
+    <value>Elegir base de datos</value>
+  </data>
+  <data name="titulo_estado" xml:space="preserve">
+    <value>Expresar</value>
+  </data>
   <data name="titulo_fornecedor" xml:space="preserve">
     <value>&amp;Fornecedor</value>
+  </data>
+  <data name="titulo_fornecedor1" xml:space="preserve">
+    <value>Fornecedor</value>
   </data>
   <data name="titulo_funcionario" xml:space="preserve">
     <value>Pro&amp;veedor</value>
@@ -242,6 +296,12 @@
   </data>
   <data name="titulo_logar" xml:space="preserve">
     <value>&amp;Entrar</value>
+  </data>
+  <data name="titulo_logar1" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="titulo_logradouro" xml:space="preserve">
+    <value>Lugar público</value>
   </data>
   <data name="titulo_loja" xml:space="preserve">
     <value>Tie&amp;nda</value>
@@ -276,14 +336,20 @@
   <data name="titulo_produto" xml:space="preserve">
     <value>&amp;Producto</value>
   </data>
+  <data name="titulo_produto1" xml:space="preserve">
+    <value>Producto</value>
+  </data>
   <data name="titulo_quantidade" xml:space="preserve">
-    <value>Cantidad</value>
+    <value>Cantidad de stock</value>
   </data>
   <data name="titulo_rua" xml:space="preserve">
     <value>calle</value>
   </data>
   <data name="titulo_sair" xml:space="preserve">
     <value>Sal</value>
+  </data>
+  <data name="titulo_salvar" xml:space="preserve">
+    <value>Guardar el archivo</value>
   </data>
   <data name="titulo_sexo" xml:space="preserve">
     <value>Sexo:</value>

@@ -230,9 +230,9 @@ namespace BancoDadosZe
             // textoPais
             // 
             this.textoPais.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoPais.Location = new System.Drawing.Point(412, 56);
+            this.textoPais.Location = new System.Drawing.Point(359, 56);
             this.textoPais.Name = "textoPais";
-            this.textoPais.Size = new System.Drawing.Size(53, 22);
+            this.textoPais.Size = new System.Drawing.Size(106, 22);
             this.textoPais.TabIndex = 103;
             this.textoPais.Text = "Pais";
             this.textoPais.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

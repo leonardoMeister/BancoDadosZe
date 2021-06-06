@@ -81,11 +81,70 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ajustes30 {
+            get {
+                object obj = ResourceManager.GetObject("ajustes30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ajustes60 {
+            get {
+                object obj = ResourceManager.GetObject("ajustes60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap areas30 {
+            get {
+                object obj = ResourceManager.GetObject("areas30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap areas60 {
+            get {
+                object obj = ResourceManager.GetObject("areas60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap areas601 {
+            get {
+                object obj = ResourceManager.GetObject("areas601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Adicionar.
         /// </summary>
         internal static string btn_adicionar {
             get {
                 return ResourceManager.GetString("btn_adicionar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Adicionar.
+        /// </summary>
+        internal static string btn_adicionar1 {
+            get {
+                return ResourceManager.GetString("btn_adicionar1", resourceCulture);
             }
         }
         
@@ -99,11 +158,29 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Buscar.
+        /// </summary>
+        internal static string btn_busca1 {
+            get {
+                return ResourceManager.GetString("btn_busca1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Editar.
         /// </summary>
         internal static string btn_editar {
             get {
                 return ResourceManager.GetString("btn_editar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Editar.
+        /// </summary>
+        internal static string btn_editar1 {
+            get {
+                return ResourceManager.GetString("btn_editar1", resourceCulture);
             }
         }
         
@@ -135,6 +212,16 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cadeado100 {
+            get {
+                object obj = ResourceManager.GetObject("cadeado100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Escolha.
         /// </summary>
         internal static string campo_escolha {
@@ -159,6 +246,16 @@ namespace BancoDadosZe.Properties {
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enter_30 {
+            get {
+                object obj = ResourceManager.GetObject("enter_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +333,26 @@ namespace BancoDadosZe.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fornecedores30 {
+            get {
+                object obj = ResourceManager.GetObject("fornecedores30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fornecedores60 {
+            get {
+                object obj = ResourceManager.GetObject("fornecedores60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap funcionarios {
             get {
                 object obj = ResourceManager.GetObject("funcionarios", resourceCulture);
@@ -246,9 +363,129 @@ namespace BancoDadosZe.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap funcionarios30 {
+            get {
+                object obj = ResourceManager.GetObject("funcionarios30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap funcionarios60 {
+            get {
+                object obj = ResourceManager.GetObject("funcionarios60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap funcionariosq100 {
+            get {
+                object obj = ResourceManager.GetObject("funcionariosq100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap funcionariosq120 {
+            get {
+                object obj = ResourceManager.GetObject("funcionariosq120", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagemApp {
             get {
                 object obj = ResourceManager.GetObject("imagemApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login100 {
+            get {
+                object obj = ResourceManager.GetObject("login100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login1001 {
+            get {
+                object obj = ResourceManager.GetObject("login1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login1002 {
+            get {
+                object obj = ResourceManager.GetObject("login1002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login90 {
+            get {
+                object obj = ResourceManager.GetObject("login90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lojas30 {
+            get {
+                object obj = ResourceManager.GetObject("lojas30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lojas60 {
+            get {
+                object obj = ResourceManager.GetObject("lojas60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marcas30 {
+            get {
+                object obj = ResourceManager.GetObject("marcas30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marcas60 {
+            get {
+                object obj = ResourceManager.GetObject("marcas60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -269,6 +506,26 @@ namespace BancoDadosZe.Properties {
         internal static System.Drawing.Bitmap produto_801 {
             get {
                 object obj = ResourceManager.GetObject("produto_801", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produto30 {
+            get {
+                object obj = ResourceManager.GetObject("produto30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produto60 {
+            get {
+                object obj = ResourceManager.GetObject("produto60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -367,11 +624,47 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Adicionar.
+        /// </summary>
+        internal static string titulo_adicionar {
+            get {
+                return ResourceManager.GetString("titulo_adicionar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a A&amp;justes.
         /// </summary>
         internal static string titulo_ajustes {
             get {
                 return ResourceManager.GetString("titulo_ajustes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Area Atuação Cadastradas.
+        /// </summary>
+        internal static string titulo_areaCadastrada {
+            get {
+                return ResourceManager.GetString("titulo_areaCadastrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Area Atuação Fornecedor.
+        /// </summary>
+        internal static string titulo_areaFornecedor {
+            get {
+                return ResourceManager.GetString("titulo_areaFornecedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nenhuma Area De Atuação Selecionada.
+        /// </summary>
+        internal static string titulo_areaSelecionada {
+            get {
+                return ResourceManager.GetString("titulo_areaSelecionada", resourceCulture);
             }
         }
         
@@ -493,6 +786,33 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Dados Adicionados com Sucesso.
+        /// </summary>
+        internal static string titulo_dadosAdicionados {
+            get {
+                return ResourceManager.GetString("titulo_dadosAdicionados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Dados Removidos com Sucesso.
+        /// </summary>
+        internal static string titulo_dadosRemovidos {
+            get {
+                return ResourceManager.GetString("titulo_dadosRemovidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Dados Salvos com Sucesso.
+        /// </summary>
+        internal static string titulo_dadosSalvos {
+            get {
+                return ResourceManager.GetString("titulo_dadosSalvos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Data Entrada.
         /// </summary>
         internal static string titulo_data {
@@ -511,11 +831,38 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Deletar Arquivo.
+        /// </summary>
+        internal static string titulo_deletar {
+            get {
+                return ResourceManager.GetString("titulo_deletar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Descrição.
         /// </summary>
         internal static string titulo_descricao {
             get {
                 return ResourceManager.GetString("titulo_descricao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Deseja Deletar o Item do banco?.
+        /// </summary>
+        internal static string titulo_desejaDeletar {
+            get {
+                return ResourceManager.GetString("titulo_desejaDeletar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Deseja Sair ?.
+        /// </summary>
+        internal static string titulo_desejaSair {
+            get {
+                return ResourceManager.GetString("titulo_desejaSair", resourceCulture);
             }
         }
         
@@ -556,6 +903,24 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Escolha Banco Dados.
+        /// </summary>
+        internal static string titulo_escolhaBanco {
+            get {
+                return ResourceManager.GetString("titulo_escolhaBanco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Estado.
+        /// </summary>
+        internal static string titulo_estado {
+            get {
+                return ResourceManager.GetString("titulo_estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Fornecedor.
         /// </summary>
         internal static string titulo_fornecedor {
@@ -565,11 +930,29 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fornecedor.
+        /// </summary>
+        internal static string titulo_fornecedor1 {
+            get {
+                return ResourceManager.GetString("titulo_fornecedor1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a F&amp;uncionários.
         /// </summary>
         internal static string titulo_funcionario {
             get {
                 return ResourceManager.GetString("titulo_funcionario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Funcionário.
+        /// </summary>
+        internal static string titulo_funcionario1 {
+            get {
+                return ResourceManager.GetString("titulo_funcionario1", resourceCulture);
             }
         }
         
@@ -610,11 +993,29 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Logradouro.
+        /// </summary>
+        internal static string titulo_logradouro {
+            get {
+                return ResourceManager.GetString("titulo_logradouro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &amp;Loja.
         /// </summary>
         internal static string titulo_loja {
             get {
                 return ResourceManager.GetString("titulo_loja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Loja.
+        /// </summary>
+        internal static string titulo_loja1 {
+            get {
+                return ResourceManager.GetString("titulo_loja1", resourceCulture);
             }
         }
         
@@ -709,7 +1110,16 @@ namespace BancoDadosZe.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Quantidade.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Produto.
+        /// </summary>
+        internal static string titulo_produto1 {
+            get {
+                return ResourceManager.GetString("titulo_produto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Quantidade Estoque.
         /// </summary>
         internal static string titulo_quantidade {
             get {
@@ -732,6 +1142,15 @@ namespace BancoDadosZe.Properties {
         internal static string titulo_sair {
             get {
                 return ResourceManager.GetString("titulo_sair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Salvar Arquivo.
+        /// </summary>
+        internal static string titulo_salvar {
+            get {
+                return ResourceManager.GetString("titulo_salvar", resourceCulture);
             }
         }
         

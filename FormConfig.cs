@@ -27,6 +27,7 @@ namespace BancoDadosZe
 
             //configurações para usar arquivos de linguagem resources
             grupBoxLingua.Text = Properties.Resources.ResourceManager.GetString("titulo_idioma");
+            grupBoxBanco.Text = Properties.Resources.ResourceManager.GetString("titulo_escolhaBanco");
             btn_salvar.Text = Properties.Resources.ResourceManager.GetString("btn_salvar");
             //Tradução grupo box
                     //grupBoxBanco.Text = Properties.Resources.ResourceManager.GetString("");
@@ -50,7 +51,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_salvar_Click(object sender, EventArgs e)
+        private void Btn_salvar_Click(object sender, EventArgs e)
         {
             //abre o arquivo local como leitura/escrita - ControleEstoqueDoZe.exe.config
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -107,7 +108,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void comboBoxBanco_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxBanco_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combo = (ComboBox)sender;
             if (combo.SelectedItem.ToString().Equals("MySql.Data.MySqlClient") )

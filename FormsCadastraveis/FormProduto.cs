@@ -12,8 +12,8 @@ namespace BancoDadosZe
     /// </summary> 
     public partial class FormProduto : Form
     {
-        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
-        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        readonly string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        readonly string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
         private readonly ProdutosDAO dao;
         private readonly MarcaDAO daoMarca;
         private readonly AreaAtuacaoDAO daoArea;
@@ -44,8 +44,12 @@ namespace BancoDadosZe
             mk_quantidade.Leave += new EventHandler(ClassFuncoes.CampoEventoLeave);
 
             //tradução
+            this.Text = Properties.Resources.ResourceManager.GetString("titulo_produto1");
+            this.textoDescrição.Text = Properties.Resources.ResourceManager.GetString("titulo_descricao");
+            this.texto_modelo.Text = Properties.Resources.ResourceManager.GetString("titulo_modelo");
+            this.textoQuantidadeEstoque.Text = Properties.Resources.ResourceManager.GetString("titulo_quantidade");
+
             this.textoMarca.Text = Properties.Resources.ResourceManager.GetString("titulo_categoria");
-            //this.textoValor.Text = Properties.Resources.ResourceManager.GetString("titulo_codigo");
             this.textoDescrição.Text = Properties.Resources.ResourceManager.GetString("titulo_descricao");
             this.textoNome.Text = Properties.Resources.ResourceManager.GetString("titulo_nome");
             this.textoStatus.Text = Properties.Resources.ResourceManager.GetString("titulo_status");
@@ -84,7 +88,11 @@ namespace BancoDadosZe
                 radioButtonAtivo.Checked = true;
                 //colocar a imagem padrao
 
+                userControl.btnRemover.Enabled = false;
+                userControl.btnSalvar.Enabled = false;
                 this.ShowDialog();
+                userControl.btnRemover.Enabled = true;
+                userControl.btnSalvar.Enabled = true;
                 return;
             }
             else
@@ -127,9 +135,10 @@ namespace BancoDadosZe
 
                 }
 
-                userControl.btnAdicionar.Visible = false;
+                userControl.btnAdicionar.Enabled = false;
                 this.ShowDialog();
-                userControl.btnAdicionar.Visible = true;
+                userControl.btnAdicionar.Enabled = true;
+
 
                 return;
             }
@@ -190,7 +199,7 @@ namespace BancoDadosZe
                 //pegando o id selecionado
                 int id = Convert.ToInt32(mk_id.Text);
                 dao.RemoverDbProvider(provider, strConnection, id);
-                MessageBox.Show("Dados Removidos com sucesso!", provider);
+                MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosRemovidos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception)
@@ -240,9 +249,9 @@ namespace BancoDadosZe
                 dao.InserirDbProvider(provider, strConnection, produtos);
                 if (produtos.IdProduto == 0)
                 {
-                    MessageBox.Show("Dados inseridos com sucesso!", provider);
+                    MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosAdicionados"), provider);
                 }
-                else MessageBox.Show("Dados Salvos com sucesso!", provider);
+                else MessageBox.Show(Properties.Resources.ResourceManager.GetString("titulo_dadosSalvos"), provider);
                 ClassFuncoes.FecharTela(this);
             }
             catch (Exception ex)
@@ -268,7 +277,10 @@ namespace BancoDadosZe
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
         private void BtnRemover_Click(object sender, EventArgs e)
         {
-            RemoveDbProvider();
+            if (ClassFuncoes.PerguntaSeDeletarDados())
+            {
+                RemoveDbProvider();
+            }
         }
 
         /// <summary>
@@ -281,7 +293,7 @@ namespace BancoDadosZe
             InsertDbProvider();
         }
 
-        private void pictureBoxImage_Click(object sender, EventArgs e)
+        private void PictureBoxImage_Click(object sender, EventArgs e)
         {
             openFileDialogImage.Title = "Imagem do produto";
             openFileDialogImage.Filter = @"Images

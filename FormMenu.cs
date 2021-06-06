@@ -34,17 +34,19 @@ namespace BancoDadosZe
             this.btn_entrar.Text = Properties.Resources.ResourceManager.GetString("titulo_logar");
             this.btn_buscar.Text = Properties.Resources.ResourceManager.GetString("btn_busca");
             this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("campo_escolha");
-
+            this.btn_marca.Text = Properties.Resources.ResourceManager.GetString("titulo_marca");
+            this.btn_area.Text = Properties.Resources.ResourceManager.GetString("titulo_atuacao");
+            this.btn_adicionar.Text = Properties.Resources.ResourceManager.GetString("titulo_adicionar");
             //evento de teclado para tab no enter e Esc
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
 
             //evento de menu de contexto para Form
-            this.lojasToolStripMenuItem.Click += new EventHandler(btn_lojas_clic);
-            this.ajustesToolStripMenuItem.Click += new EventHandler(btn_ajustes_Click);
-            this.produtosToolStripMenuItem.Click += new EventHandler(btn_produtos_Click);
-            this.entradasToolStripMenuItem.Click += new EventHandler(btn_entradas_Click);
-            this.fornecedorToolStripMenuItem.Click += new EventHandler(btn_fornecedor_Click);
-            this.funcionáriosToolStripMenuItem.Click += new EventHandler(btn_funcionario_Click);
+            this.lojasToolStripMenuItem.Click += new EventHandler(Btn_lojas_clic);
+            this.ajustesToolStripMenuItem.Click += new EventHandler(Btn_ajustes_Click);
+            this.produtosToolStripMenuItem.Click += new EventHandler(Btn_produtos_Click);
+            this.entradasToolStripMenuItem.Click += new EventHandler(Btn_entradas_Click);
+            this.fornecedorToolStripMenuItem.Click += new EventHandler(Btn_fornecedor_Click);
+            this.funcionáriosToolStripMenuItem.Click += new EventHandler(Btn_funcionario_Click);
             this.sairToolStripMenuItem.Click += new EventHandler(Sair);
 
 
@@ -71,10 +73,82 @@ namespace BancoDadosZe
             //Tradução das notificações do notifyIconSystemTray
             this.notifyIconSystemTray.BalloonTipText = Properties.Resources.ResourceManager.GetString("titulo_ballonText");
             this.notifyIconSystemTray.BalloonTipTitle = Properties.Resources.ResourceManager.GetString("titulo_ballonTitulo");
+
+            //AjustaTelaLogin();
         }
 
         //Métodos para funcionalidades privados do sistema  
         #region
+
+        private void AjustaTelaLogin()
+        {
+            if (!Program.logado)
+            {
+                //desabilita os botões
+                btn_marca.Enabled = false; btn_area.Enabled = false; btn_lojas.Enabled = false;
+                btn_funcionario.Enabled = false; btn_fornecedor.Enabled = false; btn_produtos.Enabled = false;
+                btn_entradas.Enabled = false; btn_ajustes.Enabled = false;
+                btn_adicionar.Enabled = false; btn_buscar.Enabled = false;
+
+
+                //ajusta o texto do botão entrar/sair e label
+                pictureBoxUsuario.Image = Properties.Resources.cadeado100;
+                labelLoginLogoff.Text = "Login";
+                labelUsuario.Text = "Usuário: ";
+                labelCargo.Text = "Cargo: ";
+                labelGrupo.Text = "Grupo: ";
+                labelLoja.Text = "Loja:";
+                labelTipoLoja.Text = "Tipo:";
+            }
+            else
+            {
+                //ajusta o texto do botão
+                pictureBoxUsuario.Image = Properties.Resources.funcionariosq100;
+                labelLoginLogoff.Text = "Logoff";
+                labelUsuario.Text = "Usuário: " + Program.nomeLogado;
+                labelCargo.Text = "Cargo: " + Program.cargoLogado;
+                labelGrupo.Text = "Grupo: " + Program.grupoLogado;
+                labelLoja.Text = "Loja: " + Program.lojaLogado;
+                labelTipoLoja.Text = "Tipo: " + Program.tipoLoja;
+
+                //desabilita todos os menus
+                btn_marca.Enabled = false; btn_area.Enabled = false; btn_lojas.Enabled = false;
+                btn_funcionario.Enabled = false; btn_fornecedor.Enabled = false; btn_produtos.Enabled = false;
+                btn_entradas.Enabled = false; btn_ajustes.Enabled = false;
+                btn_adicionar.Enabled = false; btn_buscar.Enabled = false;
+                if (Program.grupoLogado == 0)
+                {
+                    btn_marca.Enabled = true; btn_area.Enabled = true; btn_lojas.Enabled = true;
+                    btn_funcionario.Enabled = true; btn_fornecedor.Enabled = true; btn_produtos.Enabled = true;
+                    btn_entradas.Enabled = true; btn_ajustes.Enabled = true;
+                    btn_adicionar.Enabled = true; btn_buscar.Enabled = true;
+                }
+                else if (Program.grupoLogado == 1)
+                {
+                    btn_marca.Enabled = true; btn_area.Enabled = true; btn_lojas.Enabled = true;
+                    btn_funcionario.Enabled = true; btn_fornecedor.Enabled = true; btn_produtos.Enabled = true;
+                    btn_entradas.Enabled = true; btn_ajustes.Enabled = true;
+                    btn_adicionar.Enabled = true; btn_buscar.Enabled = true;
+
+                }
+                else if (Program.grupoLogado == 2)
+                {
+                    btn_funcionario.Enabled = true; btn_adicionar.Enabled = true; btn_buscar.Enabled = true;
+
+                }
+                else if (Program.grupoLogado == 3)
+                {
+                    btn_marca.Enabled = true; btn_area.Enabled = true; btn_fornecedor.Enabled = true;
+                    btn_produtos.Enabled = true; btn_entradas.Enabled = true; btn_adicionar.Enabled = true; btn_buscar.Enabled = true;
+
+                }
+                else if (Program.grupoLogado == 4)
+                {
+                    btn_funcionario.Enabled = true; btn_adicionar.Enabled = true; btn_buscar.Enabled = true;
+
+                }
+            }
+        }
 
         /// <summary>
         /// Exibindo mensagem na tela sobre a aplicação
@@ -129,7 +203,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void notifyIconSystemTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void NotifyIconSystemTray_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Show();
             WindowState = FormWindowState.Normal;
@@ -142,7 +216,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_entradas_Click(object sender, EventArgs e)
+        private void Btn_entradas_Click(object sender, EventArgs e)
         {
             FormEntradas ent = new FormEntradas();
             ent.ShowDialog();
@@ -154,7 +228,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_ajustes_Click(object sender, EventArgs e)
+        private void Btn_ajustes_Click(object sender, EventArgs e)
         {
             FormConfig conf = new FormConfig();
             conf.ShowDialog();
@@ -180,7 +254,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_entrar_Click(object sender, EventArgs e)
+        private void Btn_entrar_Click(object sender, EventArgs e)
         {
             FormLogin login = new FormLogin();
             login.ShowDialog();
@@ -191,7 +265,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_produtos_Click(object sender, EventArgs e)
+        private void Btn_produtos_Click(object sender, EventArgs e)
         {
             auxFormSelecionado = new FormProduto();
             buscar_campo.Text = "";
@@ -204,7 +278,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_fornecedor_Click(object sender, EventArgs e)
+        private void Btn_fornecedor_Click(object sender, EventArgs e)
         {
             auxFormSelecionado = new FormFornecedor();
             buscar_campo.Text = "";
@@ -217,7 +291,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_funcionario_Click(object sender, EventArgs e)
+        private void Btn_funcionario_Click(object sender, EventArgs e)
         {
             auxFormSelecionado = new FormFuncionario();
             buscar_campo.Text = "";
@@ -229,7 +303,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_marca_Click(object sender, EventArgs e)
+        private void Btn_marca_Click(object sender, EventArgs e)
         {
             auxFormSelecionado = new FormMarca();
             buscar_campo.Text = "";
@@ -241,7 +315,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_area_atuacao(object sender, EventArgs e)
+        private void Btn_area_atuacao(object sender, EventArgs e)
         {
             auxFormSelecionado = new FormAreaAtuacao();
             buscar_campo.Text = "";
@@ -254,7 +328,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender">referência ao objeto que gerou o evento</param>
         /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void btn_lojas_clic(object sender, EventArgs e)
+        private void Btn_lojas_clic(object sender, EventArgs e)
         {
             auxFormSelecionado = new FormLoja();
             buscar_campo.Text = "";
@@ -267,7 +341,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dataGridViewDados_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewDados_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = 0;
             if (dataGridViewDados.SelectedCells.Count > 0)
@@ -371,7 +445,7 @@ namespace BancoDadosZe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_adicionar_Click(object sender, EventArgs e)
+        private void Btn_adicionar_Click(object sender, EventArgs e)
         {
             if (!(auxFormSelecionado is null))
             {
@@ -380,9 +454,25 @@ namespace BancoDadosZe
             else MessageBox.Show("Selecione um menu primeiro");
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
+        private void Btn_buscar_Click(object sender, EventArgs e)
         {          
                 PesquisaParaAtualizarGrid();
         }
+
+        private void pictureBoxUsuario_Click(object sender, EventArgs e)
+        {
+            if (Program.logado)
+            {
+                Program.logado = false;
+                AjustaTelaLogin();
+            }
+            else
+            {
+                FormLogin x = new FormLogin();
+                x.ShowDialog();
+                AjustaTelaLogin();
+            }
+        }
+
     }
 }

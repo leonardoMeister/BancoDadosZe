@@ -11,14 +11,35 @@ using System.Windows.Forms;
 
 namespace BancoDadosZe
 {
+    /// <summary>
+    /// Classe ControleEndereco
+    /// </summary>
     public partial class ControleEndereco : UserControl
     {
+        /// <summary>
+        /// Construtor Classe
+        /// </summary>
         public ControleEndereco()
         {
             InitializeComponent();
 
+            this.textLogradouro.Text = Properties.Resources.ResourceManager.GetString("titulo_logradouro");
+            this.textoBairro.Text = Properties.Resources.ResourceManager.GetString("titulo_bairro");
+            this.textoCep.Text = Properties.Resources.ResourceManager.GetString("titulo_cep");
+            this.textoCidade.Text = Properties.Resources.ResourceManager.GetString("titulo_cidade");
+            this.textoComplemento.Text = Properties.Resources.ResourceManager.GetString("titulo_complemento");
+            this.textoEstado.Text = Properties.Resources.ResourceManager.GetString("titulo_estado");
+            this.textoNumero.Text = Properties.Resources.ResourceManager.GetString("titulo_numero");
+            this.textoPais.Text = Properties.Resources.ResourceManager.GetString("titulo_pais");
+            this.grupEndereco.Text = Properties.Resources.ResourceManager.GetString("titulo_endereco");
+
             AtualizarTela();
         }
+        /// <summary>
+        /// Atualiza os campos da tela com base no id, puxando do banco
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="auxTabela"></param>
         public void PegaPreencherFormComDadosBanco(int id, DataTable auxTabela)
         {
             AtualizarTela();
@@ -74,6 +95,11 @@ namespace BancoDadosZe
             }
         }
 
+
+
+        /// <summary>
+        /// Atualiza os combo box e limpa os campos
+        /// </summary>
         private void AtualizarTela()
         {
             comboBoxPais.Items.Clear();

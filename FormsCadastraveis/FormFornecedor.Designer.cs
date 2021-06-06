@@ -33,10 +33,11 @@ namespace BancoDadosZe
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.mk_id = new System.Windows.Forms.MaskedTextBox();
             this.texto_id = new System.Windows.Forms.Label();
+            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
             this.listBoxAreaFornecedor = new System.Windows.Forms.ListBox();
             this.listBoxAreasInicio = new System.Windows.Forms.ListBox();
-            this.testoListaAreaAtuacaoFinal = new System.Windows.Forms.Label();
-            this.testoListaAreaAtuacaoInicio = new System.Windows.Forms.Label();
+            this.textoListaAreaAtuacaoFinal = new System.Windows.Forms.Label();
+            this.textoListaAreaAtuacaoInicio = new System.Windows.Forms.Label();
             this.mk_Ie = new System.Windows.Forms.MaskedTextBox();
             this.mk_email = new System.Windows.Forms.MaskedTextBox();
             this.mk_telefone = new System.Windows.Forms.MaskedTextBox();
@@ -51,7 +52,6 @@ namespace BancoDadosZe
             this.textoRazaoSocial = new System.Windows.Forms.Label();
             this.textoCnpj = new System.Windows.Forms.Label();
             this.textoNomeFantasia = new System.Windows.Forms.Label();
-            this.controleUsEndereco = new BancoDadosZe.ControleEndereco();
             this.panelFundo.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.SuspendLayout();
@@ -74,8 +74,8 @@ namespace BancoDadosZe
             this.panelFormulario.Controls.Add(this.controleUsEndereco);
             this.panelFormulario.Controls.Add(this.listBoxAreaFornecedor);
             this.panelFormulario.Controls.Add(this.listBoxAreasInicio);
-            this.panelFormulario.Controls.Add(this.testoListaAreaAtuacaoFinal);
-            this.panelFormulario.Controls.Add(this.testoListaAreaAtuacaoInicio);
+            this.panelFormulario.Controls.Add(this.textoListaAreaAtuacaoFinal);
+            this.panelFormulario.Controls.Add(this.textoListaAreaAtuacaoInicio);
             this.panelFormulario.Controls.Add(this.mk_Ie);
             this.panelFormulario.Controls.Add(this.mk_email);
             this.panelFormulario.Controls.Add(this.mk_telefone);
@@ -115,6 +115,13 @@ namespace BancoDadosZe
             this.texto_id.Text = "Id";
             this.texto_id.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // controleUsEndereco
+            // 
+            this.controleUsEndereco.Location = new System.Drawing.Point(32, 278);
+            this.controleUsEndereco.Name = "controleUsEndereco";
+            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
+            this.controleUsEndereco.TabIndex = 105;
+            // 
             // listBoxAreaFornecedor
             // 
             this.listBoxAreaFornecedor.FormattingEnabled = true;
@@ -123,7 +130,7 @@ namespace BancoDadosZe
             this.listBoxAreaFornecedor.Name = "listBoxAreaFornecedor";
             this.listBoxAreaFornecedor.Size = new System.Drawing.Size(268, 84);
             this.listBoxAreaFornecedor.TabIndex = 104;
-            this.listBoxAreaFornecedor.SelectedIndexChanged += new System.EventHandler(this.listBoxAreaFornecedor_SelectedIndexChanged);
+            this.listBoxAreaFornecedor.SelectedIndexChanged += new System.EventHandler(this.ListBoxAreaFornecedor_SelectedIndexChanged);
             // 
             // listBoxAreasInicio
             // 
@@ -133,27 +140,27 @@ namespace BancoDadosZe
             this.listBoxAreasInicio.Name = "listBoxAreasInicio";
             this.listBoxAreasInicio.Size = new System.Drawing.Size(268, 84);
             this.listBoxAreasInicio.TabIndex = 102;
-            this.listBoxAreasInicio.SelectedIndexChanged += new System.EventHandler(this.listBoxAreasInicio_SelectedIndexChanged);
+            this.listBoxAreasInicio.SelectedIndexChanged += new System.EventHandler(this.ListBoxAreasInicio_SelectedIndexChanged);
             // 
-            // testoListaAreaAtuacaoFinal
+            // textoListaAreaAtuacaoFinal
             // 
-            this.testoListaAreaAtuacaoFinal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testoListaAreaAtuacaoFinal.Location = new System.Drawing.Point(456, 154);
-            this.testoListaAreaAtuacaoFinal.Name = "testoListaAreaAtuacaoFinal";
-            this.testoListaAreaAtuacaoFinal.Size = new System.Drawing.Size(271, 20);
-            this.testoListaAreaAtuacaoFinal.TabIndex = 101;
-            this.testoListaAreaAtuacaoFinal.Text = "Area atuação Fornecedor";
-            this.testoListaAreaAtuacaoFinal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textoListaAreaAtuacaoFinal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoListaAreaAtuacaoFinal.Location = new System.Drawing.Point(456, 154);
+            this.textoListaAreaAtuacaoFinal.Name = "textoListaAreaAtuacaoFinal";
+            this.textoListaAreaAtuacaoFinal.Size = new System.Drawing.Size(271, 20);
+            this.textoListaAreaAtuacaoFinal.TabIndex = 101;
+            this.textoListaAreaAtuacaoFinal.Text = "Area atuação Fornecedor";
+            this.textoListaAreaAtuacaoFinal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // testoListaAreaAtuacaoInicio
+            // textoListaAreaAtuacaoInicio
             // 
-            this.testoListaAreaAtuacaoInicio.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testoListaAreaAtuacaoInicio.Location = new System.Drawing.Point(62, 154);
-            this.testoListaAreaAtuacaoInicio.Name = "testoListaAreaAtuacaoInicio";
-            this.testoListaAreaAtuacaoInicio.Size = new System.Drawing.Size(256, 20);
-            this.testoListaAreaAtuacaoInicio.TabIndex = 100;
-            this.testoListaAreaAtuacaoInicio.Text = "Area atuação Cadastrada";
-            this.testoListaAreaAtuacaoInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textoListaAreaAtuacaoInicio.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoListaAreaAtuacaoInicio.Location = new System.Drawing.Point(62, 154);
+            this.textoListaAreaAtuacaoInicio.Name = "textoListaAreaAtuacaoInicio";
+            this.textoListaAreaAtuacaoInicio.Size = new System.Drawing.Size(256, 20);
+            this.textoListaAreaAtuacaoInicio.TabIndex = 100;
+            this.textoListaAreaAtuacaoInicio.Text = "Area atuação Cadastrada";
+            this.textoListaAreaAtuacaoInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mk_Ie
             // 
@@ -283,13 +290,6 @@ namespace BancoDadosZe
             this.textoNomeFantasia.Text = "Nome Fantasia";
             this.textoNomeFantasia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // controleUsEndereco
-            // 
-            this.controleUsEndereco.Location = new System.Drawing.Point(32, 278);
-            this.controleUsEndereco.Name = "controleUsEndereco";
-            this.controleUsEndereco.Size = new System.Drawing.Size(740, 204);
-            this.controleUsEndereco.TabIndex = 105;
-            // 
             // FormFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,8 +328,8 @@ namespace BancoDadosZe
         private System.Windows.Forms.MaskedTextBox mk_Ie;
         private System.Windows.Forms.ListBox listBoxAreaFornecedor;
         private System.Windows.Forms.ListBox listBoxAreasInicio;
-        private System.Windows.Forms.Label testoListaAreaAtuacaoFinal;
-        private System.Windows.Forms.Label testoListaAreaAtuacaoInicio;
+        private System.Windows.Forms.Label textoListaAreaAtuacaoFinal;
+        private System.Windows.Forms.Label textoListaAreaAtuacaoInicio;
         private ControleEndereco controleUsEndereco;
         private System.Windows.Forms.MaskedTextBox mk_id;
         private System.Windows.Forms.Label texto_id;
