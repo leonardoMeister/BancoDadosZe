@@ -211,16 +211,6 @@ namespace BancoDadosZe
         }
         #endregion 
 
-        /// <summary>
-        /// Abrindo form entradas
-        /// </summary>
-        /// <param name="sender">referência ao objeto que gerou o evento</param>
-        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
-        private void Btn_entradas_Click(object sender, EventArgs e)
-        {
-            FormEntradas ent = new FormEntradas();
-            ent.ShowDialog();
-        }
 
 
         /// <summary>
@@ -271,6 +261,20 @@ namespace BancoDadosZe
             buscar_campo.Text = "";
             PesquisaParaAtualizarGrid();
             this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("titulo_produto");
+        }
+
+
+        /// <summary>
+        /// Abrindo form entradas
+        /// </summary>
+        /// <param name="sender">referência ao objeto que gerou o evento</param>
+        /// <param name="e">Passa um objeto específico para o evento que está sendo manipulado</param>
+        private void Btn_entradas_Click(object sender, EventArgs e)
+        {
+            auxFormSelecionado = new FormEntradas();
+            buscar_campo.Text = "";
+            PesquisaParaAtualizarGrid();
+            this.texto_escolha.Text = Properties.Resources.ResourceManager.GetString("");
         }
 
         /// <summary>
@@ -383,7 +387,7 @@ namespace BancoDadosZe
             }
             else if (auxFormSelecionado is FormEntradas)
             {
-                // ((FormEntradas)auxFormSelecionado).AtualizarTela(id);
+                AtualizarTela(((FormEntradas)auxFormSelecionado).PegarGrid(buscar_campo.Text));
             }
             else if (auxFormSelecionado is FormAreaAtuacao)
             {
@@ -393,7 +397,7 @@ namespace BancoDadosZe
             {
                 MessageBox.Show("Escolha um Formulario!");
             }
-            
+
 
         }
 
@@ -430,7 +434,8 @@ namespace BancoDadosZe
             }
             else if (auxFormSelecionado is FormEntradas)
             {
-                // ((FormEntradas)auxFormSelecionado).AtualizarTela(id);
+                ((FormEntradas)auxFormSelecionado).PegaPreencherFormComDadosBanco(id);
+                PesquisaParaAtualizarGrid();
             }
             else if (auxFormSelecionado is FormAreaAtuacao)
             {
@@ -455,8 +460,8 @@ namespace BancoDadosZe
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
-        {          
-                PesquisaParaAtualizarGrid();
+        {
+            PesquisaParaAtualizarGrid();
         }
 
         private void pictureBoxUsuario_Click(object sender, EventArgs e)
@@ -474,5 +479,14 @@ namespace BancoDadosZe
             }
         }
 
+        private void btn_pdf_Click(object sender, EventArgs e)
+        {
+            if (auxFormSelecionado is FormEntradas)
+            {
+                string pathArquivo = GeraPdf.pathArquivo("RelProdutos");
+                GeraPdf.PdfEntradas(pathArquivo, 0);
+            }
+            else MessageBox.Show("Função Ainda não disponivel para esta Opção");
+        }
     }
 }

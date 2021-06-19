@@ -51,6 +51,7 @@ namespace BancoDadosZe
             this.btn_produtos = new System.Windows.Forms.Button();
             this.btn_lojas = new System.Windows.Forms.Button();
             this.panelFundoGrid = new System.Windows.Forms.Panel();
+            this.btn_pdf = new System.Windows.Forms.Button();
             this.btn_adicionar = new System.Windows.Forms.Button();
             this.texto_escolha = new System.Windows.Forms.Label();
             this.buscar_campo = new System.Windows.Forms.TextBox();
@@ -333,6 +334,7 @@ namespace BancoDadosZe
             // panelFundoGrid
             // 
             this.panelFundoGrid.BackColor = System.Drawing.Color.Moccasin;
+            this.panelFundoGrid.Controls.Add(this.btn_pdf);
             this.panelFundoGrid.Controls.Add(this.btn_adicionar);
             this.panelFundoGrid.Controls.Add(this.texto_escolha);
             this.panelFundoGrid.Controls.Add(this.buscar_campo);
@@ -344,6 +346,24 @@ namespace BancoDadosZe
             this.panelFundoGrid.Name = "panelFundoGrid";
             this.panelFundoGrid.Size = new System.Drawing.Size(859, 711);
             this.panelFundoGrid.TabIndex = 1;
+            // 
+            // btn_pdf
+            // 
+            this.btn_pdf.BackColor = System.Drawing.Color.Moccasin;
+            this.btn_pdf.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_pdf.FlatAppearance.BorderSize = 0;
+            this.btn_pdf.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_pdf.Image = global::BancoDadosZe.Properties.Resources.editar;
+            this.btn_pdf.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_pdf.Location = new System.Drawing.Point(662, 26);
+            this.btn_pdf.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_pdf.Name = "btn_pdf";
+            this.btn_pdf.Size = new System.Drawing.Size(83, 82);
+            this.btn_pdf.TabIndex = 22;
+            this.btn_pdf.Text = "PDF";
+            this.btn_pdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_pdf.UseVisualStyleBackColor = false;
+            this.btn_pdf.Click += new System.EventHandler(this.btn_pdf_Click);
             // 
             // btn_adicionar
             // 
@@ -602,6 +622,7 @@ namespace BancoDadosZe
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label labelGrupo;
         private System.Windows.Forms.GroupBox labelLoginLogoff;
+        private System.Windows.Forms.Button btn_pdf;
     }
 }
 

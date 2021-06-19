@@ -95,7 +95,7 @@ namespace BancoDadosZe
                 mk_cnpj.Text = "";
                 mk_email.Text = "";
                 mk_contato.Text = "";
-                mk_nomeFantasia.Text = "";
+                mk_nomeFantasia.Text = ""; 
                 mk_razaoSocial.Text = "";
                 mk_telefone.Text = "";
                 mk_Ie.Text = "";
