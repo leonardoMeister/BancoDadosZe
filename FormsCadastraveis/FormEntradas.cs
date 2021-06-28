@@ -545,5 +545,10 @@ namespace BancoDadosZe
             string pathArquivo = GeraPdf.pathArquivo("RelProdutos");
             GeraPdf.PdfEntradas(pathArquivo, Convert.ToInt32(mk_id.Text));
         }
+
+        private void userControleUsBTN_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -406,6 +406,7 @@ namespace BancoDadosZe
             this.userControleUsBTN.Name = "userControleUsBTN";
             this.userControleUsBTN.Size = new System.Drawing.Size(637, 53);
             this.userControleUsBTN.TabIndex = 137;
+            this.userControleUsBTN.Load += new System.EventHandler(this.userControleUsBTN_Load);
             // 
             // openFileXml
             // 
